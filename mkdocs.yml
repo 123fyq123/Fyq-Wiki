@@ -1,1 +1,67 @@
 site_name: My Docs
+# Project information
+site_name: PJM Wiki
+site_description: PJM Wiki 是一个计算机知识整合的站点
+site_author: 潘江明
+site_url: 'https://wiki.pjmcode.top/'
+strict: false
+
+# Repository
+repo_name: 'pjimming/PJM-Wiki'
+repo_url: 'https://github.com/pjimming/PJM-Wiki'
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.top
+  language: 'zh'
+  palette:
+    primary: 'white'
+    accent: 'red'
+  favicon: img/favicon.png
+  icon:
+    logo: material/library
+
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: white
+    accent: red
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: cyan
+    accent: red
+    toggle:
+      icon: material/weather-night
+      name: Switch to light mode
+
+# copyright
+copyright: Copyright &copy; 2022 <a href="https://pjmcode.top" target="_blank" rel="noopener noreferrer">潘江明</a>
+
+# extra
+extra:
+  search:
+    language: 'jp'
+
+
+# md extrc
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
