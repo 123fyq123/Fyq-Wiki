@@ -1,14 +1,33 @@
-site_name: My Docs
+site_name: Fyq Docs
 # Project information
-site_name: PJM Wiki
-site_description: PJM Wiki 是一个计算机知识整合的站点
-site_author: 潘江明
-site_url: 'https://wiki.pjmcode.top/'
+site_name: FYQ Wiki
+site_description: 一位计算机爱好者的资料整理.... 
+site_author: 方毓乔
+# site_url: 'https://wiki.pjmcode.top/'
 strict: false
 
 # Repository
-repo_name: 'pjimming/PJM-Wiki'
-repo_url: 'https://github.com/pjimming/PJM-Wiki'
+repo_name: 'Fyq'
+repo_url: 'https://github.com/123fyq123/Fyq-Wiki'
+
+nav:
+  - welcome: index.md
+  - ACM:
+    - 数学:
+      - 组合数学:
+        - 组合数: 404.md
+        - 置换群:
+          - polya定理: 404.md
+        - 线性基: 线性基.md
+      - 数论:
+        - 欧拉函数: 欧拉函数.md
+        - 逆元: 逆元.md
+        - BSGS和扩展BSGS: BSGS.md
+        - 扩展欧几里德和贝祖定理: 扩欧.md
+        - 中国剩余定理: crt.md
+        - 积性函数与莫比乌斯反演: 莫反.md
+        - 例题: 404.md
+    
 
 theme:
   name: material
@@ -19,7 +38,7 @@ theme:
   palette:
     primary: 'white'
     accent: 'red'
-  favicon: img/favicon.png
+  # favicon: img/favicon.png
   icon:
     logo: material/library
 
@@ -40,7 +59,7 @@ theme:
       name: Switch to light mode
 
 # copyright
-copyright: Copyright &copy; 2022 <a href="https://pjmcode.top" target="_blank" rel="noopener noreferrer">潘江明</a>
+copyright: Copyright &copy; 2022 <a href="#" target="_blank" rel="noopener noreferrer">方毓乔</a>
 
 # extra
 extra:
