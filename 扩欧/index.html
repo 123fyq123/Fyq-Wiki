@@ -235,6 +235,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../base.md" class="md-tabs__link">
+        PS
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -447,6 +463,34 @@
     <li class="md-nav__item">
       <a href="../%E7%BA%BF%E6%80%A7%E5%9F%BA/" class="md-nav__link">
         线性基
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" class="md-nav__link">
+        卡特兰数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%96%AF%E7%89%B9%E6%8B%89%E6%95%B0/" class="md-nav__link">
+        斯特拉数
       </a>
     </li>
   
@@ -677,6 +721,68 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          PS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          PS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base.md" class="md-nav__link">
+        基础知识入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PS1.md" class="md-nav__link">
+        图像的基本编辑方法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -797,9 +903,9 @@
 <p><strong>判断方程<span class="arithmatex">\(ax+by=m\)</span>或<span class="arithmatex">\(ax≡m(mod\ b)\)</span>是否有解</strong>
 <strong>思路</strong>:当<span class="arithmatex">\(gcd(a,b)|m\)</span>时 方程有解，反之则无解</p>
 <p><strong>求解方程<span class="arithmatex">\(ax+by=m( ax≡m(mod\ b) )\)</span>的最小正整数解</strong>
-<strong>思路</strong>
-1.首先判断方程是否有解，无解则直接退出
-2.扩欧求x，令<span class="arithmatex">\(bg=m/gcd(a,b),则x=(x\%bg+bg)\%bg\)</span></p>
+<strong>思路</strong></p>
+<p>1.首先判断方程是否有解，无解则直接退出</p>
+<p>2.扩欧求x，令<span class="arithmatex">\(bg=m/gcd(a,b),则x=(x\%bg+bg)\%bg\)</span></p>
 <h2 id="_3">经典例题</h2>
 <h3 id="1-p1082">例1. 洛谷 P1082 同余方程</h3>
 <p><strong>题目描述</strong>
@@ -939,24 +1045,31 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="2p5656">例2.洛谷P5656 二元一次方程</h3>
-<p><strong>题目描述</strong>
-给定不定方程ax+by=c
+<p><strong>题目描述</strong></p>
+<p>给定不定方程ax+by=c
 若该方程无整数解，输出-1。
 若该方程有整数解，且有正整数解，则输出其正整数解的数量，所有正整数解中x的最小值，所有正整数解中y的最小值，所有正整数解中x的最大值，以及所有正整数解中y 的最大值。
 若方程有整数解，但没有正整数解，你需要输出所有整数解中x的最小正整数值，y的最小正整数值。
 正整数解即为 x, y 均为正整数的解， 0 不是正整数。
 整数解即为 x,y 均为整数的解。
-x的最小正整数值即所有x为正整数的整数解中x的最小值，y同理。
-<strong>输入格式</strong>
-第一行一个正整数 T，代表数据组数。
-接下来 T 行，每行三个由空格隔开的正整数a,b,c。
-<strong>输出格式</strong>
-T 行。
-若该行对应的询问无整数解，一个数字 -1。
-若该行对应的询问有整数解但无正整数解，包含 2个由空格隔开的数字，依次代表整数解中，x的最小正整数值，y 的最小正整数值。
-否则包含5个由空格隔开的数字，依次代表正整数解的数量，正整数解中，x的最小值，y的最小值，x的最大值，y的最大值。
-<strong>输入样例</strong>
-7
+x的最小正整数值即所有x为正整数的整数解中x的最小值，y同理。</p>
+<p><strong>输入格式</strong>
+第一行一个正整数 T，代表数据组数。</p>
+<p>接下来 T 行，每行三个由空格隔开的正整数a,b,c。</p>
+<p><strong>输出格式</strong>
+T 行。</p>
+<p>若该行对应的询问无整数解，一个数字 -1。</p>
+<p>若该行对应的询问有整数解但无正整数解，包含 2个由空格隔开的数字，依次代表整数解中，x的最小正整数值，y 的最小正整数值。</p>
+<p>否则包含5个由空格隔开的数字，依次代表正整数解的数量，正整数解中，x的最小值，y的最小值，x的最大值，y的最大值。</p>
+<p><strong>输入样例</strong>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>7
 2 11 100
 3 18 6
 192 608 17
@@ -964,15 +1077,25 @@ T 行。
 11 45 14
 19 19 810
 98 76 5432
+</code></pre></div>
+</td></tr></table>
 <strong>输出样例</strong>
-4 6 2 39 8
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>4 6 2 39 8
 2 1
 -1
 1600 1 18 3199 30399
 34 3
 -1
-2 12 7 50 56</p>
-<p><strong>代码：</strong></p>
+2 12 7 50 56
+</code></pre></div>
+</td></tr></table>
+<strong>代码：</strong></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
