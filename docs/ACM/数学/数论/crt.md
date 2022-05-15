@@ -104,19 +104,28 @@ signed main()
 ## 经典例题
 ### 例1.洛谷P1495 中国剩余定理
 **题目描述**
+
 自从曹冲搞定了大象以后，曹操就开始捉摸让儿子干些事业，于是派他到中原养猪场养猪，可是曹冲满不高兴，于是在工作中马马虎虎，有一次曹操想知道母猪的数量，于是曹冲想狠狠耍曹操一把。举个例子，假如有 1616 头母猪，如果建了 33 个猪圈，剩下 11 头猪就没有地方安家了。如果建造了 55 个猪圈，但是仍然有 11 头猪没有地方去，然后如果建造了 77 个猪圈，还有 22 头没有地方去。你作为曹总的私人秘书理所当然要将准确的猪数报给曹总，你该怎么办？
+
 **输入格式**
-第一行包含一个整数 nn——建立猪圈的次数，接下来 n 行，每行两个整数ai，bi表示建立了ai个猪圈，有bi头猪没有去处，规定ai，aj¬互质
+
+第一行包含一个整数n为建立猪圈的次数，接下来n行，每行两个整数ai，bi表示建立了ai个猪圈，有bi头猪没有去处，规定ai，aj互质
+
 **输出格式**
+
 输出包含一个正整数，即为曹冲至少养母猪的数目。
+
 **输入样例**
+```
 3
 3 1
 5 1
 7 2
+```
 **输出样例**
+```
 16
-
+```
 **代码：**
 
 ```cpp
@@ -167,17 +176,24 @@ int main()
 
 ### 例2.HDU3579 Hello Kiki
 **题目背景**
+
 One day I was shopping in the supermarket. There was a cashier counting coins seriously when a little kid running and singing "门前大桥下游过一群鸭，快来快来 数一数，二四六七八". And then the cashier put the counted coins back morosely and count again...
 Hello Kiki is such a lovely girl that she loves doing counting in a different way. For example, when she is counting X coins, she count them N times. Each time she divide the coins into several same sized groups and write down the group size Mi and the number of the remaining coins Ai on her note.
 One day Kiki's father found her note and he wanted to know how much coins Kiki was counting.
+
 **输入格式**
+
 The first line is T indicating the number of test cases.
 Each case contains N on the first line, Mi(1 <= i <= N) on the second line, and corresponding Ai(1 <= i <= N) on the third line.
 All numbers in the input and output are integers.
 1 <= T <= 100, 1 <= N <= 6, 1 <= Mi <= 50, 0 <= Ai < Mi
+
 **输出格式**
+
 For each case output the least positive integer X which Kiki was counting in the sample output format. If there is no solution then output -1.
+
 **输入样例**
+```
 2
 2
 14 57
@@ -185,10 +201,12 @@ For each case output the least positive integer X which Kiki was counting in the
 5
 19 54 40 24 80
 11 2 36 20 76
+```
 **输出样例**
+```
 Case 1: 341
 Case 2: 5996
-
+```
 **代码：**
 
 ```cpp
