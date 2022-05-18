@@ -38,7 +38,10 @@ nav:
     - 修复工具与图像润色工具: PS/PS4.md
     - 矢量工具与路径: PS/PS5.md
     - 文字的艺术: PS/PS6.md
-    
+    - 图层的基本操作: 404.md
+    - 图层的高级操作: 404.md
+    - 通道的应用: 404.md
+    - 蒙版: 404.md
 
 theme:
   name: material
