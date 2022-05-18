@@ -172,3 +172,9 @@
 使用“自动混合图层”命令可以缝合或者组合图像，从而在最终图像中获得平滑的过渡效果。“编辑 > 自动混合图层”命令，可以打开“自动混合图层”对话框。
 
 ![](../img/22.png)
+
+## 练习
++   <a href = "https://www.bilibili.com/video/BV1TY4y1t7vp?share_source=copy_web">使用变换制作形态各异的蝴蝶<a>
++   <a href = "https://www.bilibili.com/video/BV123411A7aM?share_source=copy_web">使用操控变形改变美女姿势<a>
++   <a href = "https://www.bilibili.com/video/BV11F41177LK?share_source=copy_web">利用自由变换将照片放到相框中<a>
++   <a href = "https://www.bilibili.com/video/BV1VS4y1876Q?share_source=copy_web">调整画面构图<a>

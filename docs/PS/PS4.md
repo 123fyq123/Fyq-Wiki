@@ -8,6 +8,11 @@
 
 ![](../img/62.png)
 
+#### 仿制图章练习
+
++   <a href = "https://www.bilibili.com/video/BV1qL4y1F7FH?share_source=copy_web">使用仿制源面板与仿制图章工具</a>
++   <a href = "https://www.bilibili.com/video/BV1o34y1h7RY?share_source=copy_web">使用仿制图章修补天空</a>
+
 ### 图案图章工具
 “图案图章工具”可以使用预设图案或载入的图案进行绘画，首先在选项栏中选择一种合适的图案，并设置混合模式以及画笔的不透明度，接着在画面中按住鼠标左键并拖动即可绘制出图案。
 可通过自定义图案来达到“盖章”的目的。
@@ -22,6 +27,10 @@
 
 ![](../img/65.png)
 
+#### 污点修复工具练习
+
+<a href = "https://www.bilibili.com/video/BV1GZ4y18774?share_source=copy_web">使用污点修复工具去除瑕疵</a>
+
 ### 修复画笔工具
 与“仿制图章工具”的使用方法相同，“修复画笔工具”可以修复图像的瑕疵，也可以用图像中的像素作为样本进行绘制。不同的是，“修复画笔工具”还可将样本像素的纹理、光照、透明度和阴影与所修复的像素进行匹配，从而使修复后的像素不留痕迹地融入图像的其他部分。
 
@@ -31,12 +40,20 @@
 
 ![](../img/67.png)
 
+#### 修复画笔工具练习
+
+<a href = "https://www.bilibili.com/video/BV1ZA4y1S7Ls?share_source=copy_web">使用修复画笔去除面部细纹</a>
+
 ### 修补工具
 修补工具可以使用其他区域或图案中的像素来修复选中的区域。修补工具会将选区内像素的纹理、光照和阴影等内容与源像素进行匹配，计算出最佳的修复效果。
 
 ![](../img/69.png)
 
 ![](../img/68.png)
+
+#### 修补工具练习
+
+<a href = "https://www.bilibili.com/video/BV18T4y1B7qu?share_source=copy_web">使用修补工具去除文字</a>
 
 ### 内容感知移动工具
 内容感知移动工具是CS6版本中新增加的智能工具，根据设置的属性是扩展（复制）或移动，实现选择内容的复制或是移动操作，由系统自动对选区的边缘进行计算，轻松实现“乾坤大挪移”。
@@ -53,6 +70,11 @@
 ## 历史记录工具组
 ### 历史记录画笔工具
 “历史记录画笔工具”可以理性、真实地还原某一区域的某一步操作，可以将标记的历史记录状态或快照用作源数据对图像进行修改。“历史记录画笔工具”需要与“历史记录面板”共同使用，首先需要在“历史记录面板”中标记一个操作步骤，然后使用“历史记录画笔”在画面中绘制，被绘制的区域会呈现出标记步骤的状态。
+
+#### 历史画笔工具练习
+
+<a href = "https://www.bilibili.com/video/BV1FR4y1P7Du?share_source=copy_web">使用历史记录画笔还原局部效果
+</a>
 
 ### 历史记录艺术画笔工具
 与“历史记录画笔工具”相似，“历史记录艺术画笔工具”也可以将标记的历史记录状态或快照用作源数据对图像进行修改。不同的是，“历史记录艺术画笔工具”在使用原始数据的同时，还可以为图像创建不同的颜色和艺术风格。
@@ -82,12 +104,30 @@
 
 ![](../img/76.png)
 
+#### 减淡工具练习
+
+<a href = "https://www.bilibili.com/video/BV1r34y177Ej?share_source=copy_web">使用减淡工具美白人像
+</a>
+
 ### 加深工具
 “加深工具”可以对图像进行加深处理，在某个区域上方绘制的次数越多，该区域就会变得越暗。
 
 ![](../img/77.png)
 
+#### 加深工具练习
+
+<a href = "https://www.bilibili.com/video/BV18t4y1x79w?share_source=copy_web">利用加深减淡工具进行通道抠图
+</a>
+
 ### 海绵工具
 “海绵工具”可以增加或降低图像中某个区域的饱和度。如果是灰度图像，该工具将通过灰阶远离或靠近中间灰色来增加或降低对比度。
 
 ![](../img/78.png)
+
+#### 海绵工具练习
+
+<a href = "https://www.bilibili.com/video/BV13Z4y1875K?share_source=copy_web">使用海绵工具制作复古效果</a>
+
+## 练习
++   <a href = "https://www.bilibili.com/video/BV13t4y1x7pi?share_source=copy_web">去除皱纹还原年轻态</a>
++   <a href = "https://www.bilibili.com/video/BV1Fr4y1b7EX?share_source=copy_web">使用涂抹工具制作炫彩妆面</a>
