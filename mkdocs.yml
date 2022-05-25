@@ -38,7 +38,7 @@ nav:
     - 修复工具与图像润色工具: PS/PS4.md
     - 矢量工具与路径: PS/PS5.md
     - 文字的艺术: PS/PS6.md
-    - 图层的基本操作: 404.md
+    - 图层的基本操作: PS/PS7.md
     - 图层的高级操作: 404.md
     - 通道的应用: 404.md
     - 蒙版: 404.md
@@ -95,6 +95,6 @@ markdown_extensions:
       generic: true
 
 extra_javascript:
-  - js/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    - 'js/mathjax.js'
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  
