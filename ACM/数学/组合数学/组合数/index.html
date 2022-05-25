@@ -501,22 +501,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#c_ab-a2000b2000" class="md-nav__link">
-    \(C_a^b (a≤2000,b≤2000)\)
+  <a href="#ab-2000" class="md-nav__link">
+    a,b &lt; 2000
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#c_ab-mod-pa1e5b1e5" class="md-nav__link">
-    \(C_a^b\  (mod\ p)(a≤1e5,b≤1e5)\)
+  <a href="#ab-1e5" class="md-nav__link">
+    a,b &lt; 1e5
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#c_ab-mod-pa1e18b1e18p1e5" class="md-nav__link">
-    \(C_a^b\ (mod\ p)(a≤1e18,b≤1e18,p≤1e5)\)
+  <a href="#ab" class="md-nav__link">
+    a,b较大且取模
   </a>
   
 </li>
@@ -941,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../404/" class="md-nav__link">
+      <a href="../../../../PS/PS7/" class="md-nav__link">
         图层的基本操作
       </a>
     </li>
@@ -1091,22 +1091,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#c_ab-a2000b2000" class="md-nav__link">
-    \(C_a^b (a≤2000,b≤2000)\)
+  <a href="#ab-2000" class="md-nav__link">
+    a,b &lt; 2000
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#c_ab-mod-pa1e5b1e5" class="md-nav__link">
-    \(C_a^b\  (mod\ p)(a≤1e5,b≤1e5)\)
+  <a href="#ab-1e5" class="md-nav__link">
+    a,b &lt; 1e5
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#c_ab-mod-pa1e18b1e18p1e5" class="md-nav__link">
-    \(C_a^b\ (mod\ p)(a≤1e18,b≤1e18,p≤1e5)\)
+  <a href="#ab" class="md-nav__link">
+    a,b较大且取模
   </a>
   
 </li>
@@ -1184,7 +1184,7 @@
 部分圆排列公式
 <span class="arithmatex">\(Q_n^r=\frac{A_n^r}{r}=\frac{n!}{r×(n-r)!}\)</span></p>
 <h2 id="_8">三种求组合数的方法</h2>
-<h3 id="c_ab-a2000b2000"><span class="arithmatex">\(C_a^b (a≤2000,b≤2000)\)</span></h3>
+<h3 id="ab-2000">a,b &lt; 2000</h3>
 <p>通过<span class="arithmatex">\((_b^a)=(_{b-1}^a)+(_{b-1}^{a-1})\)</span>预处理</p>
 <p><strong>代码</strong>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1242,7 +1242,7 @@
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table></p>
-<h3 id="c_ab-mod-pa1e5b1e5"><span class="arithmatex">\(C_a^b\  (mod\ p)(a≤1e5,b≤1e5)\)</span></h3>
+<h3 id="ab-1e5">a,b &lt; 1e5</h3>
 <p>随取随用，用逆元,若询问多则选择预处理阶乘，<span class="arithmatex">\(C_a^b=\frac{fac[a]}{fac[b]*fac[a-b]}\)</span></p>
 <p><strong>代码</strong>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1334,7 +1334,8 @@
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table></p>
-<h3 id="c_ab-mod-pa1e18b1e18p1e5"><span class="arithmatex">\(C_a^b\ (mod\ p)(a≤1e18,b≤1e18,p≤1e5)\)</span></h3>
+<h3 id="ab">a,b较大且取模</h3>
+<p><span class="arithmatex">\(a≤1e18,b≤1e18,p≤1e5\)</span></p>
 <p>Lucas定理，当p为质数时，有<span class="arithmatex">\(C_a^b=C_{a\ mod\ p}^{b\ mod\ p}\times C_{\frac{a}{p}}^{\frac{b}{p}}\)</span></p>
 <p><strong>代码</strong></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1622,9 +1623,7 @@
       
         <script src="../../../../js/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>
