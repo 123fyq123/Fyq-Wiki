@@ -40,8 +40,8 @@ nav:
     - 文字的艺术: PS/PS6.md
     - 图层的基本操作: PS/PS7.md
     - 图层的高级操作: PS/PS8.md
-    - 通道的应用: 404.md
-    - 蒙版: 404.md
+    - 通道的应用: PS/PS9.md
+    - 蒙版: PS/PS10.md
 
 theme:
   name: material
