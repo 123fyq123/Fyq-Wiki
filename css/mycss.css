@@ -1,0 +1,39 @@
+* {
+    cursor: url("../image/移动.png"), auto;
+}
+
+a:hover {
+    cursor: url("../image/手.png"), auto;
+}
+
+input {
+    cursor: url("../image/文本.png"), auto;
+}
+
+.md-source__repository:hover {
+    cursor: url("../image/手.png"), auto;
+}
+
+.md-ellipsis:hover {
+    cursor: url("../image/手.png"), auto;
+}
+
+.md-footer__direction {
+    cursor: url("../image/手.png"), auto;
+}
+
+svg:hover {
+    cursor: url("../image/手.png"), auto;
+}
+
+path:hover {
+    cursor: url("../image/手.png"), auto;
+}
+
+label:hover {
+    cursor: url("../image/手.png"), auto;
+}
+
+.md-nav__title {
+    cursor: url("../image/手.png"), auto;
+}
