@@ -42,9 +42,6 @@ nav:
     - 图层的高级操作: PS/PS8.md
     - 通道的应用: PS/PS9.md
     - 蒙版: PS/PS10.md
-  - about:
-    - 关于作者: 关于/作者.md
-    - 关于算法竞赛: 关于/大学.md
   - Web:
     - html: 
       - html基础标签: Web/html/html1.md
@@ -72,7 +69,9 @@ nav:
       - 浮动: Web/CSS/CSS12.md
       - flex布局: Web/CSS/CSS13.md
       - 响应式布局: Web/CSS/CSS14.md
-
+  - about:
+    - 关于作者: 关于/作者.md
+    - 关于算法竞赛: 关于/大学.md
 theme:
   name: material
   features:
