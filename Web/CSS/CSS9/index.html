@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#margin" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1300,9 +1305,52 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          内边距与外边距
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         内边距与外边距
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#margin" class="md-nav__link">
+    margin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padding" class="md-nav__link">
+    padding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1410,6 +1458,35 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#margin" class="md-nav__link">
+    margin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#padding" class="md-nav__link">
+    padding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1428,7 +1505,37 @@
 
   <h1>内边距与外边距</h1>
 
-
+<h2 id="margin"><code>margin</code></h2>
+<p><code>margin</code>属性为给定元素设置所有四个（上下左右）方向的外边距属性。</p>
+<ul>
+<li>可以接受1~4个值（上、右、下、左的顺序）</li>
+<li>可以分别指明四个方向：<code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>、<code>margin-left</code></li>
+<li>可取值<ul>
+<li>length：固定值</li>
+<li>percentage：相对于包含块的宽度，以百分比值为外边距。</li>
+<li>auto：让浏览器自己选择一个合适的外边距。有时，在一些特殊情况下，该值可以使元素居中。</li>
+</ul>
+</li>
+<li>外边距重叠<ul>
+<li>块的上外边距(margin-top)和下外边距(margin-bottom)有时合并(折叠)为单个边距，其大小为单个边距的最大值(或如果它们相等，则仅为其中一个)，这种行为称为边距折叠。</li>
+<li>父元素与后代元素：父元素没有上边框和padding时，后代元素的margin-top会溢出，溢出后父元素的margin-top会与后代元素取最大值。</li>
+</ul>
+</li>
+</ul>
+<h2 id="padding"><code>padding</code></h2>
+<p><code>padding</code> CSS 简写属性控制元素所有四条边的内边距区域。</p>
+<ul>
+<li>可以接受1~4个值（上、右、下、左的顺序）</li>
+<li>可以分别指明四个方向：padding-top、padding-right、padding-bottom、padding-left</li>
+<li>可取值<ul>
+<li>length：固定值</li>
+<li>percentage：相对于包含块的宽度，以百分比值为内边距。</li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">来源</h2>
+<p>链接：<a href="https://www.acwing.com/blog/content/16280/">https://www.acwing.com/blog/content/16280/</a></p>
+<p>来源：AcWing</p>
 
               
             </article>

@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#position" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1328,9 +1333,59 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          位置
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         位置
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#position" class="md-nav__link">
+    position
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    定位类型：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    取值：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1410,6 +1465,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#position" class="md-nav__link">
+    position
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    定位类型：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    取值：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1428,7 +1519,26 @@
 
   <h1>位置</h1>
 
-
+<h2 id="position"><code>position</code></h2>
+<p>CSS <code>position</code>属性用于指定一个元素在文档中的定位方式。</p>
+<h2 id="_1">定位类型：</h2>
+<ul>
+<li>定位元素（positioned element）是其计算后位置属性为 <code>relative</code>, <code>absolute</code>, <code>fixed</code> 或 <code>sticky</code> 的一个元素（换句话说，除<code>static</code>以外的任何东西）。</li>
+<li>相对定位元素（relatively positioned element）是计算后位置属性为 <code>relative</code> 的元素。</li>
+<li>绝对定位元素（absolutely positioned element）是计算后位置属性为 <code>absolute</code> 或<code>fixed</code>的元素。</li>
+<li>粘性定位元素（stickily positioned element）是计算后位置属性为 <code>sticky</code>的元素。</li>
+</ul>
+<h2 id="_2">取值：</h2>
+<ul>
+<li><code>static</code>：该关键字指定元素使用正常的布局行为，即元素在文档常规流中当前的布局位置。此时 <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> 和 <code>z-index</code> 属性无效。</li>
+<li><code>relative</code>：该关键字下，元素先放置在未添加定位时的位置，再在不改变页面布局的前提下调整元素位置（因此会在此元素未添加定位时所在位置留下空白）。<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>等调整元素相对于初始位置的偏移量。</li>
+<li><code>absolute</code>：元素会被移出正常文档流，并不为元素预留空间，通过指定元素相对于最近的非 <code>static</code> 定位祖先元素的偏移，来确定元素位置。绝对定位的元素可以设置外边距（margins），且不会与其他边距合并。</li>
+<li><code>fixed</code>：元素会被移出正常文档流，并不为元素预留空间，而是通过指定元素相对于屏幕视口（viewport）的位置来指定元素位置。元素的位置在屏幕滚动时不会改变。</li>
+<li><code>sticky</code>：元素根据正常文档流进行定位，然后相对它的最近滚动祖先（nearest scrolling ancestor）和 containing block (最近块级祖先 nearest block-level ancestor)，包括<code>table-related</code>元素，基于<code>top</code>, <code>right</code>, <code>bottom</code>, 和 <code>left</code>的值进行偏移。偏移值不会影响任何其他元素的位置。</li>
+</ul>
+<h2 id="_3">来源</h2>
+<p>链接：<a href="https://www.acwing.com/blog/content/16282/">https://www.acwing.com/blog/content/16282/</a></p>
+<p>来源：AcWing</p>
 
               
             </article>

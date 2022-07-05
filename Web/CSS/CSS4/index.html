@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#text-align" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1230,9 +1235,80 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          文本
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         文本
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#text-align" class="md-nav__link">
+    text-align
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-height" class="md-nav__link">
+    line-height
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#letter-spacing" class="md-nav__link">
+    letter-spacing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-indent" class="md-nav__link">
+    text-indent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-decoration" class="md-nav__link">
+    text-decoration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-shadow" class="md-nav__link">
+    text-shadow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1410,6 +1486,63 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#text-align" class="md-nav__link">
+    text-align
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-height" class="md-nav__link">
+    line-height
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#letter-spacing" class="md-nav__link">
+    letter-spacing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-indent" class="md-nav__link">
+    text-indent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-decoration" class="md-nav__link">
+    text-decoration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-shadow" class="md-nav__link">
+    text-shadow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1428,7 +1561,58 @@
 
   <h1>文本</h1>
 
-
+<h2 id="text-align"><code>text-align</code></h2>
+<p><code>text-align</code> CSS属性定义行内内容（例如文字）如何相对它的块父元素对齐。<code>text-align</code> 并不控制块元素自己的对齐，只控制它的行内内容的对齐。</p>
+<h2 id="line-height"><code>line-height</code></h2>
+<p><code>line-height</code> CSS 属性用于设置多行元素的空间量，如多行文本的间距。对于块级元素，它指定元素行盒（line boxes）的最小高度。对于非替代的 inline 元素，它用于计算行盒（line box）的高度。</p>
+<ul>
+<li>补充知识点：长度单位</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>单位</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>px</td>
+<td>设备上的像素点</td>
+</tr>
+<tr>
+<td>%</td>
+<td>相对于父元素的百分比</td>
+</tr>
+<tr>
+<td>em</td>
+<td>相对于当前元素的字体大小</td>
+</tr>
+<tr>
+<td>rem</td>
+<td>相对于根元素的字体大小</td>
+</tr>
+<tr>
+<td>vw</td>
+<td>相对于视窗宽度的百分比</td>
+</tr>
+<tr>
+<td>vh</td>
+<td>相对于视窗高度的百分比</td>
+</tr>
+</tbody>
+</table>
+<h2 id="letter-spacing"><code>letter-spacing</code></h2>
+<p>CSS 的 <code>letter-spacing</code> 属性用于设置文本字符的间距。</p>
+<h2 id="text-indent"><code>text-indent</code></h2>
+<p><code>text-indent</code>属性能定义一个块元素首行文本内容之前的缩进量。</p>
+<h2 id="text-decoration"><code>text-decoration</code></h2>
+<p><code>text-decoration</code> 这个 CSS 属性是用于设置文本的修饰线外观的（下划线、上划线、贯穿线/删除线 或 闪烁）它是 <code>text-decoration-line</code>, <code>text-decoration-color</code>, <code>text-decoration-style</code>, 和新出现的 <code>text-decoration-thickness</code> 属性的缩写。</p>
+<h2 id="text-shadow"><code>text-shadow</code></h2>
+<p><code>text-shadow</code>为文字添加阴影。可以为文字与 <code>text-decorations</code> 添加多个阴影，阴影值之间用逗号隔开。每个阴影值由元素在X和Y方向的偏移量、模糊半径和颜色值组成。</p>
+<h2 id="_1">来源</h2>
+<p>链接：<a href="https://www.acwing.com/blog/content/16275/">https://www.acwing.com/blog/content/16275/</a></p>
+<p>来源：AcWing</p>
 
               
             </article>
