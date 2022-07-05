@@ -45,6 +45,33 @@ nav:
   - about:
     - 关于作者: 关于/作者.md
     - 关于算法竞赛: 关于/大学.md
+  - Web:
+    - html: 
+      - html基础标签: Web/html/html1.md
+      - 文本标签: Web/html/html2.md
+      - 图片: Web/html/html3.md
+      - 音频和视频: Web/html/html4.md
+      - 超链接: Web/html/html5.md
+      - 表单: Web/html/html6.md
+      - 列表: Web/html/html7.md
+      - 表格: Web/html/html8.md
+      - 语义标签: Web/html/html9.md
+      - 特殊符号: Web/html/html10.md
+    - CSS: 
+      - 样式定义方式: Web/CSS/CSS1.md
+      - 选择器: Web/CSS/CSS2.md
+      - 颜色: Web/CSS/CSS3.md
+      - 文本: Web/CSS/CSS4.md
+      - 字体: Web/CSS/CSS5.md
+      - 背景: Web/CSS/CSS6.md
+      - 边框: Web/CSS/CSS7.md
+      - 元素展示格式: Web/CSS/CSS8.md
+      - 内边距与外边距: Web/CSS/CSS9.md
+      - 盒子模型: Web/CSS/CSS10.md
+      - 位置: Web/CSS/CSS11.md
+      - 浮动: Web/CSS/CSS12.md
+      - flex布局: Web/CSS/CSS13.md
+      - 响应式布局: Web/CSS/CSS14.md
 
 theme:
   name: material
