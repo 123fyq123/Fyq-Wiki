@@ -12,3 +12,9 @@ HTML `<img>` 元素将一份图像嵌入文档。
 
 ## `width`属性
 图像的宽度，在 HTML5 中单位是 CSS 像素， 在 HTML 4 中可以是像素也可以是百分比。
+
+
+## 来源
+链接：<a href="https://www.acwing.com/file_system/file/content/whole/index/content/4078555/">https://www.acwing.com/file_system/file/content/whole/index/content/4078555/</a>
+
+来源：AcWing

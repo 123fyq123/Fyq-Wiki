@@ -8,3 +8,8 @@
 |`&copy;`|©|版权|
 |`&trade;`|™|商标|
 |`&nbsp;`| | 不断行的空白|	
+
+## 来源
+链接：<a href="https://www.acwing.com/file_system/file/content/whole/index/content/4078555/">https://www.acwing.com/file_system/file/content/whole/index/content/4078555/</a>
+
+来源：AcWing
