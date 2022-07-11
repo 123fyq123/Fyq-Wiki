@@ -11,6 +11,8 @@
     +   块的上外边距(margin-top)和下外边距(margin-bottom)有时合并(折叠)为单个边距，其大小为单个边距的最大值(或如果它们相等，则仅为其中一个)，这种行为称为边距折叠。
     +   父元素与后代元素：父元素没有上边框和padding时，后代元素的margin-top会溢出，溢出后父元素的margin-top会与后代元素取最大值。
 
+---
+
 ## `padding`
 `padding` CSS 简写属性控制元素所有四条边的内边距区域。
 
@@ -19,6 +21,8 @@
 +   可取值
     +   length：固定值
     +   percentage：相对于包含块的宽度，以百分比值为内边距。
+
+---
 
 ## 来源
 链接：<a href="https://www.acwing.com/blog/content/16280/">https://www.acwing.com/blog/content/16280/</a>

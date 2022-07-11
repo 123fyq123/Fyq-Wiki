@@ -7,6 +7,9 @@ div {
     background-color: gray;
 }
 ```
+
+---
+
 ## ID选择器
 选择ID为`rect-1`的标签：
 ``` css
@@ -17,6 +20,8 @@ div {
 }
 ```
 
+---
+
 ## 类选择器
 选择所有`rectangle`类的标签：
 ``` css
@@ -26,6 +31,8 @@ div {
     background-color: gray;
 }
 ```
+
+---
 
 ## 伪类选择器
 伪类用于定义元素的特殊状态。
@@ -67,10 +74,14 @@ div {
 +   `::after`：可以在元素后插入内容
 +   `::before`：可以在元素前插入内容
 
+---
+
 ## 样式渲染优先级
 +   权重大小，越具体的选择器权重越大：`!important` > 行内样式 > ID选择器 > 类与伪类选择器 > 标签选择器 > 通用选择器
 +   权重相同时，后面的样式会覆盖前面的样式
 +   继承自父元素的权重最低
+
+---
 
 ## 来源
 链接：<a href="https://www.acwing.com/blog/content/16243/">https://www.acwing.com/blog/content/16243/</a>

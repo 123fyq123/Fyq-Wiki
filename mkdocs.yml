@@ -30,6 +30,9 @@ nav:
         - 积性函数与莫比乌斯反演: ACM/数学/数论/莫反.md
         - 例题: ACM/数学/数论/例题.md
       - 期望: ACM/数学/期望/期望.md
+    - 动态规划:
+      - 区间DP: ACM/动态规划/区间DP.md
+      
   - PS: 
     - 基础知识入门: PS/base.md
     - 图像的基本编辑方法: PS/PS1.md
@@ -72,6 +75,7 @@ nav:
   - about:
     - 关于作者: 关于/作者.md
     - 关于算法竞赛: 关于/大学.md
+    
 theme:
   name: material
   features:

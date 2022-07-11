@@ -7,15 +7,21 @@
 <img src="/images/mountain.jpg" alt="" style="width: 300px; height: 200px;">
 ```
 
+---
+
 ## 内部样式表（internal style sheet）
 定义在`style`标签中，通过选择器影响对应的标签。
 
 +   作用范围：可以对同一个页面中的多个元素产生影响。
 
+---
+
 ## 外部样式表（external style sheet）
 定义在css样式文件中，通过选择器影响对应的标签。可以用link标签引入某些页面。
 
 +   作用范围：可以对多个页面产生影响。
+
+---
 
 ## 注释
 注意不能使用`//`。
@@ -23,6 +29,8 @@
 ``` css
 /* 注释 */ 
 ```
+
+---
 
 ## 来源
 链接：<a href="https://www.acwing.com/blog/content/16273/">https://www.acwing.com/blog/content/16273/</a>

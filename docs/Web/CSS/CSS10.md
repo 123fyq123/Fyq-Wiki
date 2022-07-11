@@ -4,6 +4,8 @@ CSS 中的 `box-sizing` 属性定义了 user agent 应该如何计算一个元�
 +   `content-box`：是默认值，设置`border`和`padding`均会增加元素的宽高。
 +   `border-box`：设置`border`和`padding`不会改变元素的宽高，而是挤占内容区域。
 
+---
+
 ## 来源
 链接：<a href="https://www.acwing.com/blog/content/16281/">https://www.acwing.com/blog/content/16281/</a>
 
