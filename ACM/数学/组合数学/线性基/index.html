@@ -566,15 +566,15 @@
     判断某数能否由线性基表示
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="判断某数能否由线性基表示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     求异或和最大
   </a>
   
-    <nav class="md-nav" aria-label="求异或和最大">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
@@ -595,7 +595,8 @@
     经典例题
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="经典例题">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1hdu-3949-xor" class="md-nav__link">
@@ -622,6 +623,11 @@
   <a href="#4p3265" class="md-nav__link">
     例4.洛谷P3265 装备购买
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -813,6 +819,53 @@
     <li class="md-nav__item">
       <a href="../../%E6%9C%9F%E6%9C%9B/%E6%9C%9F%E6%9C%9B/" class="md-nav__link">
         期望
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          动态规划
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="动态规划" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          动态规划
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/" class="md-nav__link">
+        区间DP
       </a>
     </li>
   
@@ -1575,15 +1628,15 @@
     判断某数能否由线性基表示
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="判断某数能否由线性基表示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     求异或和最大
   </a>
   
-    <nav class="md-nav" aria-label="求异或和最大">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
@@ -1604,7 +1657,8 @@
     经典例题
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="经典例题">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1hdu-3949-xor" class="md-nav__link">
@@ -1638,6 +1692,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -1662,12 +1721,15 @@
 一组线性无关的向量即可作为一组基底，张起一个线性的向量空间，这个基底即称为线性基，利用线性基的基底进行线性运算，可表示向量空间内的所有向量，换句话说，所有向量都可以拆成基底的线性组合。
 根据异或的原理，将一个数字拆成他的二进制形式，将二进制形式用向量来表示，由于一组线性无关的向量可以张起一个向量空间，因此可以考虑构造这样一组数字的二进制形式组成的线性基，在这个线性基中，通过基底的线性组合、异或运算，从而可以表达所有的异或结果。
 简单来说，若一个数集 T 的值域范围为 ，那么 T 的线性基是 T 的一个子集 A={a1,a2,a3,...,an}，A 中元素相互异或而成的集合，等价于原数集 T 的元素相互异或形成异或集合</p>
+<hr />
 <h2 id="_2">预备知识</h2>
 <p>交换变量位置：
 a = a ^ b; b = a ^ b; a = a ^ b;<br />
 如果a^b==c  则a^c==b   b^c==a    a^b^c==0</p>
+<hr />
 <h2 id="_3">定义</h2>
 <p>线性基是一个数的集合，并且每个序列都拥有至少一个线性基，取线性基中若干个数异或起来可以得到原序列中的任何一个数。</p>
+<hr />
 <h2 id="_4">二进制求线性基</h2>
 <p><strong>代码</strong>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1745,7 +1807,8 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table></p>
-<h1 id="_6">求异或和最大</h1>
+<hr />
+<h2 id="_6">求异或和最大</h2>
 <p><strong>思路：求出线性基，由于高位为1贡献更大，每次优先异或高位，遍历线性基即可</strong></p>
 <p><strong>代码</strong></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1765,6 +1828,7 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table>
+<hr />
 <h2 id="_7">求异或和最小</h2>
 <p><strong>思路：求最小的线性基元素即可</strong></p>
 <p><strong>代码</strong></p>
@@ -1781,6 +1845,7 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table>
+<hr />
 <h2 id="k">求异或和第K大</h2>
 <p><strong>思路：将线性基化为最简，K用二进制表示，选出1的位，将以其为下标的线性基元素相乘即可</strong></p>
 <p><strong>代码</strong></p>
@@ -1825,8 +1890,9 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table>
+<hr />
 <h2 id="_8">经典例题</h2>
-<h2 id="1hdu-3949-xor">例1.HDU 3949 XOR</h2>
+<h3 id="1hdu-3949-xor">例1.HDU 3949 XOR</h3>
 <p><strong>Problem Description</strong></p>
 <p>XOR is a kind of bit operator, we define that as follow: for two binary base number A and B, let C=A XOR B, then for each bit of C, we can get its value by check the digit of corresponding position in A and B. And for each digit, 1 XOR 1 = 0, 1 XOR 0 = 1, 0 XOR 1 = 1, 0 XOR 0 = 0. And we simply write this operator as ^, like 3 ^ 1 = 2,4 ^ 3 = 7. XOR is an amazing operator and this is a question about XOR. We can choose several numbers and do XOR operatorion to them one by one, then we get another number. For example, if we choose 2,3 and 4, we can get 2^3^4=5. Now, you are given N numbers, and you can choose some of them(even a single number) to do XOR on them, and you can get many different numbers. Now I want you tell me which number is the K-th smallest number among them.</p>
 <p><strong>Input</strong></p>
@@ -2069,7 +2135,8 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="2p3812">例2.洛谷P3812  线性基</h2>
+<hr />
+<h3 id="2p3812">例2.洛谷P3812  线性基</h3>
 <p><strong>题目描述</strong></p>
 <p>给定 n个整数（数字可能重复），求在这些数中选取任意个，使得他们的异或和最大。</p>
 <p><strong>输入格式</strong></p>
@@ -2172,7 +2239,8 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table></p>
-<h2 id="3p4570bjwc2011">例3.洛谷P4570[BJWC2011]元素</h2>
+<hr />
+<h3 id="3p4570bjwc2011">例3.洛谷P4570[BJWC2011]元素</h3>
 <p><strong>题目描述</strong>
 相传，在远古时期，位于西方大陆的 Magic Land 上，人们已经掌握了用魔法矿石炼制法杖的技术。那时人们就认识到，一个法杖的法力取决于使用的矿石。</p>
 <p>一般地，矿石越多则法力越强，但物极必反：有时，人们为了获取更强的法力而使用了很多矿石，却在炼制过程中发现魔法矿石全部消失了，从而无法炼制出法杖，这个现象被称为“魔法抵消”。特别地，如果在炼制过程中使用超过一块同一种矿石，那么一定会发生“魔法抵消”。后来，随着人们认知水平的提高，这个现象得到了很好的解释。经过了大量的实验后，著名法师 Dmitri 发现：如果给现在发现的每一种矿石进行合理的编号（编号为正整数，称为该矿石的元素序号），那么，一个矿石组合会产生“魔法抵消”当且仅当存在一个非空子集，那些矿石的元素序号按位异或起来为零（如果你不清楚什么是异或，请参见下一页的名词解释 ）。</p>
@@ -2294,7 +2362,8 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="4p3265">例4.洛谷P3265 装备购买</h2>
+<hr />
+<h3 id="4p3265">例4.洛谷P3265 装备购买</h3>
 <p><strong>题目描述</strong></p>
 <p>有n件装备，每件装备有m个属性，用向量（a1，a2，a3……am）表示，需要花费c购买，现在规定如果一件装备能由其他装备组合出，那么就不需要购买（即可由其他向量线性表示），求在买下最多装备的情况下花费最少的钱</p>
 <p><strong>输入格式</strong></p>

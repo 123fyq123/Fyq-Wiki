@@ -524,8 +524,6 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           卡特兰数
@@ -542,8 +540,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -552,21 +548,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     概述
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     常见公式
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     经典例题
   </a>
   
@@ -754,6 +750,53 @@
     <li class="md-nav__item">
       <a href="../../%E6%9C%9F%E6%9C%9B/%E6%9C%9F%E6%9C%9B/" class="md-nav__link">
         期望
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          动态规划
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="动态规划" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          动态规划
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/" class="md-nav__link">
+        区间DP
       </a>
     </li>
   
@@ -1476,8 +1519,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1486,21 +1527,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     概述
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     常见公式
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     经典例题
   </a>
   
@@ -1537,11 +1578,13 @@
 
 
 
-<h1 id="_1">卡特兰数</h1>
-<h2 id="_2">概述</h2>
+  <h1>卡特兰数</h1>
+
+<h2 id="_1">概述</h2>
 <p>卡特兰数是一种经典的组合数，经常出现在各种计算中，其前几项为 :
 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845…</p>
-<h2 id="_3">常见公式</h2>
+<hr />
+<h2 id="_2">常见公式</h2>
 <ul>
 <li><span class="arithmatex">\(H_n=\begin{cases}
         \sum_{i = 1}^nH_{i - 1}H_{n-i},(n\ge2, n\in N_{+})\\
@@ -1550,7 +1593,8 @@
 <li>&ensp;<span class="arithmatex">\(H_n = \frac{H_{n-1}(4n-2)}{n+1}\)</span></li>
 <li>&ensp;<span class="arithmatex">\(H_n=C_{2n}^n-C_{2n}^{n-1}=\frac{C_{2n}^n}{n+1}\)</span></li>
 </ul>
-<h2 id="_4">经典例题</h2>
+<hr />
+<h2 id="_3">经典例题</h2>
 <h3 id="1-p1641-scoi2010">例1 P1641 [SCOI2010]生成字符串</h3>
 <p><strong>题目描述</strong></p>
 <p>lxhgww 最近接到了一个生成字符串的任务，任务需要他把 n 个 1 和 m 个 0 组成字符串，但是任务还要求在组成的字符串中，在任意的前 k 个字符中，1 的个数不能少于 0 的个数。现在 lxhgww 想要知道满足要求的字符串共有多少个，聪明的程序员们，你们能帮助他吗？</p>
