@@ -33,6 +33,7 @@ nav:
     - 动态规划:
       - 区间DP: ACM/动态规划/区间DP.md
       - 树形DP: ACM/动态规划/树形DP.md
+      - 状态机DP: ACM/动态规划/状态机DP.md
   - PS: 
     - 基础知识入门: PS/base.md
     - 图像的基本编辑方法: PS/PS1.md
