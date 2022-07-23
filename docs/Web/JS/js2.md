@@ -1,0 +1,45 @@
+## let与const
+
+用来声明变量，作用范围为当前作用域。
+
++   `let`用来定义变量；
++   `const`用来定义常量；
+
+例如：
+
+```js
+let s = "acwing", x = 5;
+
+let d = {
+    name: "fyq",
+    age: 18,
+}
+
+const n = 100;
+```
+
+---
+
+## 变量类型
+
++   `number`：数值变量，例如1, 2.5
++   `string`：字符串，例如"fyqcode", 'fyq'，单引号与双引号均可。字符串中的每个字符为只读类型。
++   `boolean`：布尔值，例如true, false
++   `object`：对象，类似于C++中的指针，例如[1, 2, 3]，{name: "fyq", age: 18}，null
++   `undefined`：未定义的变量
+
+类似于Python，JavaScript中的变量类型可以动态变化。
+
+---
+
+## 运算符
+
+与`C++`、`Python`、`Java`类似，
+
+不同点：
+
++   `**`表示乘方
++   等于与不等于用`===`和`!==`
+
+
+

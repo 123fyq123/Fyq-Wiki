@@ -1,0 +1,54 @@
+## 概述
+
+JavaScript中的循环语句与`C++`中类似，也包含`for`、`while`、`do while`循环。
+
+---
+
+## for循环
+
+```js
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+```
+
+枚举对象或数组时可以使用：
+
++   `for-in`循环，可以枚举数组中的下标，以及对象中的`key`
++   `for-of`循环，可以枚举数组中的值，以及对象中的`value`
+
+---
+
+## while循环
+
+```js
+let i = 0;
+while (i < 10) {
+    console.log(i);
+    i++;
+}
+```
+
+---
+
+## do while循环
+
+`do while`语句与`while`语句非常相似。唯一的区别是，`do while`语句限制性循环体后检查条件。不管条件的值如何，我们都要至少执行一次循环。
+
+```js
+let i = 0;
+do {
+    console.log(i);
+    i++;
+} while (i < 10);
+```
+
+---
+
+## 练习
+
++   <a href="https://www.acwing.com/problem/content/710/">偶数</a>
++   <a href="https://www.acwing.com/problem/content/714/">正数</a>
++   <a href="https://www.acwing.com/problem/content/723/">递增序列</a>
++   <a href="https://www.acwing.com/problem/content/726/">约数</a>
++   <a href="https://www.acwing.com/problem/content/729/">菱形</a>

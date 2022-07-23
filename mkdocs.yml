@@ -16,8 +16,6 @@ nav:
     - 数学:
       - 组合数学:
         - 组合数: ACM/数学/组合数学/组合数.md
-        - 置换群:
-          - polya定理: 404.md
         - 线性基: ACM/数学/组合数学/线性基.md
         - 卡特兰数: ACM/数学/组合数学/卡特兰数.md
         - 斯特拉数: ACM/数学/组合数学/斯特拉数.md
@@ -77,6 +75,12 @@ nav:
       - 浮动: Web/CSS/CSS12.md
       - flex布局: Web/CSS/CSS13.md
       - 响应式布局: Web/CSS/CSS14.md
+    - JS:
+      - JS的调用方式与执行顺序: Web/JS/js1.md
+      - 变量与运算符: Web/JS/js2.md
+      - 输入与输出: Web/JS/js3.md
+      - 判断语句: Web/JS/js4.md
+      - 循环语句: Web/JS/js5.md
   - about:
     - 关于作者: 关于/作者.md
     - 关于算法竞赛: 关于/大学.md
