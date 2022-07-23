@@ -36,6 +36,8 @@ nav:
     - 数据结构:
       - 并查集 基础篇: ACM/数据结构/并查集 基础篇.md
       - 并查集 提高篇: ACM/数据结构/并查集 提高篇.md
+    - 图论:
+      - Dijkstra算法: ACM/图论/Dijkstra算法.md
   - PS: 
     - 基础知识入门: PS/base.md
     - 图像的基本编辑方法: PS/PS1.md
