@@ -72,7 +72,7 @@ impossible
 
 ### 题解
 
-Floyd模板提
+Floyd模板题
 
 ### 代码
 
