@@ -37,7 +37,11 @@ nav:
       - 并查集 基础篇: ACM/数据结构/并查集 基础篇.md
       - 并查集 提高篇: ACM/数据结构/并查集 提高篇.md
     - 图论:
+      - Floyd算法: ACM/图论/Floyd算法.md
+      - Bellman-Ford算法: ACM/图论/Bellman-Ford算法.md
       - Dijkstra算法: ACM/图论/Dijkstra算法.md
+      - SPFA算法: ACM/图论/SPFA算法.md
+      - 单源最短路应用: ACM/图论/单源最短路应用.md
   - PS: 
     - 基础知识入门: PS/base.md
     - 图像的基本编辑方法: PS/PS1.md
