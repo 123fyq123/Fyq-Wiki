@@ -87,6 +87,11 @@ nav:
       - 输入与输出: Web/JS/js3.md
       - 判断语句: Web/JS/js4.md
       - 循环语句: Web/JS/js5.md
+      - 对象: Web/JS/js6.md
+      - 数组: Web/JS/js7.md
+      - 函数: Web/JS/js8.md
+      - 类: Web/JS/js9.md
+      - 事件: Web/JS/js10.md
   - about:
     - 关于作者: 关于/作者.md
     - 关于算法竞赛: 关于/大学.md
