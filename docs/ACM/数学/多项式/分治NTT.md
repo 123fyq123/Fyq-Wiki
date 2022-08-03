@@ -52,7 +52,7 @@ NTT用来加速多项式乘法，最大的优点是可以取模，是FFT取模�
 
 ### 题解
 
-对于第i个群，对应的生成函数是$F_i(x) = \sum_{i=1}^{s[i]}C_{s_i}^j$
+对于第i个群，对应的生成函数是$F_i(x) = \sum_{j=1}^{s[i]}C_{s_i}^jx^j$
 
 则令$G(x)=\prod_{i=1}^{n} F(x)$
 
@@ -373,7 +373,7 @@ $1 \le n \le 5\times 10^5,0\le k \le n$
 
 因此可以构造出每个环对应的生成函数
 
-$F_i(x)=\sum_{j=1}^{size[i]}(C_{size[i]-j-1}^{j-1}+C_{size[i]-j}^j)$
+$F_i(x)=\sum_{j=1}^{size[i]}(C_{size[i]-j-1}^{j-1}+C_{size[i]-j}^j)x^j$
 
 累乘后得到$G(x)=\prod_{i=1}^{cnt}F_i(x)$
 
