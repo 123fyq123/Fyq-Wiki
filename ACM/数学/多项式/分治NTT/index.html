@@ -2169,7 +2169,7 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="_7">题解</h3>
-<p>对于第i个群，对应的生成函数是<span class="arithmatex">\(F_i(x) = \sum_{i=1}^{s[i]}C_{s_i}^j\)</span></p>
+<p>对于第i个群，对应的生成函数是<span class="arithmatex">\(F_i(x) = \sum_{j=1}^{s[i]}C_{s_i}^jx^j\)</span></p>
 <p>则令<span class="arithmatex">\(G(x)=\prod_{i=1}^{n} F(x)\)</span></p>
 <p>套NTT模板后<span class="arithmatex">\([x^k]G(x)\)</span>即为答案</p>
 <h3 id="_8">代码</h3>
@@ -2656,7 +2656,7 @@
 <li>若断开处是选中的点:此时相当于在<span class="arithmatex">\(m-2-(k-1)\)</span>个相同物体中选<span class="arithmatex">\(k-1\)</span>个,答案为<span class="arithmatex">\(C_{m-k-1}^{k-1}\)</span></li>
 </ul>
 <p>因此可以构造出每个环对应的生成函数</p>
-<p><span class="arithmatex">\(F_i(x)=\sum_{j=1}^{size[i]}(C_{size[i]-j-1}^{j-1}+C_{size[i]-j}^j)\)</span></p>
+<p><span class="arithmatex">\(F_i(x)=\sum_{j=1}^{size[i]}(C_{size[i]-j-1}^{j-1}+C_{size[i]-j}^j)x^j\)</span></p>
 <p>累乘后得到<span class="arithmatex">\(G(x)=\prod_{i=1}^{cnt}F_i(x)\)</span></p>
 <p>则<span class="arithmatex">\([x^k]G(x)\)</span>即为答案</p>
 <p>分治NTT加速即可</p>
