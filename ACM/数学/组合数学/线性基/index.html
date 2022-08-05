@@ -13,7 +13,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
@@ -21,11 +21,12 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
         
+      
       
     
     
@@ -2139,7 +2140,7 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <hr />
 <h2 id="_4">二进制求线性基</h2>
 <p><strong>代码</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2158,7 +2159,7 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="c1">//求非最简线性基  </span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="c1">//求非最简线性基  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//1-n遍历数组元素  </span>
 <span class="w">    </span><span class="p">{</span><span class="w">  </span>
@@ -2178,12 +2179,11 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <h1 id="_5">判断某数能否由线性基表示</h1>
 <p><strong>思路：将该数通过线性基，看结果是否为0即可</strong></p>
 <p><strong>代码</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2197,7 +2197,7 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">  </span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">60</span><span class="p">;</span><span class="n">j</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">--</span><span class="p">)</span><span class="w">  </span>
 <span class="w">    </span><span class="p">{</span><span class="w">  </span>
@@ -2212,20 +2212,19 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <hr />
 <h2 id="_6">求异或和最大</h2>
 <p><strong>思路：求出线性基，由于高位为1贡献更大，每次优先异或高位，遍历线性基即可</strong></p>
 <p><strong>代码</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">query_max</span><span class="p">()</span><span class="w">  </span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">query_max</span><span class="p">()</span><span class="w">  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ret</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">60</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w">  </span>
@@ -2233,30 +2232,28 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="w">            </span><span class="n">ret</span><span class="o">^=</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="_7">求异或和最小</h2>
 <p><strong>思路：求最小的线性基元素即可</strong></p>
 <p><strong>代码</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">query_min</span><span class="p">()</span><span class="w">  </span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">query_min</span><span class="p">()</span><span class="w">  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">60</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w">  </span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="k">求异或和第K大</h2>
 <p><strong>思路：将线性基化为最简，K用二进制表示，选出1的位，将以其为下标的线性基元素相乘即可</strong></p>
 <p><strong>代码</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2275,7 +2272,7 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">rebuild</span><span class="p">()</span><span class="c1">//高斯消元化为最简线性基  </span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">rebuild</span><span class="p">()</span><span class="c1">//高斯消元化为最简线性基  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">60</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w">  </span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="mi">-1</span><span class="p">;</span><span class="n">j</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">--</span><span class="p">)</span><span class="w">  </span>
@@ -2295,8 +2292,7 @@ a = a ^ b; b = a ^ b; a = a ^ b;<br />
 <span class="w">            </span><span class="n">ret</span><span class="o">^=</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="_8">经典例题</h2>
 <h3 id="1hdu-3949-xor">例1.HDU 3949 XOR</h3>
@@ -2308,7 +2304,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <p><strong>Output</strong></p>
 <p>For each test case,first output Case #C: in a single line,C means the number of the test case which is from 1 to T. Then for each query, you should output a single line contains the Ki-th smallest number in them, if there are less than Ki different numbers, output -1.</p>
 <p><strong>Sample input</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -2316,7 +2312,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>2
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>2
 2
 1 2
 4
@@ -2325,35 +2321,32 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 1 2 3
 5
 1 2 3 4 5
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <strong>Sample output</strong>
 <strong>Case #1:</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>1
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>1
 2
 3
 -1
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <strong>Case #2:</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>0
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>0
 1
 2
 3
 -1
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <strong>题意：给出n个数，求他们任意组合的最小值</strong></p>
 <p><strong>思路：求出这些数的线性基，将k二进制拆分，第i位为1，答案就异或第i个线性基，若线性基个数小于原个数，即最小值可为0，则用类似方法求k-1小即可</strong></p>
 <p><strong>代码</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2446,7 +2439,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="normal">91</span>
 <span class="normal">92</span>
 <span class="normal">93</span>
-<span class="normal">94</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w"> </span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w">  </span>
 <span class="n">ll</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">65</span><span class="p">];</span><span class="c1">//存储线性基  </span>
@@ -2540,8 +2533,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h3 id="2p3812">例2.洛谷P3812  线性基</h3>
 <p><strong>题目描述</strong></p>
@@ -2552,18 +2544,16 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <p><strong>输出格式</strong></p>
 <p>仅一行，表示答案。</p>
 <p><strong>输入样例</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>2
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>2
 1 1
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <strong>输出样例</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>1
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>1
+</code></pre></div></td></tr></table></div>
 <strong>思路：遍历线性基，每次异或高位为1的线性基元素</strong></p>
 <p><strong>代码</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2603,7 +2593,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w">  </span>
 <span class="n">ll</span><span class="w"> </span><span class="n">mp</span><span class="p">[</span><span class="mi">65</span><span class="p">];</span><span class="w">  </span>
@@ -2644,8 +2634,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <hr />
 <h3 id="3p4570bjwc2011">例3.洛谷P4570[BJWC2011]元素</h3>
 <p><strong>题目描述</strong>
@@ -2659,22 +2648,20 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <p><strong>输出格式</strong></p>
 <p>仅包含一行，一个整数代表最大的魔力值。</p>
 <p><strong>输入样例</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>3
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>3
 1 10
 2 20
 3 30
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <strong>输出样例</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>50
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>50
+</code></pre></div></td></tr></table></div>
 <strong>思路：由于线性基不唯一，本题要求最大魔力值，可优先选魔力值大的值生成线性基，贪心即可</strong></p>
 <p><strong>代码：</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2720,7 +2707,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w">  </span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w">  </span>
@@ -2767,8 +2754,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h3 id="4p3265">例4.洛谷P3265 装备购买</h3>
 <p><strong>题目描述</strong></p>
@@ -2780,24 +2766,22 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <p>一行两个数，</p>
 <p>第一个数表示能够购买的最多装备数量，第二个数表示在购买最多数量的装备的情况下的最小花费</p>
 <p><strong>输入样例</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>3 3
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>3 3
 1 2 3
 3 4 5
 2 3 4
 1 1 2
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <strong>输出样例</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>2 2
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>2 2
+</code></pre></div></td></tr></table></div>
 <strong>思路：实数线性基+贪心</strong></p>
 <p><strong>代码：</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2854,7 +2838,7 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="normal">55</span>
 <span class="normal">56</span>
 <span class="normal">57</span>
-<span class="normal">58</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w">  </span>
 <span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">;</span><span class="w">  </span>
@@ -2912,15 +2896,15 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">cnt</span><span class="o">&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
               
             </article>
+            
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             回到页面顶部
           </a>
@@ -2929,7 +2913,8 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="页脚">
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
         <a href="../%E7%BB%84%E5%90%88%E6%95%B0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 组合数" rel="prev">
@@ -2988,10 +2973,10 @@ For each test case, the first line is an integer N(1&lt;=N&lt;=10000), the numbe
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../../../js/mathjax.js"></script>
       
