@@ -7,8 +7,7 @@
 
 ---
 
-## 经典问题
-### 没有上司的舞会
+## 例1.没有上司的舞会
 
 <a href="https://www.acwing.com/problem/content/287/">题目链接</a>
 
@@ -118,8 +117,7 @@ int main() {
 
 ---
 
-## 进阶问题
-### 树的最长路径
+## 例2.树的最长路径
 
 <a href="https://www.acwing.com/problem/content/1074/">题目链接</a>
 
@@ -275,7 +273,7 @@ int main() {
 
 ---
 
-### 树的中心
+## 例3.树的中心
 
 <a href="https://www.acwing.com/problem/content/1075/">题目链接</a>
 
@@ -398,7 +396,7 @@ int main() {
 
 ---
 
-### 数字转换
+## 例4.数字转换
 
 <a href="https://www.acwing.com/problem/content/1077/">题目链接</a>
 
@@ -502,7 +500,7 @@ int main() {
 
 ---
 
-### 战略游戏
+## 例5.战略游戏
 
 <a href="https://www.acwing.com/problem/content/325/">题目链接</a>
 
@@ -683,7 +681,7 @@ int main() {
 
 ---
 
-### 皇宫看守
+## 例6.皇宫看守
 
 <a href="https://www.acwing.com/problem/content/1079/">题目链接</a>
 

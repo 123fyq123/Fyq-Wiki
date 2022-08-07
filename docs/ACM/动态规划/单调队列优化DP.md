@@ -4,9 +4,7 @@
 
 ---
 
-## 经典问题
-
-### 滑动窗口
+## 例1.滑动窗口
 
 <a href="https://www.acwing.com/problem/content/156/">题目链接</a>
 
@@ -103,9 +101,7 @@ int main()
 
 ---
 
-## 进阶问题
-
-### 最大子序和
+## 例2.最大子序和
 
 <a href="https://www.acwing.com/problem/content/137/">题目链接</a>
 
@@ -178,7 +174,7 @@ int main() {
 
 ---
 
-### 修剪草坪
+## 例3.修剪草坪
 
 <a href="https://www.acwing.com/problem/content/1089/">题目链接</a>
 
@@ -273,7 +269,7 @@ signed main() {
 
 ---
 
-### 烽火传递
+## 例4.烽火传递
 
 <a href="https://www.acwing.com/problem/content/1091/">题目链接</a>
 
@@ -391,7 +387,7 @@ int main() {
 
 --- 
 
-### 绿色通道
+## 例5.绿色通道
 
 <a href="https://www.acwing.com/problem/content/1092/">题目链接</a>
 

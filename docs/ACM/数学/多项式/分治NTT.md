@@ -28,9 +28,7 @@ NTT用来加速多项式乘法，最大的优点是可以取模，是FFT取模�
 
 ---
 
-## 例题
-
-### 挑选队友
+## 例1.挑选队友
 
 <a href="https://ac.nowcoder.com/acm/contest/26013/C">题目链接</a>
 
@@ -160,7 +158,7 @@ signed main() {
 
 ---
 
-### tokitsukaze and Another Protoss and Zerg
+## 例2.tokitsukaze and Another Protoss and Zerg
 
 <a href="https://ac.nowcoder.com/acm/contest/26013/D">题目链接</a>
 
@@ -303,7 +301,7 @@ signed main() {
 
 ---
 
-### Count Set
+## 例3.Count Set
 
 <a href="http://acm.hdu.edu.cn/showproblem.php?pid=7191">题目链接</a>
 

@@ -3,8 +3,7 @@
 
 ---
 
-## 经典问题
-### 大盗阿福
+## 例1.大盗阿福
 
 <a href="https://www.acwing.com/problem/content/1051/">题目链接</a>
 
@@ -96,8 +95,7 @@ signed main() {
 
 ---
 
-## 进阶问题
-### 股票买卖 IV
+## 例2.股票买卖 IV
 
 <a href="https://www.acwing.com/problem/content/1059/">题目链接</a>
 
@@ -182,7 +180,7 @@ int main() {
 
 ---
 
-### 股票买卖 V
+## 例3.股票买卖 V
 
 <a href="https://www.acwing.com/problem/content/1060/">题目链接</a>
 
@@ -267,7 +265,7 @@ int main()
 
 ---
 
-### 设计密码
+## 例4.设计密码
 
 <a href="https://www.acwing.com/problem/content/1054/">题目链接</a>
 

@@ -3,8 +3,7 @@
 
 ---
 
-## 经典问题
-### 石子合并
+## 例1.石子合并
 <a href="https://www.acwing.com/problem/content/284/">题目链接</a>
 
 **题目描述**
@@ -84,8 +83,7 @@ int main()
 
 ---
 
-## 进阶问题
-### 环形石子合并
+## 例2.环形石子合并
 <a href="https://www.acwing.com/problem/content/1070/">题目链接</a>
 
 **题目描述**
@@ -178,7 +176,7 @@ int main() {
 
 ---
 
-### 能量项链
+## 例3.能量项链
 <a href="https://www.acwing.com/problem/content/322/">题目链接</a>
 
 **题目描述**
@@ -275,7 +273,7 @@ int main() {
 
 ---
 
-### 凸多边形的划分
+## 例4.凸多边形的划分
 <a href="https://www.acwing.com/problem/content/1071/">题目链接</a>
 
 **题目描述**
@@ -396,7 +394,7 @@ signed main() {
 
 ---
 
-### 加分二叉树
+## 例5.加分二叉树
 
 **题目描述**
 
@@ -510,7 +508,7 @@ int main() {
 
 ---
 
-### 棋盘分割
+## 例6.棋盘分割
 
 **题目描述**
 

@@ -1,9 +1,11 @@
 ## 概述
+
 用于求解模数互质的线性同余方程组
 
 ---
 
 ## 解题方法
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/b6de6db0cc1f45a7888810861add8747.png)
 
 ---
@@ -41,10 +43,15 @@ int crt(int n)
 ---
 
 ## 扩展中国剩余定理
+
 ### 概述
+
 用于求解模数不互质的线性同余方程组
+
 ### 解题方法
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/454150fae07f483b9df0d00521f4cdfc.png)
+
 ### 代码模板
 
 ```cpp
@@ -109,8 +116,8 @@ signed main()
 
 ---
 
-## 经典例题
-### 例1.洛谷P1495 中国剩余定理
+## 例1.洛谷P1495 中国剩余定理
+
 **题目描述**
 
 自从曹冲搞定了大象以后，曹操就开始捉摸让儿子干些事业，于是派他到中原养猪场养猪，可是曹冲满不高兴，于是在工作中马马虎虎，有一次曹操想知道母猪的数量，于是曹冲想狠狠耍曹操一把。举个例子，假如有 1616 头母猪，如果建了 33 个猪圈，剩下 11 头猪就没有地方安家了。如果建造了 55 个猪圈，但是仍然有 11 头猪没有地方去，然后如果建造了 77 个猪圈，还有 22 头没有地方去。你作为曹总的私人秘书理所当然要将准确的猪数报给曹总，你该怎么办？
@@ -134,7 +141,7 @@ signed main()
 ```
 16
 ```
-**代码：**
+### 代码
 
 ```cpp
 #include<bits/stdc++.h>  
@@ -184,7 +191,8 @@ int main()
 
 ---
 
-### 例2.HDU3579 Hello Kiki
+## 例2.HDU3579 Hello Kiki
+
 **题目背景**
 
 One day I was shopping in the supermarket. There was a cashier counting coins seriously when a little kid running and singing "门前大桥下游过一群鸭，快来快来 数一数，二四六七八". And then the cashier put the counted coins back morosely and count again...
@@ -217,7 +225,7 @@ For each case output the least positive integer X which Kiki was counting in the
 Case 1: 341
 Case 2: 5996
 ```
-**代码：**
+### 代码
 
 ```cpp
 #include<bits/stdc++.h>  
