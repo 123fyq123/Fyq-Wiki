@@ -97,6 +97,10 @@ nav:
       - 函数: Web/JS/js8.md
       - 类: Web/JS/js9.md
       - 事件: Web/JS/js10.md
+  - MarkDown扩展语法:
+    - 警告框: MarkDown/警告框.md
+    - 代码块扩展语法: MarkDown/代码块扩展语法.md
+    - 其他扩展语法: MarkDown/其他.md
   - about:
     - 关于作者: 关于/作者.md
     - 关于算法竞赛: 关于/大学.md
@@ -141,16 +145,27 @@ extra:
 
 # md extrc
 markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true 
-  - pymdownx.snippets
-  - pymdownx.highlight:
-      linenums: true
+  - footnotes
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      linenums: false
+      guess_lang: false
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.details
   - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.arithmatex:
-      generic: true
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra_javascript:
     - 'js/mathjax.js'
