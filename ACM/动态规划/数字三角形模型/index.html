@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -1951,12 +1967,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -2148,7 +2240,7 @@
 
   <h1>数字三角形模型</h1>
 
-<h2 id="1">例1.摘花生</h2>
+<h2 id="1">例1.摘花生<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1017/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>Hello Kitty想摘点花生送给她喜欢的米老鼠。</p>
@@ -2165,73 +2257,42 @@
 <p><strong>输出格式</strong></p>
 <p>对每组输入数据，输出一行，内容为Hello Kitty能摘到得最多的花生颗数。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤T≤100,\)</span></p>
-<p><span class="arithmatex">\(1≤R,C≤100,\)</span></p>
-<p><span class="arithmatex">\(0≤M≤1000\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤T≤100,</span><script type="math/tex">1≤T≤100,</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤R,C≤100,</span><script type="math/tex">1≤R,C≤100,</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">0≤M≤1000</span><script type="math/tex">0≤M≤1000</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>2
+<div class="highlight"><pre><span></span><code>2
 2 2
 1 1
 3 4
 2 3
 2 3 4
 1 6 5
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>8
+<div class="highlight"><pre><span></span><code>8
 16
-</code></pre></div></td></tr></table></div>
-<h3 id="_1">思路</h3>
+</code></pre></div>
+<h3 id="_1">思路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>标准的动态规划题目,从以下三个角度来分析</p>
 <ul>
 <li>状态表示:<ul>
-<li>集合:定义<span class="arithmatex">\(f[i,j]\)</span>表示从<span class="arithmatex">\((1,1)\)</span>到<span class="arithmatex">\((i,j)\)</span>的所有方案</li>
+<li>集合:定义<span class="arithmatex"><span class="MathJax_Preview">f[i,j]</span><script type="math/tex">f[i,j]</script></span>表示从<span class="arithmatex"><span class="MathJax_Preview">(1,1)</span><script type="math/tex">(1,1)</script></span>到<span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span>的所有方案</li>
 <li>属性:最大值</li>
 </ul>
 </li>
 <li>状态转移:<ul>
-<li><span class="arithmatex">\((i,j)\)</span>从<span class="arithmatex">\((i-1,j)\)</span>转移过来,<span class="arithmatex">\(f[i,j]=f[i-1,j]+a[i,j]\)</span></li>
-<li><span class="arithmatex">\((i,j)\)</span>从<span class="arithmatex">\((i,j-1)\)</span>转移过来,<span class="arithmatex">\(f[i,j]=f[i,j-1]+a[i,j]\)</span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span>从<span class="arithmatex"><span class="MathJax_Preview">(i-1,j)</span><script type="math/tex">(i-1,j)</script></span>转移过来,<span class="arithmatex"><span class="MathJax_Preview">f[i,j]=f[i-1,j]+a[i,j]</span><script type="math/tex">f[i,j]=f[i-1,j]+a[i,j]</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span>从<span class="arithmatex"><span class="MathJax_Preview">(i,j-1)</span><script type="math/tex">(i,j-1)</script></span>转移过来,<span class="arithmatex"><span class="MathJax_Preview">f[i,j]=f[i,j-1]+a[i,j]</span><script type="math/tex">f[i,j]=f[i,j-1]+a[i,j]</script></span></li>
 </ul>
 </li>
 <li>优化<ul>
-<li>由于<span class="arithmatex">\(f[i][j]\)</span>只需要用到这一层和上一层的元素,因此可以用滚动数组优化空间</li>
+<li>由于<span class="arithmatex"><span class="MathJax_Preview">f[i][j]</span><script type="math/tex">f[i][j]</script></span>只需要用到这一层和上一层的元素,因此可以用滚动数组优化空间</li>
 </ul>
 </li>
 </ul>
-<h3 id="_2">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_2">代码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1005</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
@@ -2256,78 +2317,51 @@
 <span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="2">例2.最低通行费</h2>
+<h2 id="2">例2.最低通行费<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1020/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
-<p>一个商人穿过一个 <span class="arithmatex">\(N×N\)</span> 的正方形的网格，去参加一个非常重要的商务活动。</p>
+<p>一个商人穿过一个 <span class="arithmatex"><span class="MathJax_Preview">N×N</span><script type="math/tex">N×N</script></span> 的正方形的网格，去参加一个非常重要的商务活动。</p>
 <p>他要从网格的左上角进，右下角出。</p>
-<p>每穿越中间<span class="arithmatex">\(1\)</span>个小方格，都要花费<span class="arithmatex">\(1\)</span>个单位时间。</p>
-<p>商人必须在 <span class="arithmatex">\((2N−1)\)</span> 个单位时间穿越出去。</p>
+<p>每穿越中间<span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span>个小方格，都要花费<span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span>个单位时间。</p>
+<p>商人必须在 <span class="arithmatex"><span class="MathJax_Preview">(2N−1)</span><script type="math/tex">(2N−1)</script></span> 个单位时间穿越出去。</p>
 <p>而在经过中间的每个小方格时，都需要缴纳一定的费用。</p>
 <p>这个商人期望在规定时间内用最少费用穿越出去。</p>
 <p>请问至少需要多少费用？</p>
 <p>注意：不能对角穿越各个小方格（即，只能向上下左右四个方向移动且不能离开网格）。</p>
 <p><strong>输入格式</strong></p>
 <p>第一行是一个整数，表示正方形的宽度$ N$。</p>
-<p>后面<span class="arithmatex">\(N\)</span>行，每行$ N <span class="arithmatex">\(个不大于\)</span> 100 $的正整数，为网格上每个小方格的费用。</p>
+<p>后面<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>行，每行$ N <span class="arithmatex"><span class="MathJax_Preview">个不大于</span><script type="math/tex">个不大于</script></span> 100 $的正整数，为网格上每个小方格的费用。</p>
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示至少需要的费用。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤N≤100\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤N≤100</span><script type="math/tex">1≤N≤100</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>5
+<div class="highlight"><pre><span></span><code>5
 1  4  6  8  10
 2  5  7  15 17
 6  8  9  18 20
 10 11 12 19 21
 20 23 25 29 33
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>109
-</code></pre></div></td></tr></table></div>
-<h3 id="_3">题解</h3>
+<div class="highlight"><pre><span></span><code>109
+</code></pre></div>
+<h3 id="_3">题解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>状态表示:<ul>
-<li>集合:<span class="arithmatex">\(f[i,j]\)</span>表示从起点出发,走到第<span class="arithmatex">\((i,j)\)</span>的所有方案</li>
+<li>集合:<span class="arithmatex"><span class="MathJax_Preview">f[i,j]</span><script type="math/tex">f[i,j]</script></span>表示从起点出发,走到第<span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span>的所有方案</li>
 <li>属性:总价值最小</li>
 </ul>
 </li>
 <li>状态转移:<ul>
-<li><span class="arithmatex">\(f[i,j]=min(f[i-1,j],f[i,j-1])+w[i,j]\)</span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,j]=min(f[i-1,j],f[i,j-1])+w[i,j]</span><script type="math/tex">f[i,j]=min(f[i-1,j],f[i,j-1])+w[i,j]</script></span></li>
 </ul>
 </li>
 </ul>
-<h3 id="_4">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<h3 id="_4">代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
 
@@ -2350,9 +2384,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="3">例3.方格取数</h2>
+<h2 id="3">例3.方格取数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1029/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>设有 N×N 的方格图，我们在其中的某些方格中填入正整数，而其它的方格中则放入数字0。如下图所示：</p>
@@ -2368,18 +2402,9 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示两条路径上取得的最大的和。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(N≤10\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">N≤10</span><script type="math/tex">N≤10</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>8
+<div class="highlight"><pre><span></span><code>8
 2 3 13
 2 6 6
 3 5 7
@@ -2389,63 +2414,26 @@
 6 3 15
 7 2 14
 0 0 0
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>67
-</code></pre></div></td></tr></table></div>
-<h3 id="_5">题解</h3>
-<p>刚开始看到这道题，正常思路应该是用开四维DP，<span class="arithmatex">\(f[x1,y1,x2,y2]\)</span>表示两条路线走到的位置，可由于题目给出一个格子的贡献无法重复计算，因此还需要增加一维来表示每个格子是否被取过，但这样显然时间空间都爆炸，因此考虑其他方法</p>
+<div class="highlight"><pre><span></span><code>67
+</code></pre></div>
+<h3 id="_5">题解<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>刚开始看到这道题，正常思路应该是用开四维DP，<span class="arithmatex"><span class="MathJax_Preview">f[x1,y1,x2,y2]</span><script type="math/tex">f[x1,y1,x2,y2]</script></span>表示两条路线走到的位置，可由于题目给出一个格子的贡献无法重复计算，因此还需要增加一维来表示每个格子是否被取过，但这样显然时间空间都爆炸，因此考虑其他方法</p>
 <p>虽然题目要求先后出发，但实际上不管是先后出发还是同时出发，一个格子的贡献都只能被算一次，而我们若选择同时出发的话，可以发现两条路线的曼哈顿距离是相等的，这样可以通过三维状态表示两个点的位置，继续从以下表示和转移两个角度考虑:</p>
 <ul>
 <li>状态表示:<ul>
-<li>属性:<span class="arithmatex">\(f[k,i,j]\)</span>表示路径长度为k,第一条路径的x坐标为i,第二条路径的x坐标为j的所有方案</li>
+<li>属性:<span class="arithmatex"><span class="MathJax_Preview">f[k,i,j]</span><script type="math/tex">f[k,i,j]</script></span>表示路径长度为k,第一条路径的x坐标为i,第二条路径的x坐标为j的所有方案</li>
 <li>集合:总价值最大</li>
 </ul>
 </li>
 <li>状态转移:<ul>
-<li><span class="arithmatex">\(f[k,i,j]=max(f[k-1,i,j],f[k-1,i-1,j],f[k-1,i,j-1],f[k-1][i-1][j-1])+w[i,j]\)</span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[k,i,j]=max(f[k-1,i,j],f[k-1,i-1,j],f[k-1,i,j-1],f[k-1][i-1][j-1])+w[i,j]</span><script type="math/tex">f[k,i,j]=max(f[k-1,i,j],f[k-1,i-1,j],f[k-1,i,j-1],f[k-1][i-1][j-1])+w[i,j]</script></span></li>
 </ul>
 </li>
 </ul>
-<h3 id="_6">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_6">代码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w"></span>
@@ -2483,9 +2471,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">][</span><span class="n">n</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="4">例4.传纸条</h2>
+<h2 id="4">例4.传纸条<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/277/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>小渊和小轩是好朋友也是同班同学，他们在一起总有谈不完的话题。</p>
@@ -2504,23 +2492,20 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示来回两条路上参与传递纸条的学生的好心程度之和的最大值。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤n,m≤50\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤n,m≤50</span><script type="math/tex">1≤n,m≤50</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>3 3
+<div class="highlight"><pre><span></span><code>3 3
 0 3 9
 2 8 5
 5 7 0
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>34
-</code></pre></div></td></tr></table></div>
-<h3 id="_7">题解</h3>
-<p>由于从<span class="arithmatex">\((n,m)\)</span>点通过向上向左走到<span class="arithmatex">\((1,1)\)</span>，等同于从<span class="arithmatex">\((1,1)\)</span>点通过向下向右走到<span class="arithmatex">\((n,m)\)</span></p>
+<div class="highlight"><pre><span></span><code>34
+</code></pre></div>
+<h3 id="_7">题解<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>由于从<span class="arithmatex"><span class="MathJax_Preview">(n,m)</span><script type="math/tex">(n,m)</script></span>点通过向上向左走到<span class="arithmatex"><span class="MathJax_Preview">(1,1)</span><script type="math/tex">(1,1)</script></span>，等同于从<span class="arithmatex"><span class="MathJax_Preview">(1,1)</span><script type="math/tex">(1,1)</script></span>点通过向下向右走到<span class="arithmatex"><span class="MathJax_Preview">(n,m)</span><script type="math/tex">(n,m)</script></span></p>
 <p>因此本题就转化为:</p>
-<p>从<span class="arithmatex">\((1,1)\)</span>出发到达<span class="arithmatex">\((n,m)\)</span>，且每次只能向下或向右，先后出发两次，且两次不能通过重复格子的方案数</p>
+<p>从<span class="arithmatex"><span class="MathJax_Preview">(1,1)</span><script type="math/tex">(1,1)</script></span>出发到达<span class="arithmatex"><span class="MathJax_Preview">(n,m)</span><script type="math/tex">(n,m)</script></span>，且每次只能向下或向右，先后出发两次，且两次不能通过重复格子的方案数</p>
 <p>与上一题方格取数很相似，但规定了不能走重复格子</p>
 <p>接下来我们给出一个结论:</p>
 <p>方格取数中最优方案两条路径一定不走重复格子</p>
@@ -2538,42 +2523,8 @@
 <p>我们一定可以找到额外的一条路径，使其不通过重复点</p>
 <p>因此得证</p>
 <p>经过以上证明，我们发现这题和上题一模一样，具体状态定义和转移见上题</p>
-<h3 id="_8">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_8">代码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">55</span><span class="p">;</span><span class="w"></span>
@@ -2608,7 +2559,7 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 
               
             </article>

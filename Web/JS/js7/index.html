@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -1864,12 +1880,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -1974,24 +2066,14 @@
 
   <h1>数组</h1>
 
-<h2 id="_1">概述</h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>数组是一种特殊的对象。
 类似于C++中的数组，但是数组中的元素类型可以不同。</p>
 <ul>
 <li>数组中的元素可以是变量、数组、对象、函数。</li>
 </ul>
 <p>例如：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fyq&quot;</span><span class="p">];</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fyq&quot;</span><span class="p">];</span><span class="w"></span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="mf">1</span><span class="p">,</span><span class="w">  </span><span class="c1">// 变量</span><span class="w"></span>
@@ -2002,17 +2084,16 @@
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;fyq&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// 对象</span><span class="w"></span>
 <span class="p">];</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="_2">访问数组中的元素</h2>
+<h2 id="_2">访问数组中的元素<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>通过下标。</p>
 <p>例如：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 访问数组a[]的第0个元素</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 访问数组a[]的第0个元素</span><span class="w"></span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="_3">数组的常用属性和函数</h2>
+<h2 id="_3">数组的常用属性和函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>属性<code>length</code>：返回数组长度。注意<code>length</code>是属性，不是函数，因此调用的时候不要加()</li>
 <li>函数<code>push()</code>：向数组末尾添加元素</li>

@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -1864,12 +1880,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -1974,43 +2066,37 @@
 
   <h1>输入与输出</h1>
 
-<h2 id="_1">输入</h2>
+<h2 id="_1">输入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>从HTML与用户的交互中输入信息，例如通过input、textarea等标签获取用户的键盘输入，通过click、hover等事件获取用户的鼠标输入。</li>
 <li>通过Ajax与WebSocket从服务器端获取输入</li>
 <li>标准输入，参考<a href="https://www.acwing.com/problem/content/description/1/">AcWing 1. A + B</a></li>
 </ul>
 <hr />
-<h2 id="_2">格式化字符串</h2>
+<h2 id="_2">格式化字符串<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>字符串中填入数值：</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;yxc&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">18</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;yxc&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">18</span><span class="p">;</span><span class="w"></span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`My name is </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">, I&#39;m </span><span class="si">${</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ul>
 <li>定义多行字符串：</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 <span class="sb">`&lt;div&gt;</span>
 <span class="sb">    &lt;h2&gt;标题&lt;/h2&gt;</span>
 <span class="sb">    &lt;p&gt;段落&lt;/p&gt;</span>
 <span class="sb">/div&gt;`</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <ul>
 <li>保留两位小数如何输出</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.234567</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.234567</span><span class="p">;</span><span class="w"></span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">x</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="_3">练习</h2>
+<h2 id="_3">练习<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.acwing.com/problem/content/1/">A+B</a></li>
 <li><a href="https://www.acwing.com/problem/content/610/">差</a></li>

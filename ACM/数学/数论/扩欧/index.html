@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -1906,12 +1922,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -2056,24 +2148,11 @@
 
   <h1>扩展欧几里德和贝祖定理</h1>
 
-<h2 id="_1">概述</h2>
-<p>扩展欧几里德用来求解有关方程<span class="arithmatex">\(ax+by=m\)</span>的问题</p>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>扩展欧几里德用来求解有关方程<span class="arithmatex"><span class="MathJax_Preview">ax+by=m</span><script type="math/tex">ax+by=m</script></span>的问题</p>
 <hr />
-<h2 id="_2">扩欧模板</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">exgcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">)</span><span class="w">  </span>
+<h2 id="_2">扩欧模板<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">exgcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">)</span><span class="w">  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w">  </span>
 <span class="w">    </span><span class="p">{</span><span class="w">  </span>
@@ -2087,15 +2166,15 @@
 <span class="w">    </span><span class="n">y</span><span class="o">=</span><span class="n">tmp</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div></td></tr></table></div>
-<p><strong>判断方程<span class="arithmatex">\(ax+by=m\)</span>或<span class="arithmatex">\(ax≡m(mod\ b)\)</span>是否有解</strong></p>
-<p><strong>思路:</strong>当<span class="arithmatex">\(gcd(a,b)|m\)</span>时 方程有解，反之则无解</p>
-<p><strong>求解方程<span class="arithmatex">\(ax+by=m( ax≡m(mod\ b) )\)</span>的最小正整数解</strong></p>
+</code></pre></div>
+<p><strong>判断方程<span class="arithmatex"><span class="MathJax_Preview">ax+by=m</span><script type="math/tex">ax+by=m</script></span>或<span class="arithmatex"><span class="MathJax_Preview">ax≡m(mod\ b)</span><script type="math/tex">ax≡m(mod\ b)</script></span>是否有解</strong></p>
+<p>**思路:**当<span class="arithmatex"><span class="MathJax_Preview">gcd(a,b)|m</span><script type="math/tex">gcd(a,b)|m</script></span>时 方程有解，反之则无解</p>
+<p><strong>求解方程<span class="arithmatex"><span class="MathJax_Preview">ax+by=m( ax≡m(mod\ b) )</span><script type="math/tex">ax+by=m( ax≡m(mod\ b) )</script></span>的最小正整数解</strong></p>
 <p><strong>思路</strong></p>
 <p>1.首先判断方程是否有解，无解则直接退出</p>
-<p>2.扩欧求<span class="arithmatex">\(x\)</span>，令<span class="arithmatex">\(bg=m/gcd(a,b),则x=(x\%bg+bg)\%bg\)</span></p>
+<p>2.扩欧求<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，令<span class="arithmatex"><span class="MathJax_Preview">bg=m/gcd(a,b),则x=(x\%bg+bg)\%bg</span><script type="math/tex">bg=m/gcd(a,b),则x=(x\%bg+bg)\%bg</script></span></p>
 <hr />
-<h2 id="1-p1082">例1.洛谷 P1082 同余方程</h2>
+<h2 id="1-p1082">例1.洛谷 P1082 同余方程<a class="headerlink" href="#1-p1082" title="Permanent link">&para;</a></h2>
 <p><strong>题目描述</strong></p>
 <p>求关于x的同余方程ax≡1(mod b)的最小正整数解。</p>
 <p><strong>输入格式</strong></p>
@@ -2103,44 +2182,18 @@
 <p><strong>输出格式</strong></p>
 <p>一个正整数x0，即最小正整数解。输入数据保证一定有解。</p>
 <p><strong>输入样例</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>3 10
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>3 10
+</code></pre></div>
 <strong>输出样例</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>7
-</code></pre></div></td></tr></table></div></p>
-<h3 id="_3">题解</h3>
-<p>模板题，由于题目规定一定有解，因此<span class="arithmatex">\(a⊥b（a与b互质）\)</span> ，此时既可以用扩欧求解，也可用欧拉定理求解</p>
+<div class="highlight"><pre><span></span><code>7
+</code></pre></div></p>
+<h3 id="_3">题解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>模板题，由于题目规定一定有解，因此<span class="arithmatex"><span class="MathJax_Preview">a⊥b（a与b互质）</span><script type="math/tex">a⊥b（a与b互质）</script></span> ，此时既可以用扩欧求解，也可用欧拉定理求解</p>
 <p>在这科普一下欧拉定理：</p>
-<p><span class="arithmatex">\(a^φ(n) ≡1(mod\ n)(其中，a与n均为正整数，且两者互质。)\)</span> 费马小定理为欧拉定理的特殊形式</p>
-<h3 id="_4">代码</h3>
+<p><span class="arithmatex"><span class="MathJax_Preview">a^φ(n) ≡1(mod\ n)(其中，a与n均为正整数，且两者互质。)</span><script type="math/tex">a^φ(n) ≡1(mod\ n)(其中，a与n均为正整数，且两者互质。)</script></span> 费马小定理为欧拉定理的特殊形式</p>
+<h3 id="_4">代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p><strong>扩欧版</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="cp">#define int long long  </span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">exgcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">)</span><span class="w">  </span>
@@ -2167,40 +2220,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>欧拉定理版</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="cp">#define int long long  </span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">qpow</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w">  </span>
@@ -2232,9 +2254,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">qpow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">euler</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="mi">-1</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="2p5656">例2.洛谷P5656 二元一次方程</h2>
+<h2 id="2p5656">例2.洛谷P5656 二元一次方程<a class="headerlink" href="#2p5656" title="Permanent link">&para;</a></h2>
 <p><strong>题目描述</strong></p>
 <p>给定不定方程ax+by=c
 若该方程无整数解，输出-1。
@@ -2252,14 +2274,7 @@ T 行。</p>
 <p>若该行对应的询问有整数解但无正整数解，包含 2个由空格隔开的数字，依次代表整数解中，x的最小正整数值，y 的最小正整数值。</p>
 <p>否则包含5个由空格隔开的数字，依次代表正整数解的数量，正整数解中，x的最小值，y的最小值，x的最大值，y的最大值。</p>
 <p><strong>输入样例</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>7
+<div class="highlight"><pre><span></span><code>7
 2 11 100
 3 18 6
 192 608 17
@@ -2267,97 +2282,18 @@ T 行。</p>
 11 45 14
 19 19 810
 98 76 5432
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <strong>输出样例</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>4 6 2 39 8
+<div class="highlight"><pre><span></span><code>4 6 2 39 8
 2 1
 -1
 1600 1 18 3199 30399
 34 3
 -1
 2 12 7 50 56
-</code></pre></div></td></tr></table></div></p>
-<h3 id="_5">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+</code></pre></div></p>
+<h3 id="_5">代码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="cp">#define int long long  </span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">exgcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">)</span><span class="w">  </span>
@@ -2431,7 +2367,7 @@ T 行。</p>
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 
               
             </article>

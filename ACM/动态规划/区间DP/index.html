@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -2012,12 +2028,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -2270,10 +2362,10 @@
 
   <h1>区间DP</h1>
 
-<h2 id="_1">概述</h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>区间dp就是利用了分治的思想，将整个区间不断的拆分一下，将一个区间[l,r]分成[l,k] [k+1,r]，然后再对[l,k]和[k+1,r]进行类似的拆分，直到拆分成最小的区间，通过对每个小区间算出最小或者最大代价，再通过将这些小区间组合成一个更大的区间，哪种组合方式最优，则就是所求解。解题为三部分+最后一步+边界情况。</p>
 <hr />
-<h2 id="1">例1.石子合并</h2>
+<h2 id="1">例1.石子合并<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/284/">题目链接</a></p>
 <p><strong>题目描述</strong>
 设有 N 堆石子排成一排，其编号为 1，2，3，…，N。</p>
@@ -2288,46 +2380,18 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示最小代价。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤N≤300\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤N≤300</span><script type="math/tex">1≤N≤300</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>4
+<div class="highlight"><pre><span></span><code>4
 1 3 5 2
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>22
-</code></pre></div></td></tr></table></div>
-<h3 id="_2">题解</h3>
-<p>区间DP的状态定义一般为一个范围，我们令<span class="arithmatex">\(f[l,r]\)</span>为合并<span class="arithmatex">\(l-r\)</span>范围内的石子能获得的最小代价，根据最后一步合并的不同，可以划分为若干个部分，状态转移方程很容易可以表示为<span class="arithmatex">\(f[l,r]=min(f[l,k]+f[k + 1,r] + (w[l]+w[l+1]...+w[r]), f[l,r])\)</span>，其中k为最后一步合并的端点,这里<span class="arithmatex">\(w[l]+...w[r]\)</span>可以用前缀和优化</p>
-<h3 id="_3">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code>22
+</code></pre></div>
+<h3 id="_2">题解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>区间DP的状态定义一般为一个范围，我们令<span class="arithmatex"><span class="MathJax_Preview">f[l,r]</span><script type="math/tex">f[l,r]</script></span>为合并<span class="arithmatex"><span class="MathJax_Preview">l-r</span><script type="math/tex">l-r</script></span>范围内的石子能获得的最小代价，根据最后一步合并的不同，可以划分为若干个部分，状态转移方程很容易可以表示为<span class="arithmatex"><span class="MathJax_Preview">f[l,r]=min(f[l,k]+f[k + 1,r] + (w[l]+w[l+1]...+w[r]), f[l,r])</span><script type="math/tex">f[l,r]=min(f[l,k]+f[k + 1,r] + (w[l]+w[l+1]...+w[r]), f[l,r])</script></span>，其中k为最后一步合并的端点,这里<span class="arithmatex"><span class="MathJax_Preview">w[l]+...w[r]</span><script type="math/tex">w[l]+...w[r]</script></span>可以用前缀和优化</p>
+<h3 id="_3">代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">305</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
@@ -2355,9 +2419,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="2">例2.环形石子合并</h2>
+<h2 id="2">例2.环形石子合并<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1070/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>将 n 堆石子绕圆形操场排放，现要将石子有序地合并成一堆。</p>
@@ -2375,56 +2439,19 @@
 <p>第一行为合并得分总和最小值，</p>
 <p>第二行为合并得分总和最大值。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤n≤200\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤n≤200</span><script type="math/tex">1≤n≤200</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>4
+<div class="highlight"><pre><span></span><code>4
 4 5 9 4
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>43
+<div class="highlight"><pre><span></span><code>43
 54
-</code></pre></div></td></tr></table></div>
-<h3 id="_4">题解</h3>
+</code></pre></div>
+<h3 id="_4">题解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>与朴素版相比，多了一个破环成链的过程，由于是个环，n堆石子就有n个空隙，若按照空隙断开可以有n种断法，由于环断开后个数仍然为n个，于是不难想到可以在原n堆石子后面补上n个，从前n堆开始分别对应一种断法，最后在这些断法中取最小值(或最大值)，而每种断法使用朴素版的做法即可</p>
-<h3 id="_5">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_5">代码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">405</span><span class="p">,</span><span class="w"> </span><span class="n">INF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3f3f3f3f</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">g</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
@@ -2460,9 +2487,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">minx</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">maxx</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="3">例3.能量项链</h2>
+<h2 id="3">例3.能量项链<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/322/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>在 Mars 星球上，每个 Mars 人都随身佩带着一串能量项链，在项链上有 N 颗能量珠。</p>
@@ -2483,47 +2510,19 @@
 <p><strong>输出格式</strong></p>
 <p>输出只有一行，是一个正整数 E，为一个最优聚合顺序所释放的总能量。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(4≤N≤100,\)</span></p>
-<p><span class="arithmatex">\(1≤E≤2.1×109\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">4≤N≤100,</span><script type="math/tex">4≤N≤100,</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤E≤2.1×109</span><script type="math/tex">1≤E≤2.1×109</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>4
+<div class="highlight"><pre><span></span><code>4
 2 3 5 10
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>710
-</code></pre></div></td></tr></table></div>
-<h3 id="_6">题解</h3>
+<div class="highlight"><pre><span></span><code>710
+</code></pre></div>
+<h3 id="_6">题解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>环形问题，首先破环成链，参考环形石子合并的方法，本题与环形石子合并的不同点在于每一堆既有头也有尾，因此对于堆数为n的石子实际长度应该为n+1，所以本题就是在长度为n+1的石子堆中做环形石子合并问题，第n+1和第1个一样，长度为1不存在，因此可以从2开始枚举，注意一个小坑，在枚举最后一步时不能选择一个珠子的同一端，即k范围为l+1到r-1</p>
-<h3 id="_7">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_7">代码<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">205</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">dp</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
@@ -2551,9 +2550,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="4">例4.凸多边形的划分</h2>
+<h2 id="4">例4.凸多边形的划分<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1071/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一个具有 N 个顶点的凸多边形，将顶点从 1 至 N 标号，每个顶点的权值都是一个正整数。</p>
@@ -2564,91 +2563,19 @@
 <p><strong>输出格式</strong></p>
 <p>输出仅一行，为所有三角形的顶点权值乘积之和的最小值。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(N≤50,\)</span></p>
-<p>数据保证所有顶点的权值都小于<span class="arithmatex">\(10^9\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">N≤50,</span><script type="math/tex">N≤50,</script></span></p>
+<p>数据保证所有顶点的权值都小于<span class="arithmatex"><span class="MathJax_Preview">10^9</span><script type="math/tex">10^9</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>5
+<div class="highlight"><pre><span></span><code>5
 121 122 123 245 231
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>12214884
-</code></pre></div></td></tr></table></div>
-<h3 id="_8">题解</h3>
-<p>我们枚举三角形中的一条边，设<span class="arithmatex">\(f[l,r]\)</span>为所有由<span class="arithmatex">\([l,l+1],[l+1,l+2],...[r-2,r-1],[r-1,r],[r-l]\)</span>这些边组成的四边形划分成三角形方案的最小值，根据最后一步即除<span class="arithmatex">\(l,r\)</span>这两个点外三角形另一个顶点的位置确定状态转移方程，可以发现第三个点可以取到<span class="arithmatex">\((l,r)\)</span>内的所有点，于是<span class="arithmatex">\(f[l,r]=min(f[l,r],f[l,k]+f[k,r]+w[l]*w[k]*w[r]\)</span>，看上去和上题转移方程一样，但本题长度为n并且不需要破环就能枚举到所有线段，数据范围很大，需要使用高精度</p>
-<h3 id="_9">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code>12214884
+</code></pre></div>
+<h3 id="_8">题解<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>我们枚举三角形中的一条边，设<span class="arithmatex"><span class="MathJax_Preview">f[l,r]</span><script type="math/tex">f[l,r]</script></span>为所有由<span class="arithmatex"><span class="MathJax_Preview">[l,l+1],[l+1,l+2],...[r-2,r-1],[r-1,r],[r-l]</span><script type="math/tex">[l,l+1],[l+1,l+2],...[r-2,r-1],[r-1,r],[r-l]</script></span>这些边组成的四边形划分成三角形方案的最小值，根据最后一步即除<span class="arithmatex"><span class="MathJax_Preview">l,r</span><script type="math/tex">l,r</script></span>这两个点外三角形另一个顶点的位置确定状态转移方程，可以发现第三个点可以取到<span class="arithmatex"><span class="MathJax_Preview">(l,r)</span><script type="math/tex">(l,r)</script></span>内的所有点，于是<span class="arithmatex"><span class="MathJax_Preview">f[l,r]=min(f[l,r],f[l,k]+f[k,r]+w[l]*w[k]*w[r]</span><script type="math/tex">f[l,r]=min(f[l,r],f[l,k]+f[k,r]+w[l]*w[k]*w[r]</script></span>，看上去和上题转移方程一样，但本题长度为n并且不需要破环就能枚举到所有线段，数据范围很大，需要使用高精度</p>
+<h3 id="_9">代码<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="cp">#define int long long</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
@@ -2720,9 +2647,9 @@
 <span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="5">例5.加分二叉树</h2>
+<h2 id="5">例5.加分二叉树<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p><strong>题目描述</strong></p>
 <p>设一个 n 个节点的二叉树 tree 的中序遍历为（1,2,3,…,n），其中数字 1,2,3,…,n 为节点编号。</p>
 <p>每个节点都有一个分数（均为正整数），记第 i 个节点的分数为 di，tree 及它的每个子树都有一个加分，任一棵子树 subtree（也包含 tree 本身）的加分计算方法如下：     </p>
@@ -2740,70 +2667,25 @@
 <p>第 1 行：一个整数，为最高加分（结果不会超过int范围）。     </p>
 <p>第 2 行：n 个用空格隔开的整数，为该树的前序遍历。如果存在多种方案，则输出字典序最小的方案。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(n&lt;30\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">n&lt;30</span><script type="math/tex">n<30</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>5
+<div class="highlight"><pre><span></span><code>5
 5 7 1 2 10
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>145
+<div class="highlight"><pre><span></span><code>145
 3 1 2 4 5
-</code></pre></div></td></tr></table></div>
-<h3 id="_10">题解</h3>
-<p>由于每一颗树的中序遍历在序列中时连续的一段，根据以往区间DP将其分成三部分的规律，很容易想到令<span class="arithmatex">\(f[l,r]\)</span>为中序遍历为<span class="arithmatex">\(l-r\)</span>的二叉树方案的分数最大值，这里的最后一步是根结点的位置，假设为k，则状态转移方程为<span class="arithmatex">\(f[l,r]=max(f[l,r],f[l,k-1] \times f[k+1,r]+w[k])\)</span></p>
+</code></pre></div>
+<h3 id="_10">题解<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>由于每一颗树的中序遍历在序列中时连续的一段，根据以往区间DP将其分成三部分的规律，很容易想到令<span class="arithmatex"><span class="MathJax_Preview">f[l,r]</span><script type="math/tex">f[l,r]</script></span>为中序遍历为<span class="arithmatex"><span class="MathJax_Preview">l-r</span><script type="math/tex">l-r</script></span>的二叉树方案的分数最大值，这里的最后一步是根结点的位置，假设为k，则状态转移方程为<span class="arithmatex"><span class="MathJax_Preview">f[l,r]=max(f[l,r],f[l,k-1] \times f[k+1,r]+w[k])</span><script type="math/tex">f[l,r]=max(f[l,r],f[l,k-1] \times f[k+1,r]+w[k])</script></span></p>
 <p>注意边界情况</p>
 <ul>
 <li>当没有子树时分数为自身值</li>
 <li>当没有一颗子树时，没有的子树权值为1</li>
 </ul>
-<p>本题还要求输出字典序最小的前序遍历，由于前序遍历优先输出根节点，而根节点又为下标，于是想到根结点越靠前越好，即找到第一个满足最大值的数，之后遇到相同分数不进行<span class="arithmatex">\(f[l,r]\)</span>的更新</p>
-<h3 id="_11">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// f[l][r]为中序遍历为l-r的二叉树的分数最大值</span>
+<p>本题还要求输出字典序最小的前序遍历，由于前序遍历优先输出根节点，而根节点又为下标，于是想到根结点越靠前越好，即找到第一个满足最大值的数，之后遇到相同分数不进行<span class="arithmatex"><span class="MathJax_Preview">f[l,r]</span><script type="math/tex">f[l,r]</script></span>的更新</p>
+<h3 id="_11">代码<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// f[l][r]为中序遍历为l-r的二叉树的分数最大值</span>
 <span class="c1">// g[l][r]表示根</span>
 
 <span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
@@ -2847,9 +2729,9 @@
 <span class="w">    </span><span class="n">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="6">例6.棋盘分割</h2>
+<h2 id="6">例6.棋盘分割<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p><strong>题目描述</strong></p>
 <p>将一个 8×8 的棋盘进行如下分割：将原棋盘割下一块矩形棋盘并使剩下部分也是矩形，再将剩下的部分继续如此分割，这样割了 (n−1) 次后，连同最后剩下的矩形棋盘共有 n 块矩形棋盘。(每次切割都只能沿着棋盘格子的边进行)</p>
 <p><img alt="" src="https://www.acwing.com/media/article/image/2019/02/05/19_32dad08629-1191_1.jpg" /></p>
@@ -2863,17 +2745,9 @@
 <p><strong>输出格式</strong></p>
 <p>输出最小均方差值（四舍五入精确到小数点后三位）。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1&lt;n&lt;15\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1&lt;n&lt;15</span><script type="math/tex">1<n<15</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>3
+<div class="highlight"><pre><span></span><code>3
 1 1 1 1 1 1 1 3
 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1 1
@@ -2882,68 +2756,22 @@
 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1 0
 1 1 1 1 1 1 0 3
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>1.633
-</code></pre></div></td></tr></table></div>
-<h3 id="_12">题解</h3>
-<p>设<span class="arithmatex">\(f[x1][y1][x2][y2][k]\)</span>为左端点为<span class="arithmatex">\((x1,y1)\)</span>，右端点为<span class="arithmatex">\((x2,y2)\)</span>的矩阵划分为k部分的均方差的最小值，发现若要使所有部分在切的过程中都能为矩形，只有横切到底和竖切到底两种方法，本题使用记忆化搜索来写</p>
+<div class="highlight"><pre><span></span><code>1.633
+</code></pre></div>
+<h3 id="_12">题解<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>设<span class="arithmatex"><span class="MathJax_Preview">f[x1][y1][x2][y2][k]</span><script type="math/tex">f[x1][y1][x2][y2][k]</script></span>为左端点为<span class="arithmatex"><span class="MathJax_Preview">(x1,y1)</span><script type="math/tex">(x1,y1)</script></span>，右端点为<span class="arithmatex"><span class="MathJax_Preview">(x2,y2)</span><script type="math/tex">(x2,y2)</script></span>的矩阵划分为k部分的均方差的最小值，发现若要使所有部分在切的过程中都能为矩形，只有横切到底和竖切到底两种方法，本题使用记忆化搜索来写</p>
 <p>状态转移方程如下:</p>
 <ul>
-<li>横切:<span class="arithmatex">\(f[x1][y1][x2][y2][k]=min(f[x1][y1][x2][i][k-1]+get(x1,i+1,x2,y2),\)</span>
-<span class="arithmatex">\(f[x1][i+1][x2][y2][k-1]+get(x1,y1,x2,i),f[x1][y1][x2][y2][k])\)</span></li>
-<li>竖切:<span class="arithmatex">\(f[x1][y1][x2][y2][k]=min(f[x1][y1] [x2][i][k-1]+get(x1, i + 1, x2, y2),\)</span>
-<span class="arithmatex">\(f[x1][i+1][x2][y2][k-1]+get(x1, y1, x2, i),f[x1][y1][x2][y2][k])\)</span></li>
+<li>横切:<span class="arithmatex"><span class="MathJax_Preview">f[x1][y1][x2][y2][k]=min(f[x1][y1][x2][i][k-1]+get(x1,i+1,x2,y2),</span><script type="math/tex">f[x1][y1][x2][y2][k]=min(f[x1][y1][x2][i][k-1]+get(x1,i+1,x2,y2),</script></span>
+<span class="arithmatex"><span class="MathJax_Preview">f[x1][i+1][x2][y2][k-1]+get(x1,y1,x2,i),f[x1][y1][x2][y2][k])</span><script type="math/tex">f[x1][i+1][x2][y2][k-1]+get(x1,y1,x2,i),f[x1][y1][x2][y2][k])</script></span></li>
+<li>竖切:<span class="arithmatex"><span class="MathJax_Preview">f[x1][y1][x2][y2][k]=min(f[x1][y1] [x2][i][k-1]+get(x1, i + 1, x2, y2),</span><script type="math/tex">f[x1][y1][x2][y2][k]=min(f[x1][y1] [x2][i][k-1]+get(x1, i + 1, x2, y2),</script></span>
+<span class="arithmatex"><span class="MathJax_Preview">f[x1][i+1][x2][y2][k-1]+get(x1, y1, x2, i),f[x1][y1][x2][y2][k])</span><script type="math/tex">f[x1][i+1][x2][y2][k-1]+get(x1, y1, x2, i),f[x1][y1][x2][y2][k])</script></span></li>
 </ul>
 <p>利用二维前缀和继续优化</p>
-<h3 id="_13">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_13">代码<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span><span class="w"></span>
 <span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
@@ -2990,7 +2818,7 @@
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.3lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)));</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 
               
             </article>

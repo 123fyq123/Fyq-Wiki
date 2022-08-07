@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -2012,12 +2028,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -2270,12 +2362,12 @@
 
   <h1>树形DP</h1>
 
-<h2 id="_1">概述</h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>树形DP准确的说是一种DP的思想，将DP建立在树状结构的基础上。整体的思路大致就是用树形的结构存储数据。</p>
-<p>树形DP的关键和实现方法是<strong>dfs</strong>;</p>
+<p>树形DP的关键和实现方法是**dfs**;</p>
 <p>先找到树根，从树根开始运用dfs递归，跟dfs一样先初始化，然后递归到叶子节点上为止，把最底层的f[i][j]更新完毕，再回来往上走，自底向上地根据题意更新上层的f数组，最后输出答案即可。</p>
 <hr />
-<h2 id="1">例1.没有上司的舞会</h2>
+<h2 id="1">例1.没有上司的舞会<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/287/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>Ural 大学有 N 名职员，编号为 1∼N。</p>
@@ -2290,23 +2382,10 @@
 <p><strong>输出格式</strong></p>
 <p>输出最大的快乐指数。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤N≤6000,\)</span></p>
-<p><span class="arithmatex">\(−128≤Hi≤127\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤N≤6000,</span><script type="math/tex">1≤N≤6000,</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">−128≤Hi≤127</span><script type="math/tex">−128≤Hi≤127</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>7
+<div class="highlight"><pre><span></span><code>7
 1
 1
 1
@@ -2320,55 +2399,18 @@
 7 4
 4 5
 3 5
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>5
-</code></pre></div></td></tr></table></div>
-<h3 id="_2">题解</h3>
-<p>经典题，首先建树+找根，用<span class="arithmatex">\(f[i,0]\)</span>表示不选当前职员且其为根结点时的最大快乐指数，<span class="arithmatex">\(f[i,1]\)</span>表示选择当前职员且其为根节点时的最大快乐指数，由于选了当前职员后，他的部下就不能再选，所以状态转移方程如下:</p>
+<div class="highlight"><pre><span></span><code>5
+</code></pre></div>
+<h3 id="_2">题解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>经典题，首先建树+找根，用<span class="arithmatex"><span class="MathJax_Preview">f[i,0]</span><script type="math/tex">f[i,0]</script></span>表示不选当前职员且其为根结点时的最大快乐指数，<span class="arithmatex"><span class="MathJax_Preview">f[i,1]</span><script type="math/tex">f[i,1]</script></span>表示选择当前职员且其为根节点时的最大快乐指数，由于选了当前职员后，他的部下就不能再选，所以状态转移方程如下:</p>
 <ul>
-<li><span class="arithmatex">\(f[i,0] = \sum{max(f[j,0], f[j,1])}\)</span></li>
-<li><span class="arithmatex">\(f[i,1] = \sum{f[j,0]}\)</span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,0] = \sum{max(f[j,0], f[j,1])}</span><script type="math/tex">f[i,0] = \sum{max(f[j,0], f[j,1])}</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,1] = \sum{f[j,0]}</span><script type="math/tex">f[i,1] = \sum{f[j,0]}</script></span></li>
 </ul>
-<h3 id="_3">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_3">代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6005</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">head</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">e</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">ne</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
@@ -2406,9 +2448,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="2">例2.树的最长路径</h2>
+<h2 id="2">例2.树的最长路径<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1074/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一棵树，树中包含 n 个结点（编号1~n）和 n−1 条无向边，每条边都有一个权值。</p>
@@ -2421,122 +2463,25 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示树的最长路径的长度。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤n≤10000,\)</span></p>
-<p><span class="arithmatex">\(1≤ai,bi≤n,\)</span></p>
-<p><span class="arithmatex">\(−10^5≤ci≤10^5\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤n≤10000,</span><script type="math/tex">1≤n≤10000,</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤ai,bi≤n,</span><script type="math/tex">1≤ai,bi≤n,</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">−10^5≤ci≤10^5</span><script type="math/tex">−10^5≤ci≤10^5</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>6
+<div class="highlight"><pre><span></span><code>6
 5 1 6
 1 4 5
 6 3 9
 2 6 8
 6 1 7
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>22
-</code></pre></div></td></tr></table></div>
-<h3 id="_4">题解</h3>
-<p>本题也称树的直径，朴素做法为枚举每条路径的起点与终点，利用倍增求出两点距离，但这样光枚举起点和终点已经<span class="arithmatex">\(O(n^2)\)</span>超时，因此转换枚举方式，我们选择枚举中间结点，并且假设其为路径上的最高点，则直径一定在所有结点的最长路径+次长路径当中，只需要预处理出所有点的最长路径和次长路径即可</p>
+<div class="highlight"><pre><span></span><code>22
+</code></pre></div>
+<h3 id="_4">题解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>本题也称树的直径，朴素做法为枚举每条路径的起点与终点，利用倍增求出两点距离，但这样光枚举起点和终点已经<span class="arithmatex"><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span>超时，因此转换枚举方式，我们选择枚举中间结点，并且假设其为路径上的最高点，则直径一定在所有结点的最长路径+次长路径当中，只需要预处理出所有点的最长路径和次长路径即可</p>
 <p>但上面有个问题，由于是树的形式，最长或次长路径可能是往上经过父节点的，该怎么办呢？其实这种情况在枚举到它的祖先节点时已经考虑完了，这样问题就解决了,代码给出两种dfs写法，分别为有返回值和无返回值</p>
-<h3 id="_5">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 有返回值</span>
+<h3 id="_5">代码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// 有返回值</span>
 <span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e4</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2e4</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
@@ -2629,9 +2574,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="3">例3.树的中心</h2>
+<h2 id="3">例3.树的中心<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1075/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一棵树，树中包含 n 个结点（编号1~n）和 n−1 条无向边，每条边都有一个权值。</p>
@@ -2642,94 +2587,28 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示所求点到树中其他结点的最远距离。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤n≤10000,\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤n≤10000,</span><script type="math/tex">1≤n≤10000,</script></span></p>
 <p>$1≤ai,bi≤n,</p>
-<p><span class="arithmatex">\(1≤ci≤10^5\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤ci≤10^5</span><script type="math/tex">1≤ci≤10^5</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>5 
+<div class="highlight"><pre><span></span><code>5 
 2 1 1 
 3 2 1 
 4 3 1 
 5 1 1
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>2
-</code></pre></div></td></tr></table></div>
-<h3 id="_6">题解</h3>
+<div class="highlight"><pre><span></span><code>2
+</code></pre></div>
+<h3 id="_6">题解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>和树的直径很相似，但也很不同，首先考虑对一个点需要比较哪些部分</p>
 <ul>
 <li>1.往子节点走的路径</li>
 <li>2.往父节点走的路径</li>
 </ul>
-<p>这就是为什么和树的直径很相似但又不同的地方了，书的直径往父节点走的路径在枚举父节点时已经考虑，是因为当时我们考虑的是直径，一条直径可以被拆成不同的最长路径和次长路径，只要直径的最高点不同即可，而本题只是一条路径，不能被拆分，因此需要考虑往上走，我们用d1，d2存当前点往子结点走的最长和次长路径，用up存往父节点走的<strong>不经过当前节点</strong>的最长路径，使用两个dfs，第一个处理d1和d2，第二个处理up，最后枚举所有的点更新答案就行了</p>
-<h3 id="_7">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<p>这就是为什么和树的直径很相似但又不同的地方了，书的直径往父节点走的路径在枚举父节点时已经考虑，是因为当时我们考虑的是直径，一条直径可以被拆成不同的最长路径和次长路径，只要直径的最高点不同即可，而本题只是一条路径，不能被拆分，因此需要考虑往上走，我们用d1，d2存当前点往子结点走的最长和次长路径，用up存往父节点走的**不经过当前节点**的最长路径，使用两个dfs，第一个处理d1和d2，第二个处理up，最后枚举所有的点更新答案就行了</p>
+<h3 id="_7">代码<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">head</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">e</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="w"> </span><span class="n">ne</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
@@ -2792,9 +2671,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="4">例4.数字转换</h2>
+<h2 id="4">例4.数字转换<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1077/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>如果一个数 x 的约数之和 y（不包括他本身）比他本身小，那么 x 可以变成 y，y 也可以变成 x。</p>
@@ -2805,73 +2684,17 @@
 <p><strong>输出格式</strong></p>
 <p>输出不断进行数字变换且不出现重复数字的最多变换步数。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤n≤50000\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤n≤50000</span><script type="math/tex">1≤n≤50000</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>7
-</code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code>7
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>3
-</code></pre></div></td></tr></table></div>
-<h3 id="_8">题解</h3>
-<p>简易版的树的直径，这里简单提一下预处理约束和的方法，不选择枚举每个数的约束，而选择枚举每个数的倍数，时间复杂度为<span class="arithmatex">\(O(nlog_n + C)\)</span>，C为欧拉常数，建树后用就是求边权为1时树的直径</p>
-<h3 id="_9">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code>3
+</code></pre></div>
+<h3 id="_8">题解<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>简易版的树的直径，这里简单提一下预处理约束和的方法，不选择枚举每个数的约束，而选择枚举每个数的倍数，时间复杂度为<span class="arithmatex"><span class="MathJax_Preview">O(nlog_n + C)</span><script type="math/tex">O(nlog_n + C)</script></span>，C为欧拉常数，建树后用就是求边权为1时树的直径</p>
+<h3 id="_9">代码<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5e4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">head</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">e</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="w"> </span><span class="n">ne</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
@@ -2928,9 +2751,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="5">例5.战略游戏</h2>
+<h2 id="5">例5.战略游戏<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/325/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>鲍勃喜欢玩电脑游戏，特别是战略游戏，但有时他找不到解决问题的方法，这让他很伤心。</p>
@@ -2951,20 +2774,10 @@
 <p><strong>输出格式</strong></p>
 <p>对于每组测试数据，输出一个占据一行的结果，表示最少需要的士兵数。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(0&lt;N≤1500 ,\)</span></p>
-<p>一个测试点所有 N 相加之和不超过 <span class="arithmatex">\(300650\)</span>。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">0&lt;N≤1500 ,</span><script type="math/tex">0<N≤1500 ,</script></span></p>
+<p>一个测试点所有 N 相加之和不超过 <span class="arithmatex"><span class="MathJax_Preview">300650</span><script type="math/tex">300650</script></span>。</p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>4
+<div class="highlight"><pre><span></span><code>4
 0:(1) 1
 1:(2) 2 3
 2:(0)
@@ -2975,116 +2788,19 @@
 2:(0)
 0:(0)
 4:(0)
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>1
+<div class="highlight"><pre><span></span><code>1
 2
-</code></pre></div></td></tr></table></div>
-<h3 id="_10">题解</h3>
+</code></pre></div>
+<h3 id="_10">题解<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>没有上司的舞会我扩展，与其不同的是若父节点选择，其子节点可选可不选，父节点未选择，子节点必选，状态转移方程如下:</p>
 <ul>
-<li><span class="arithmatex">\(f[i,1]=\sum min(f[j,0],f[j,1]\)</span></li>
-<li><span class="arithmatex">\(f[i,0]=\sum f[j,1]\)</span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,1]=\sum min(f[j,0],f[j,1]</span><script type="math/tex">f[i,1]=\sum min(f[j,0],f[j,1]</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,0]=\sum f[j,1]</span><script type="math/tex">f[i,0]=\sum f[j,1]</script></span></li>
 </ul>
-<h3 id="_11">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span>
-<span class="normal">87</span>
-<span class="normal">88</span>
-<span class="normal">89</span>
-<span class="normal">90</span>
-<span class="normal">91</span>
-<span class="normal">92</span>
-<span class="normal">93</span>
-<span class="normal">94</span>
-<span class="normal">95</span>
-<span class="normal">96</span>
-<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 无返回值</span>
+<h3 id="_11">代码<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// 无返回值</span>
 <span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1505</span><span class="p">;</span><span class="w"></span>
@@ -3181,9 +2897,9 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="6">例6.皇宫看守</h2>
+<h2 id="6">例6.皇宫看守<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/1079/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>太平王世子事件后，陆小凤成了皇上特聘的御前一品侍卫。</p>
@@ -3200,26 +2916,20 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示最少的经费。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤n≤1500\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤n≤1500</span><script type="math/tex">1≤n≤1500</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>6
+<div class="highlight"><pre><span></span><code>6
 1 30 3 2 3 4
 2 16 2 5 6
 3 5 0
 4 4 0
 5 11 0
 6 5 0
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>25
-</code></pre></div></td></tr></table></div>
-<h3 id="_12">题解</h3>
+<div class="highlight"><pre><span></span><code>25
+</code></pre></div>
+<h3 id="_12">题解<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>上题要求观察到所有的边，本题要求观察到所有的点，此时考虑像上题一样，每个点有无防守卫这两个状态是否足够，讨论当前点不放置守卫的情况:</p>
 <ul>
 <li>当前点不放守卫但被父节点观察到，则它的子节点可以放置守卫，也可以不放置守卫</li>
@@ -3228,74 +2938,18 @@
 <p>因此对于上述情况来看两个状态是不够的</p>
 <p>我们定义:</p>
 <ul>
-<li><span class="arithmatex">\(f[i,0]\)</span>为不放置守卫但被父节点观察到</li>
-<li><span class="arithmatex">\(f[i,1]\)</span>为不放置守卫也未被父节点观察到</li>
-<li><span class="arithmatex">\(f[i,1]\)</span>为放置守卫</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,0]</span><script type="math/tex">f[i,0]</script></span>为不放置守卫但被父节点观察到</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,1]</span><script type="math/tex">f[i,1]</script></span>为不放置守卫也未被父节点观察到</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,1]</span><script type="math/tex">f[i,1]</script></span>为放置守卫</li>
 </ul>
 <p>状态转移方程如下:</p>
 <ul>
-<li><span class="arithmatex">\(f[i,0]=\sum min(f[j,1],f[j,2])\)</span></li>
-<li><span class="arithmatex">\(f[i,1]=min(f[i, 1], f[k, 2] + \sum_{j \ne k} min(f[j, 1],f[j, 2]))\)</span> (其中一点放守卫观察，其余点可放可不放，取最小)</li>
-<li><span class="arithmatex">\(f[i,2]=\sum min(f[j,0], f[j,1],f[j,2])\)</span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,0]=\sum min(f[j,1],f[j,2])</span><script type="math/tex">f[i,0]=\sum min(f[j,1],f[j,2])</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,1]=min(f[i, 1], f[k, 2] + \sum_{j \ne k} min(f[j, 1],f[j, 2]))</span><script type="math/tex">f[i,1]=min(f[i, 1], f[k, 2] + \sum_{j \ne k} min(f[j, 1],f[j, 2]))</script></span> (其中一点放守卫观察，其余点可放可不放，取最小)</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f[i,2]=\sum min(f[j,0], f[j,1],f[j,2])</span><script type="math/tex">f[i,2]=\sum min(f[j,0], f[j,1],f[j,2])</script></span></li>
 </ul>
-<h3 id="_13">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">//f[i, 0] 不放哨兵被父节点观察到  f[i, 0] += min(f[j, 1], f[j, 2])</span>
+<h3 id="_13">代码<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">//f[i, 0] 不放哨兵被父节点观察到  f[i, 0] += min(f[j, 1], f[j, 2])</span>
 <span class="c1">//f[i, 1] 不放哨兵被子节点观察到  f[i, 1] = min(f[k, 2], sigema min(f[j, 1], f[j, 2]))</span>
 <span class="c1">//f[i, 2] 放哨兵 f[i, 2] += min(f[j, 1], f[j, 2], f[j, 0])</span>
 <span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
@@ -3352,7 +3006,7 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 
               
             </article>

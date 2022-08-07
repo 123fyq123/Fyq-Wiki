@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -1958,12 +1974,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -2162,53 +2254,39 @@
 
   <h1>并查集 基础篇</h1>
 
-<h2 id="_1">概述</h2>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>👉<a href="http://127.0.0.1:8000/ACM/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86%20%E6%8F%90%E9%AB%98%E7%AF%87/">并查集 提高篇</a></p>
 <p><strong>定义：</strong>
 并查集是一种树型的数据结构，用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。比如说，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。</p>
 <p><strong>主要构成：</strong>
 并查集主要由一个整型数组pre[ ]和两个函数find( )、join( )构成。
 数组 pre[ ] 记录了每个点的前驱节点是谁，函数 find(x) 用于查找指定节点 x 属于哪个集合，函数 join(x,y) 用于合并两个节点 x 和 y 。</p>
-<h3 id="find">find函数</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">                 </span>
+<h3 id="find">find函数<a class="headerlink" href="#find" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">                 </span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">pre</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">          </span><span class="c1">//如果x的上级不是自己</span>
 <span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pre</span><span class="p">[</span><span class="n">x</span><span class="p">];</span><span class="w">             </span><span class="c1">//x继续找他的上级</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">                   </span><span class="c1">//找到</span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h3 id="join">join函数</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w">                     </span>
+</code></pre></div>
+<h3 id="join">join函数<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">join</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w">                     </span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fx</span><span class="o">=</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">fy</span><span class="o">=</span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">);</span><span class="w">   </span><span class="c1">// 找x的上级，y的上级   </span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">fx</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">fy</span><span class="p">)</span><span class="w">                  </span><span class="c1">// 上级不相等，合并         </span>
 <span class="w">        </span><span class="n">pre</span><span class="p">[</span><span class="n">fx</span><span class="p">]</span><span class="o">=</span><span class="n">fy</span><span class="p">;</span><span class="w">                       </span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h3 id="_2">路径压缩</h3>
+</code></pre></div>
+<h3 id="_2">路径压缩<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>从find函数可以看出，从某个节点出发寻找根节点时，需要途径一系列的节点，而这些节点的上级都是同一个，因此可以在寻找的过程中将这些节点的上级都顺带修改了，简单说来就是将x到根节点路径上的所有点的pre（上级）都设为根节点。代码如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">                     </span><span class="c1">//查找结点 x的根结点 </span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">                     </span><span class="c1">//查找结点 x的根结点 </span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">pre</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">       </span><span class="c1">//递归出口：x的上级为 x本身，即 x为根结点        </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pre</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">pre</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span><span class="w">   </span><span class="c1">// 修改途径节点的根节点</span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="1">例1.合并集合</h2>
+<h2 id="1">例1.合并集合<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p><a href = "https://www.acwing.com/problem/content/838/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>一共有 n 个数，编号是 1∼n，最开始每个数各自在一个集合中。</p>
@@ -2224,62 +2302,24 @@
 <p>对于每个询问指令 <code>Q a b</code>，都要输出一个结果，如果 a 和 b 在同一集合内，则输出 <code>Yes</code>，否则输出 <code>No</code>。</p>
 <p>每个结果占一行。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤n,m≤105\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤n,m≤105</span><script type="math/tex">1≤n,m≤105</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>4 5
+<div class="highlight"><pre><span></span><code>4 5
 M 1 2
 M 3 4
 Q 1 2
 Q 1 3
 Q 3 4
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Yes
+<div class="highlight"><pre><span></span><code>Yes
 No
 Yes
-</code></pre></div></td></tr></table></div>
-<h3 id="_3">题解</h3>
+</code></pre></div>
+<h3 id="_3">题解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>并查集模板题</p>
-<h3 id="_4">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<h3 id="_4">代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
@@ -2311,9 +2351,9 @@ Yes
 
 
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="2">例2.连通块中点的数量</h2>
+<h2 id="2">例2.连通块中点的数量<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/description/839/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一个包含 n 个点（编号为 1∼n）的无向图，初始时图中没有边。</p>
@@ -2331,78 +2371,24 @@ Yes
 <p>对于每个询问指令 <code>Q2 a</code>，输出一个整数表示点 a 所在连通块中点的数量</p>
 <p>每个结果占一行。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤n,m≤105\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤n,m≤105</span><script type="math/tex">1≤n,m≤105</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>5 5
+<div class="highlight"><pre><span></span><code>5 5
 C 1 2
 Q1 1 2
 Q2 1
 C 2 5
 Q2 5
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Yes
+<div class="highlight"><pre><span></span><code>Yes
 2
 3
-</code></pre></div></td></tr></table></div>
-<h3 id="_5">题解</h3>
+</code></pre></div>
+<h3 id="_5">题解<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>C和Q1操作为并查集基本操作，Q2操作要求知道与a有相同根节点的节点所构成集合的大小，因此在每次join操作时更新集合大小即可</p>
-<h3 id="_6">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<h3 id="_6">代码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100010</span><span class="p">;</span><span class="w"></span>
@@ -2450,9 +2436,9 @@ Q2 5
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="3">例3.食物链</h2>
+<h2 id="3">例3.食物链<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.acwing.com/problem/content/242/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>动物王国中有三类动物 A,B,C，这三类动物的食物链构成了有趣的环形。</p>
@@ -2478,17 +2464,10 @@ Q2 5
 <p><strong>输出格式</strong></p>
 <p>只有一个整数，表示假话的数目。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex">\(1≤N≤50000,\)</span></p>
-<p><span class="arithmatex">\(0≤K≤100000\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">1≤N≤50000,</span><script type="math/tex">1≤N≤50000,</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">0≤K≤100000</span><script type="math/tex">0≤K≤100000</script></span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>100 7
+<div class="highlight"><pre><span></span><code>100 7
 1 101 1 
 2 1 2
 2 2 3 
@@ -2496,133 +2475,15 @@ Q2 5
 1 1 3 
 2 3 1 
 1 5 5
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>3
-</code></pre></div></td></tr></table></div>
-<h3 id="_7">题解</h3>
+<div class="highlight"><pre><span></span><code>3
+</code></pre></div>
+<h3 id="_7">题解<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>解法1:若x和y已经确定关系，则x和y已经有了相同的根节点，因此我们可以通过维护x和y到根节点的距离来判断他们之间的关系，对3取余后距离取值为0，1，2，分别对应<code>x和y同类</code>，<code>x吃y</code>，<code>y吃x</code>三种状态，若根节点相同，判断距离，若不相同，则合并即可</p>
 <p>解法2:扩展域并查集，开三倍空间，令<code>1-n</code>为同类域，<code>n+1-2n</code>为捕食域，<code>2n+1-3n</code>为天敌域，每次修改时同时维护三个域，例如x吃y，则在x的捕食域中加入y，在y的天敌域中加入x，同时在y的捕食域是捕食x的天敌域。</p>
-<h3 id="_8">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
-<span class="normal">  2</span>
-<span class="normal">  3</span>
-<span class="normal">  4</span>
-<span class="normal">  5</span>
-<span class="normal">  6</span>
-<span class="normal">  7</span>
-<span class="normal">  8</span>
-<span class="normal">  9</span>
-<span class="normal"> 10</span>
-<span class="normal"> 11</span>
-<span class="normal"> 12</span>
-<span class="normal"> 13</span>
-<span class="normal"> 14</span>
-<span class="normal"> 15</span>
-<span class="normal"> 16</span>
-<span class="normal"> 17</span>
-<span class="normal"> 18</span>
-<span class="normal"> 19</span>
-<span class="normal"> 20</span>
-<span class="normal"> 21</span>
-<span class="normal"> 22</span>
-<span class="normal"> 23</span>
-<span class="normal"> 24</span>
-<span class="normal"> 25</span>
-<span class="normal"> 26</span>
-<span class="normal"> 27</span>
-<span class="normal"> 28</span>
-<span class="normal"> 29</span>
-<span class="normal"> 30</span>
-<span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
-<span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
-<span class="normal"> 58</span>
-<span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
-<span class="normal"> 62</span>
-<span class="normal"> 63</span>
-<span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
-<span class="normal"> 70</span>
-<span class="normal"> 71</span>
-<span class="normal"> 72</span>
-<span class="normal"> 73</span>
-<span class="normal"> 74</span>
-<span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
-<span class="normal">119</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 解法1</span>
+<h3 id="_8">代码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// 解法1</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
@@ -2741,7 +2602,7 @@ Q2 5
 <span class="c1">//x是同类域.</span>
 <span class="c1">//x+n是捕食域</span>
 <span class="c1">//x+n+n是天敌域</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
 
               

@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -1864,12 +1880,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -1974,45 +2066,28 @@
 
   <h1>音频和视频</h1>
 
-<h2 id="audio"><code>&lt;audio&gt;</code>标签</h2>
+<h2 id="audio"><code>&lt;audio&gt;</code>标签<a class="headerlink" href="#audio" title="Permanent link">&para;</a></h2>
 <p>HTML <code>&lt;audio&gt;</code> 元素用于在文档中嵌入音频内容。 <code>&lt;audio&gt;</code> 元素可以包含一个或多个音频资源， 这些音频资源可以使用 src 属性或者<code>&lt;source&gt;</code> 元素来进行描述：浏览器将会选择最合适的一个来使用。也可以使用 MediaStream 将这个元素用于流式媒体。</p>
 <p>使用src属性播放
 示例：
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">audio</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">audio</span>
     <span class="na">controls</span>
     <span class="na">src</span><span class="o">=</span><span class="s">&quot;/audios/bgm.mp3&quot;</span><span class="p">&gt;</span>
         Your browser does not support the
         <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>audio<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> element.
 <span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></p>
 <p><code>&lt;audio&gt;</code> 与多个 <code>&lt;source&gt;</code> 元素
 这个例子包含了多个 <code>&lt;source&gt;</code> 元素。如果能够播放的话，浏览器就会试图去加载第一个 source 元素；如果不行，那就退而求其次去加载第二个。
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/audios/sound1&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/mpeg&quot;</span><span class="p">/&gt;</span>
     <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/audios/sound2&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/mpeg&quot;</span><span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="video"><code>&lt;video&gt;</code>标签</h2>
+</code></pre></div></p>
+<h2 id="video"><code>&lt;video&gt;</code>标签<a class="headerlink" href="#video" title="Permanent link">&para;</a></h2>
 <p>HTML <code>&lt;video&gt;</code> 元素 用于在 HTML 或者 XHTML 文档中嵌入媒体播放器，用于支持文档内的视频播放。你也可以将 <code>&lt;video&gt;</code> 标签用于音频内容，但是 <code>&lt;audio&gt;</code> 元素可能在用户体验上更合适。</p>
 <p>示例：
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span><span class="p">&gt;</span>
 
     <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/videos/video1.mp4&quot;</span>
             <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span><span class="p">&gt;</span>
@@ -2022,9 +2097,9 @@
 
     Sorry, your browser doesn&#39;t support embedded videos.
 <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="_1">来源</h2>
-<p>链接：<a href="https://www.acwing.com/file_system/file/content/whole/index/content/4078555/">https://www.acwing.com/file_system/file/content/whole/index/content/4078555/</a></p>
+</code></pre></div></p>
+<h2 id="_1">来源<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>链接：<a href="https://www.acwing.com/file_system/file/content/whole/index/content/4078555/"><a href="https://www.acwing.com/file_system/file/content/whole/index/content/4078555/">https://www.acwing.com/file_system/file/content/whole/index/content/4078555/</a></a></p>
 <p>来源：AcWing</p>
 
               

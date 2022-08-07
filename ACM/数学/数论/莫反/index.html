@@ -286,6 +286,22 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-tabs__link">
+        MarkDown扩展语法
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../../../%E5%85%B3%E4%BA%8E/%E4%BD%9C%E8%80%85/" class="md-tabs__link">
         about
       </a>
@@ -2001,12 +2017,88 @@
       
       
         <label class="md-nav__link" for="__nav_5">
+          MarkDown扩展语法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MarkDown扩展语法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MarkDown扩展语法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MarkDown/%E8%AD%A6%E5%91%8A%E6%A1%86/" class="md-nav__link">
+        警告框
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MarkDown/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        代码块扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MarkDown/%E5%85%B6%E4%BB%96/" class="md-nav__link">
+        其他扩展语法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
           about
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="about" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           about
         </label>
@@ -2246,37 +2338,19 @@
 
   <h1>积性函数与莫比乌斯反演</h1>
 
-<h2 id="_1">定义</h2>
-<p>对于函数<span class="arithmatex">\(f(x)\)</span> ，若满足<span class="arithmatex">\((p, q) = 1\)</span>，且<span class="arithmatex">\(f(p \times q) = f(p) \times f(q)\)</span>，则称<span class="arithmatex">\(f(x)\)</span>为完全积性函数</p>
+<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>对于函数<span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> ，若满足<span class="arithmatex"><span class="MathJax_Preview">(p, q) = 1</span><script type="math/tex">(p, q) = 1</script></span>，且<span class="arithmatex"><span class="MathJax_Preview">f(p \times q) = f(p) \times f(q)</span><script type="math/tex">f(p \times q) = f(p) \times f(q)</script></span>，则称<span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span>为完全积性函数</p>
 <hr />
-<h2 id="_2">常见积性函数</h2>
+<h2 id="_2">常见积性函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>正因子个数函数：<span class="arithmatex">\(d(x)\)</span></li>
-<li>欧拉函数(1 - n内与n互质的数的个数)：<span class="arithmatex">\(phi(x)\)</span></li>
-<li>莫比乌斯函数：<span class="arithmatex">\(u(x)\)</span></li>
+<li>正因子个数函数：<span class="arithmatex"><span class="MathJax_Preview">d(x)</span><script type="math/tex">d(x)</script></span></li>
+<li>欧拉函数(1 - n内与n互质的数的个数)：<span class="arithmatex"><span class="MathJax_Preview">phi(x)</span><script type="math/tex">phi(x)</script></span></li>
+<li>莫比乌斯函数：<span class="arithmatex"><span class="MathJax_Preview">u(x)</span><script type="math/tex">u(x)</script></span></li>
 </ul>
 <hr />
-<h2 id="_3">线性求积性函数模板题</h2>
-<h3 id="dx">线性求正因子个数d(x)</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<h2 id="_3">线性求积性函数模板题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="dx">线性求正因子个数d(x)<a class="headerlink" href="#dx" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">vis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2295,23 +2369,9 @@
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h3 id="x">线性求欧拉函数Φ(x)</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+</code></pre></div>
+<h3 id="x">线性求欧拉函数Φ(x)<a class="headerlink" href="#x" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="n">vis</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="n">phi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
@@ -2326,34 +2386,27 @@
 <span class="w">        </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div></td></tr></table></div>
-<h3 id="x_1">线性求莫比乌斯函数μ(x)</h3>
-<div class="arithmatex">\[
+</code></pre></div>
+<h3 id="x_1">线性求莫比乌斯函数μ(x)<a class="headerlink" href="#x_1" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 u(x) = 
 \begin{cases}
     1, x = 1\\
     (-1)^k, x = a_1^{p1}\times a_2^{p2}\times a_3^{p3} ... \times a_k^{pk}\\
     0, 其他情况\\
 \end{cases}
-\]</div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"></span>
+</div>
+<script type="math/tex; mode=display">
+u(x) = 
+\begin{cases}
+    1, x = 1\\
+    (-1)^k, x = a_1^{p1}\times a_2^{p2}\times a_3^{p3} ... \times a_k^{pk}\\
+    0, 其他情况\\
+\end{cases}
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
@@ -2371,85 +2424,54 @@ u(x) =
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="_4">莫比乌斯反演</h2>
-<h3 id="_5">使用到的莫比乌斯函数的性质</h3>
-<div class="arithmatex">\[
+<h2 id="_4">莫比乌斯反演<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">使用到的莫比乌斯函数的性质<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \sum_{d|n}u(d) = 
 \begin{cases}
     1, n = 1\\
     0, n \neq 1\\
 \end{cases}
-\]</div>
-<p><strong>简单证明：</strong></p>
-<p>假设<span class="arithmatex">\(n = a_1^{p1}\times a_2^{p2} ... \times a_k^{pk} (a1,a2...ak均为质因子)\)</span></p>
-<p>令<span class="arithmatex">\(n' = a_1\times a_2 ... \times a_k\)</span></p>
-<p>则<span class="arithmatex">\(\sum_{d|n}u(d) = \sum_{d|n'}u(d) = \sum_{i}^{k} C_k^i * (-1)^i = 0\)</span></p>
-<p>当n=1时,有<span class="arithmatex">\(\sum_{d|1}u(d)=u(1)=1\)</span></p>
-<h3 id="_6">莫比乌斯反演</h3>
+</div>
+<script type="math/tex; mode=display">
+\sum_{d|n}u(d) = 
+\begin{cases}
+    1, n = 1\\
+    0, n \neq 1\\
+\end{cases}
+</script>
+</div>
+<div class="admonition 证明">
+<p class="admonition-title">证明</p>
+<p>假设<span class="arithmatex"><span class="MathJax_Preview">n = a_1^{p1}\times a_2^{p2} ... \times a_k^{pk} (a1,a2...ak均为质因子)</span><script type="math/tex">n = a_1^{p1}\times a_2^{p2} ... \times a_k^{pk} (a1,a2...ak均为质因子)</script></span></p>
+<p>令<span class="arithmatex"><span class="MathJax_Preview">n' = a_1\times a_2 ... \times a_k</span><script type="math/tex">n' = a_1\times a_2 ... \times a_k</script></span></p>
+<p>则<span class="arithmatex"><span class="MathJax_Preview">\sum_{d|n}u(d) = \sum_{d|n'}u(d) = \sum_{i}^{k} C_k^i * (-1)^i = 0</span><script type="math/tex">\sum_{d|n}u(d) = \sum_{d|n'}u(d) = \sum_{i}^{k} C_k^i * (-1)^i = 0</script></span></p>
+<p>当n=1时,有<span class="arithmatex"><span class="MathJax_Preview">\sum_{d|1}u(d)=u(1)=1</span><script type="math/tex">\sum_{d|1}u(d)=u(1)=1</script></span></p>
+</div>
+<h3 id="_6">莫比乌斯反演<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
-<li>若<span class="arithmatex">\(F(n) = \sum_{d|n}f(d)\)</span>，那么<span class="arithmatex">\(f(n) = \sum_{d|n}u(d)F(\frac{n}{d})\)</span></li>
-<li>若<span class="arithmatex">\(F(n) = \sum_{n|d}f(d)\)</span>，那么<span class="arithmatex">\(f(n) = \sum_{n|d}u(\frac{d}{n})F(d)\)</span> </li>
+<li>若<span class="arithmatex"><span class="MathJax_Preview">F(n) = \sum_{d|n}f(d)</span><script type="math/tex">F(n) = \sum_{d|n}f(d)</script></span>，那么<span class="arithmatex"><span class="MathJax_Preview">f(n) = \sum_{d|n}u(d)F(\frac{n}{d})</span><script type="math/tex">f(n) = \sum_{d|n}u(d)F(\frac{n}{d})</script></span></li>
+<li>若<span class="arithmatex"><span class="MathJax_Preview">F(n) = \sum_{n|d}f(d)</span><script type="math/tex">F(n) = \sum_{n|d}f(d)</script></span>，那么<span class="arithmatex"><span class="MathJax_Preview">f(n) = \sum_{n|d}u(\frac{d}{n})F(d)</span><script type="math/tex">f(n) = \sum_{n|d}u(\frac{d}{n})F(d)</script></span> </li>
 </ul>
-<p><strong>一式证明：</strong></p>
+<div class="admonition 一式证明">
+<p class="admonition-title">一式证明</p>
 <p><img alt="" src="../../../image/1.png" /></p>
-<p><strong>二式证明：</strong></p>
+</div>
+<div class="admonition 二式证明">
+<p class="admonition-title">二式证明</p>
 <p><img alt="" src="../../../image/2.png" /></p>
+</div>
 <hr />
-<h2 id="1zap-queries">例1.ZAP-Queries</h2>
+<h2 id="1zap-queries">例1.ZAP-Queries<a class="headerlink" href="#1zap-queries" title="Permanent link">&para;</a></h2>
 <p><strong>题目意思可化简为：</strong></p>
-<p><span class="arithmatex">\(求\sum_{x = 1}^{a}\sum_{y=1}^{b}[gcd(x, y) == 1]\)</span></p>
-<h3 id="_7">题解</h3>
-<p>设<span class="arithmatex">\(f(n)\)</span>为以上式子的值，我们假设<span class="arithmatex">\(F(n)\)</span>是在此范围内<span class="arithmatex">\(gcd(x, y)\)</span>为<span class="arithmatex">\(n或n的倍数\)</span>的个数，则有<span class="arithmatex">\(F(n) = \sum_{n|d}f(d)\)</span>,已知此时<span class="arithmatex">\(F(n)=\lfloor\frac{a}{n}\rfloor\times\lfloor\frac{b}{n}\rfloor\)</span>,均向下取整，由莫比乌斯反演可以得出<span class="arithmatex">\(f(n)=\sum_{n|d}u(\frac{d}{n})F(d)\)</span>，答案继为<span class="arithmatex">\(f(n)\)</span>,此时我们枚举<span class="arithmatex">\(\frac{d}{n}\)</span>的值，令其为<span class="arithmatex">\(t\)</span>，则<span class="arithmatex">\(d=t\times n\)</span>，原式可化为<span class="arithmatex">\(f(n)=\sum_{n|d}u(\frac{d}{n})\times \frac{a}{d}\times \frac{b}{d}=\sum_{t=1}^{min(a, b)}u(t)\times \frac{a}{nt}\times \frac{b}{nt}\)</span>，最后利用数论分块进行优化即可</p>
-<h3 id="_8">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<p><span class="arithmatex"><span class="MathJax_Preview">求\sum_{x = 1}^{a}\sum_{y=1}^{b}[gcd(x, y) == 1]</span><script type="math/tex">求\sum_{x = 1}^{a}\sum_{y=1}^{b}[gcd(x, y) == 1]</script></span></p>
+<h3 id="_7">题解<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>设<span class="arithmatex"><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>为以上式子的值，我们假设<span class="arithmatex"><span class="MathJax_Preview">F(n)</span><script type="math/tex">F(n)</script></span>是在此范围内<span class="arithmatex"><span class="MathJax_Preview">gcd(x, y)</span><script type="math/tex">gcd(x, y)</script></span>为<span class="arithmatex"><span class="MathJax_Preview">n或n的倍数</span><script type="math/tex">n或n的倍数</script></span>的个数，则有<span class="arithmatex"><span class="MathJax_Preview">F(n) = \sum_{n|d}f(d)</span><script type="math/tex">F(n) = \sum_{n|d}f(d)</script></span>,已知此时<span class="arithmatex"><span class="MathJax_Preview">F(n)=\lfloor\frac{a}{n}\rfloor\times\lfloor\frac{b}{n}\rfloor</span><script type="math/tex">F(n)=\lfloor\frac{a}{n}\rfloor\times\lfloor\frac{b}{n}\rfloor</script></span>,均向下取整，由莫比乌斯反演可以得出<span class="arithmatex"><span class="MathJax_Preview">f(n)=\sum_{n|d}u(\frac{d}{n})F(d)</span><script type="math/tex">f(n)=\sum_{n|d}u(\frac{d}{n})F(d)</script></span>，答案继为<span class="arithmatex"><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>,此时我们枚举<span class="arithmatex"><span class="MathJax_Preview">\frac{d}{n}</span><script type="math/tex">\frac{d}{n}</script></span>的值，令其为<span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>，则<span class="arithmatex"><span class="MathJax_Preview">d=t\times n</span><script type="math/tex">d=t\times n</script></span>，原式可化为<span class="arithmatex"><span class="MathJax_Preview">f(n)=\sum_{n|d}u(\frac{d}{n})\times \frac{a}{d}\times \frac{b}{d}=\sum_{t=1}^{min(a, b)}u(t)\times \frac{a}{nt}\times \frac{b}{nt}</span><script type="math/tex">f(n)=\sum_{n|d}u(\frac{d}{n})\times \frac{a}{d}\times \frac{b}{d}=\sum_{t=1}^{min(a, b)}u(t)\times \frac{a}{nt}\times \frac{b}{nt}</script></span>，最后利用数论分块进行优化即可</p>
+<h3 id="_8">代码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="cp">#define int long long</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5e4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
@@ -2496,88 +2518,36 @@ u(x) =
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
-<h2 id="2yygcd">例2.YY的GCD</h2>
+</code></pre></div>
+<h2 id="2yygcd">例2.YY的GCD<a class="headerlink" href="#2yygcd" title="Permanent link">&para;</a></h2>
 <p><strong>题目可简化为：</strong></p>
-<p><span class="arithmatex">\(求\sum_{P}^{P\le min(n, m)}\sum_{x = 1}^{N}\sum_{y = 1}^{M}[gcd(x, y) == P]\)</span></p>
-<h3 id="_9">题解</h3>
-<p>若想化为上一题的形式，我们需要改变枚举变量，将枚举<span class="arithmatex">\(x, y\)</span>改变为枚举<span class="arithmatex">\(x,y\)</span>的倍数，即后面两个<span class="arithmatex">\(\sum\)</span>变为<span class="arithmatex">\(\sum_{x=1}^{\frac{N}{P}}\sum_{y=1}^{\frac{M}{P}}[gcd(x,y)==1]\)</span>，同上题一样的套路进行化简，</p>
-<p><span class="arithmatex">\(f(n)=\sum_{n|d}u(\frac{d}{n})\times\lfloor\frac{N}{Pd}\rfloor\times \lfloor\frac{M}{Pd}\rfloor\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">求\sum_{P}^{P\le min(n, m)}\sum_{x = 1}^{N}\sum_{y = 1}^{M}[gcd(x, y) == P]</span><script type="math/tex">求\sum_{P}^{P\le min(n, m)}\sum_{x = 1}^{N}\sum_{y = 1}^{M}[gcd(x, y) == P]</script></span></p>
+<h3 id="_9">题解<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>若想化为上一题的形式，我们需要改变枚举变量，将枚举<span class="arithmatex"><span class="MathJax_Preview">x, y</span><script type="math/tex">x, y</script></span>改变为枚举<span class="arithmatex"><span class="MathJax_Preview">x,y</span><script type="math/tex">x,y</script></span>的倍数，即后面两个<span class="arithmatex"><span class="MathJax_Preview">\sum</span><script type="math/tex">\sum</script></span>变为<span class="arithmatex"><span class="MathJax_Preview">\sum_{x=1}^{\frac{N}{P}}\sum_{y=1}^{\frac{M}{P}}[gcd(x,y)==1]</span><script type="math/tex">\sum_{x=1}^{\frac{N}{P}}\sum_{y=1}^{\frac{M}{P}}[gcd(x,y)==1]</script></span>，同上题一样的套路进行化简，</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">f(n)=\sum_{n|d}u(\frac{d}{n})\times\lfloor\frac{N}{Pd}\rfloor\times \lfloor\frac{M}{Pd}\rfloor</span><script type="math/tex">f(n)=\sum_{n|d}u(\frac{d}{n})\times\lfloor\frac{N}{Pd}\rfloor\times \lfloor\frac{M}{Pd}\rfloor</script></span></p>
 <p>我们需要的是</p>
-<p><span class="arithmatex">\(res = \sum_{P}^{P\le min(N, M)}f(1)=\sum_{P}^{P\le min(N,M)}\sum_{d}u(d)\times\lfloor\frac{N}{Pd}\rfloor\times\lfloor\frac{M}{Pd}\rfloor\)</span></p>
-<p>我们发现若直接计算只能得到一半的分数，于是考虑优化，由于<span class="arithmatex">\(Pd\)</span>十分丑陋，将<span class="arithmatex">\(Pd\)</span>设为<span class="arithmatex">\(t\)</span>，枚举<span class="arithmatex">\(d\)</span>变为枚举<span class="arithmatex">\(t\)</span>，并互换枚举顺序，此时<span class="arithmatex">\(P\)</span>的范围变成了<span class="arithmatex">\(P|t\)</span></p>
-<p><span class="arithmatex">\(res = \sum_{t=1}^{min(N,M)}\sum_{P|t}^{P∈prime}u(\frac{t}{P})\times\lfloor\frac{N}{t}\rfloor\times\lfloor\frac{M}{t}\rfloor=\sum_{t=1}^{min(N,M)}\lfloor\frac{N}{t}\rfloor\times\lfloor\frac{M}{t}\rfloor\sum_{P|t}^{P∈prime}u(\frac{t}{P})\)</span></p>
-<p>对于<span class="arithmatex">\(\sum_{P|t}^{P∈prime}u(\frac{t}{P})\)</span>，我们需要预处理他的前缀和，在配合整除分块，就能过了</p>
-<p>接下来讲讲怎么求前缀和，考虑线性筛，我们设其为<span class="arithmatex">\(f(n)\)</span></p>
-<p>在线性筛的过程中，若<span class="arithmatex">\(n\)</span>为<span class="arithmatex">\(prime\)</span>，易得<span class="arithmatex">\(f(n)=u(1)=1\)</span></p>
-<p>若<span class="arithmatex">\(n\)</span>非质数，考虑<span class="arithmatex">\(n=i\times p\)</span></p>
-<p>若<span class="arithmatex">\(i\%p=0\)</span>时</p>
-<p><span class="arithmatex">\(i=p_1^{a1}\times p_{2}^{a2}...\times p_{k}^{ak}\)</span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">res = \sum_{P}^{P\le min(N, M)}f(1)=\sum_{P}^{P\le min(N,M)}\sum_{d}u(d)\times\lfloor\frac{N}{Pd}\rfloor\times\lfloor\frac{M}{Pd}\rfloor</span><script type="math/tex">res = \sum_{P}^{P\le min(N, M)}f(1)=\sum_{P}^{P\le min(N,M)}\sum_{d}u(d)\times\lfloor\frac{N}{Pd}\rfloor\times\lfloor\frac{M}{Pd}\rfloor</script></span></p>
+<p>我们发现若直接计算只能得到一半的分数，于是考虑优化，由于<span class="arithmatex"><span class="MathJax_Preview">Pd</span><script type="math/tex">Pd</script></span>十分丑陋，将<span class="arithmatex"><span class="MathJax_Preview">Pd</span><script type="math/tex">Pd</script></span>设为<span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>，枚举<span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>变为枚举<span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>，并互换枚举顺序，此时<span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>的范围变成了<span class="arithmatex"><span class="MathJax_Preview">P|t</span><script type="math/tex">P|t</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">res = \sum_{t=1}^{min(N,M)}\sum_{P|t}^{P∈prime}u(\frac{t}{P})\times\lfloor\frac{N}{t}\rfloor\times\lfloor\frac{M}{t}\rfloor=\sum_{t=1}^{min(N,M)}\lfloor\frac{N}{t}\rfloor\times\lfloor\frac{M}{t}\rfloor\sum_{P|t}^{P∈prime}u(\frac{t}{P})</span><script type="math/tex">res = \sum_{t=1}^{min(N,M)}\sum_{P|t}^{P∈prime}u(\frac{t}{P})\times\lfloor\frac{N}{t}\rfloor\times\lfloor\frac{M}{t}\rfloor=\sum_{t=1}^{min(N,M)}\lfloor\frac{N}{t}\rfloor\times\lfloor\frac{M}{t}\rfloor\sum_{P|t}^{P∈prime}u(\frac{t}{P})</script></span></p>
+<p>对于<span class="arithmatex"><span class="MathJax_Preview">\sum_{P|t}^{P∈prime}u(\frac{t}{P})</span><script type="math/tex">\sum_{P|t}^{P∈prime}u(\frac{t}{P})</script></span>，我们需要预处理他的前缀和，在配合整除分块，就能过了</p>
+<p>接下来讲讲怎么求前缀和，考虑线性筛，我们设其为<span class="arithmatex"><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span></p>
+<p>在线性筛的过程中，若<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>为<span class="arithmatex"><span class="MathJax_Preview">prime</span><script type="math/tex">prime</script></span>，易得<span class="arithmatex"><span class="MathJax_Preview">f(n)=u(1)=1</span><script type="math/tex">f(n)=u(1)=1</script></span></p>
+<p>若<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>非质数，考虑<span class="arithmatex"><span class="MathJax_Preview">n=i\times p</span><script type="math/tex">n=i\times p</script></span></p>
+<p>若<span class="arithmatex"><span class="MathJax_Preview">i\%p=0</span><script type="math/tex">i\%p=0</script></span>时</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">i=p_1^{a1}\times p_{2}^{a2}...\times p_{k}^{ak}</span><script type="math/tex">i=p_1^{a1}\times p_{2}^{a2}...\times p_{k}^{ak}</script></span></p>
 <ul>
-<li>若<span class="arithmatex">\(a1,a2...ak\)</span>均为1，则我们发现仅当<span class="arithmatex">\(P\)</span>取p时，<span class="arithmatex">\(u(\frac{n}{p})=u(i)\)</span>不为0</li>
-<li>若存在某个<span class="arithmatex">\(a_k\ge2\)</span>，则<span class="arithmatex">\(P\)</span>无论取谁，都存在一个<span class="arithmatex">\(a_i\ge2\)</span>，<span class="arithmatex">\(u(\frac{n}{p})=0=u(i)\)</span></li>
+<li>若<span class="arithmatex"><span class="MathJax_Preview">a1,a2...ak</span><script type="math/tex">a1,a2...ak</script></span>均为1，则我们发现仅当<span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>取p时，<span class="arithmatex"><span class="MathJax_Preview">u(\frac{n}{p})=u(i)</span><script type="math/tex">u(\frac{n}{p})=u(i)</script></span>不为0</li>
+<li>若存在某个<span class="arithmatex"><span class="MathJax_Preview">a_k\ge2</span><script type="math/tex">a_k\ge2</script></span>，则<span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>无论取谁，都存在一个<span class="arithmatex"><span class="MathJax_Preview">a_i\ge2</span><script type="math/tex">a_i\ge2</script></span>，<span class="arithmatex"><span class="MathJax_Preview">u(\frac{n}{p})=0=u(i)</span><script type="math/tex">u(\frac{n}{p})=0=u(i)</script></span></li>
 </ul>
-<p>所以<span class="arithmatex">\(f(n)=u(i)\)</span></p>
-<p>若<span class="arithmatex">\(i\%p\ne0\)</span>时</p>
-<p><span class="arithmatex">\(f(i)=\sum u(\frac{i}{P}),f(n)=\sum u(\frac{ip}{P})\)</span></p>
-<p>而<span class="arithmatex">\(u(\frac{ip}{P})=u(\frac{i}{P})\times(-1)\)</span></p>
-<p>于是我们发现除了<span class="arithmatex">\(p\)</span>，其他都在<span class="arithmatex">\(f(i)\)</span>中出现过类似的项</p>
-<p>所以<span class="arithmatex">\(f(n)=-f(i)+u(\frac{ip}{p})=-f(i)+u(i)\)</span></p>
-<p>到这里就能线性退出<span class="arithmatex">\(f(x)\)</span>的每一项，最后处理出前缀和就好啦，注意这题若<code>#define int long long</code>会超时一个点</p>
-<h3 id="_10">代码</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<p>所以<span class="arithmatex"><span class="MathJax_Preview">f(n)=u(i)</span><script type="math/tex">f(n)=u(i)</script></span></p>
+<p>若<span class="arithmatex"><span class="MathJax_Preview">i\%p\ne0</span><script type="math/tex">i\%p\ne0</script></span>时</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">f(i)=\sum u(\frac{i}{P}),f(n)=\sum u(\frac{ip}{P})</span><script type="math/tex">f(i)=\sum u(\frac{i}{P}),f(n)=\sum u(\frac{ip}{P})</script></span></p>
+<p>而<span class="arithmatex"><span class="MathJax_Preview">u(\frac{ip}{P})=u(\frac{i}{P})\times(-1)</span><script type="math/tex">u(\frac{ip}{P})=u(\frac{i}{P})\times(-1)</script></span></p>
+<p>于是我们发现除了<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>，其他都在<span class="arithmatex"><span class="MathJax_Preview">f(i)</span><script type="math/tex">f(i)</script></span>中出现过类似的项</p>
+<p>所以<span class="arithmatex"><span class="MathJax_Preview">f(n)=-f(i)+u(\frac{ip}{p})=-f(i)+u(i)</span><script type="math/tex">f(n)=-f(i)+u(\frac{ip}{p})=-f(i)+u(i)</script></span></p>
+<p>到这里就能线性退出<span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span>的每一项，最后处理出前缀和就好啦，注意这题若<code>#define int long long</code>会超时一个点</p>
+<h3 id="_10">代码<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">LL</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e7</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
@@ -2630,13 +2600,13 @@ u(x) =
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <hr />
-<h2 id="_11">补充知识</h2>
-<h3 id="_12">欧拉函数与莫比乌斯函数的关系</h3>
-<p><span class="arithmatex">\(phi(x)=\sum_{d|x}u(\frac{x}{d})d\)</span></p>
-<h3 id="gcdi-j1">[gcd(i, j)=1]的替换</h3>
-<p><span class="arithmatex">\([gcd(i,j)=1]=\sum_{d|gcd(i,j)}u(d)\)</span></p>
+<h2 id="_11">补充知识<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">欧拉函数与莫比乌斯函数的关系<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex"><span class="MathJax_Preview">phi(x)=\sum_{d|x}u(\frac{x}{d})d</span><script type="math/tex">phi(x)=\sum_{d|x}u(\frac{x}{d})d</script></span></p>
+<h3 id="gcdi-j1">[gcd(i, j)=1]的替换<a class="headerlink" href="#gcdi-j1" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex"><span class="MathJax_Preview">[gcd(i,j)=1]=\sum_{d|gcd(i,j)}u(d)</span><script type="math/tex">[gcd(i,j)=1]=\sum_{d|gcd(i,j)}u(d)</script></span></p>
 <p>在此感谢<a href="https://blog.csdn.net/ShadyPi/article/details/80295368">ShadyPi的博客</a></p>
 
               
