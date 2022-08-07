@@ -484,8 +484,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E6%96%AF%E7%89%B9%E6%8B%89%E6%95%B0/" class="md-nav__link">
-        斯特拉数
+      <a href="../../%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/" class="md-nav__link">
+        斯特林数
       </a>
     </li>
   
@@ -652,16 +652,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    经典例题
+  <a href="#1p4861" class="md-nav__link">
+    例1.洛谷P4861 按钮
   </a>
   
-    <nav class="md-nav" aria-label="经典例题">
+    <nav class="md-nav" aria-label="例1.洛谷P4861 按钮">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#p4861" class="md-nav__link">
-    洛谷P4861 按钮
+  <a href="#_6" class="md-nav__link">
+    题解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    代码
   </a>
   
 </li>
@@ -2043,16 +2050,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    经典例题
+  <a href="#1p4861" class="md-nav__link">
+    例1.洛谷P4861 按钮
   </a>
   
-    <nav class="md-nav" aria-label="经典例题">
+    <nav class="md-nav" aria-label="例1.洛谷P4861 按钮">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#p4861" class="md-nav__link">
-    洛谷P4861 按钮
+  <a href="#_6" class="md-nav__link">
+    题解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    代码
   </a>
   
 </li>
@@ -2083,14 +2097,14 @@
   <h1>BSGS和扩展BSGS</h1>
 
 <h2 id="_1">概述</h2>
-<p>主要用于解决<span class="arithmatex">\(an=b(mod \ p)\)</span> 问题，求解最小非负整数n，使其满足左式，普通BSGS求解a与p互质的情况，扩展BSGS可求解不互质情况</p>
+<p>主要用于解决<span class="arithmatex">\(a^n=b(mod \ p)\)</span> 问题，求解最小非负整数n，使其满足左式，普通BSGS求解<span class="arithmatex">\(a\)</span>与<span class="arithmatex">\(p\)</span>互质的情况，扩展BSGS可求解不互质情况</p>
 <hr />
 <h2 id="bsgs">普通BSGS</h2>
 <h3 id="_2">解题步骤</h3>
-<p>1.取m=ceil(sqrt(p))（向上取整），若解存在，可令n=i*m-j，即数对(i,j)存在</p>
-<p>2.<span class="arithmatex">\(an = b ( mod \ p ) -&gt; ai*m-j = b( mod \ p ) -&gt; ai*m = b*aj ( mod \ p )\)</span></p>
-<p>3.再0-m范围内枚举b*aj的值，并用hash表存储j</p>
-<p>4.在1-m范围内枚举ai<em>m的值，在hash表中查找，若找到，则输出i</em>m-j，反之无答案</p>
+<p>1.取<span class="arithmatex">\(m=ceil(sqrt(p))\)</span>(向上取整)，若解存在，可令<span class="arithmatex">\(n=i*m-j\)</span>，即数对<span class="arithmatex">\((i,j)\)</span>存在</p>
+<p>2.<span class="arithmatex">\(a^n = b ( mod \ p ) =&gt; a^{i*m-j} = b( mod \ p ) -&gt; a_{i*m} = b*aj ( mod \ p )\)</span></p>
+<p>3.在<span class="arithmatex">\(0-m\)</span>范围内枚举<span class="arithmatex">\(b*aj\)</span>的值，并用hash表存储<span class="arithmatex">\(j\)</span></p>
+<p>4.在<span class="arithmatex">\(1-m\)</span>范围内枚举<span class="arithmatex">\(a_i*m\)</span>的值，在hash表中查找，若找到，则输出<span class="arithmatex">\(i*m-j\)</span>，反之无答案</p>
 <h3 id="_3">代码模板</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2215,9 +2229,9 @@
 <hr />
 <h2 id="bsgs_1">扩展BSGS</h2>
 <h3 id="_4">解题步骤</h3>
-<p>1.当a与p互质时，套用普通BSGS即可</p>
-<p>2.当a与p不互质时，设gcd为a与p的最大公约数，对于方程an=b ( mod p ) ，一定有 a/gcd * an-1 = b/gcd ( mod p/gcd )存在，因此若b不为gcd的倍数，则方程无解</p>
-<p>3.对于新方程 令 b/ gcd /( a / gcd) = b’ , p/gcd = p’ ,  用逆元处理b’ , 递归求解即可</p>
+<p>1.当<span class="arithmatex">\(a\)</span>与<span class="arithmatex">\(p\)</span>互质时，套用普通BSGS即可</p>
+<p>2.当<span class="arithmatex">\(a\)</span>与<span class="arithmatex">\(p\)</span>不互质时，设<span class="arithmatex">\(gcd\)</span>为<span class="arithmatex">\(a\)</span>与<span class="arithmatex">\(p\)</span>的最大公约数，对于方程<span class="arithmatex">\(a^n=b ( mod \ p ) <span class="arithmatex">(，一定有 <span class="arithmatex">\(a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )\)</span>存在，因此若\)</span>b\)</span>不为<span class="arithmatex">\(gcd\)</span>的倍数，则方程无解</p>
+<p>3.对于新方程 令 <span class="arithmatex">\(b/ gcd /( a / gcd) = b’\)</span>, <span class="arithmatex">\(p/gcd = p’\)</span> ,  用逆元处理<span class="arithmatex">\(b’\)</span> , 递归求解即可</p>
 <h3 id="_5">代码模板</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2398,8 +2412,7 @@
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="_6">经典例题</h2>
-<h3 id="p4861">洛谷P4861 按钮</h3>
+<h2 id="1p4861">例1.洛谷P4861 按钮</h2>
 <p><a href="https://www.luogu.com.cn/problem/P4861">题目入口</a></p>
 <p><strong>题目描述</strong></p>
 <p>Ada被关在了一个房间里。房间的铁门上有一个按钮，还有一个显示屏显示着“1”。
@@ -2422,9 +2435,9 @@
 <strong>输出样例2</strong>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Let&#39;s go Blue Jays!
 </code></pre></div></td></tr></table></div></p>
-<p><strong>思路</strong></p>
-<p>若最后答案存在，则有两种表达方式，kn和m*x+1，于是可以列出方程，kn = 1 ( mod m ) ,套用由于答案不能为0，于是特判一下原模板中输出0的情况即可</p>
-<p><strong>代码</strong></p>
+<h3 id="_6">题解</h3>
+<p>若最后答案存在，则有两种表达方式，<span class="arithmatex">\(k^n\)</span>和<span class="arithmatex">\(m*x+1\)</span>，于是可以列出方程，<span class="arithmatex">\(k^n = 1 ( mod\ m )\)</span> ,套用由于答案不能为<span class="arithmatex">\(0\)</span>，于是特判一下原模板中输出<span class="arithmatex">\(0\)</span>的情况即可</p>
+<h3 id="_7">代码</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>

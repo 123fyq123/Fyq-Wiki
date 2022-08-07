@@ -17,7 +17,7 @@
     
     
       
-        <title>斯特拉数 - FYQ Wiki</title>
+        <title>斯特林数 - FYQ Wiki</title>
       
     
     
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              斯特拉数
+              斯特林数
             
           </span>
         </div>
@@ -494,12 +494,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          斯特拉数
+          斯特林数
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        斯特拉数
+        斯特林数
       </a>
       
         
@@ -524,8 +524,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nk" class="md-nav__link">
-    求将n个互不相同的球分成k个圆排列的方案数
+  <a href="#_2" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码模板
   </a>
   
 </li>
@@ -536,7 +550,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     第二类斯特林数
   </a>
   
@@ -544,8 +558,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nk_1" class="md-nav__link">
-    求将n个不同的球分成k组的方案数
+  <a href="#_6" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    代码模板
   </a>
   
 </li>
@@ -1949,8 +1977,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nk" class="md-nav__link">
-    求将n个互不相同的球分成k个圆排列的方案数
+  <a href="#_2" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码模板
   </a>
   
 </li>
@@ -1961,7 +2003,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     第二类斯特林数
   </a>
   
@@ -1969,8 +2011,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nk_1" class="md-nav__link">
-    求将n个不同的球分成k组的方案数
+  <a href="#_6" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    代码模板
   </a>
   
 </li>
@@ -1992,19 +2048,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/123fyq123/Fyq-Wiki/edit/master/docs/ACM/数学/组合数学/斯特拉数.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/123fyq123/Fyq-Wiki/edit/master/docs/ACM/数学/组合数学/斯特林数.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-  <h1>斯特拉数</h1>
+  <h1>斯特林数</h1>
 
 <h2 id="_1">第一类斯特林数</h2>
-<h3 id="nk">求将n个互不相同的球分成k个圆排列的方案数</h3>
-<p><strong>思路</strong></p>
-<p>s[i][j]表示将i个球分成j个圆排列的方案数，当放入第i个球时，可以将其额外新增一个原排列，此时方案数位s[i-1][j-1]，也可以将其插入到前i-1个数的空隙中，由于是圆排列，x个球就有x个空，于是新增了（i-1)*s[i-1][j]种方案。</p>
-<p><strong>代码</strong>
+<h3 id="_2">概述</h3>
+<p>求将n个互不相同的球分成k个圆排列的方案数</p>
+<h3 id="_3">思路</h3>
+<p><span class="arithmatex">\(s[i][j]\)</span>表示将<span class="arithmatex">\(i\)</span>个球分成<span class="arithmatex">\(j\)</span>个圆排列的方案数，当放入第<span class="arithmatex">\(i\)</span>个球时，可以将其额外新增一个原排列，此时方案数位<span class="arithmatex">\(s[i-1][j-1]\)</span>，也可以将其插入到前<span class="arithmatex">\(i-1\)</span>个数的空隙中，由于是圆排列，<span class="arithmatex">\(x\)</span>个球就有<span class="arithmatex">\(x\)</span>个空，于是新增了<span class="arithmatex">\((i-1)*s[i-1][j]\)</span>种方案。</p>
+<h3 id="_4">代码模板</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2046,13 +2103,14 @@
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="_2">第二类斯特林数</h2>
-<h3 id="nk_1">求将n个不同的球分成k组的方案数</h3>
-<p><strong>思路</strong></p>
-<p>S[i][j][表示将i个球分成j组的方案数，当放入第i个球时，同第一类斯特林数，可以选择额外生成一个原排列，则方案数为S[i-1][j-1]，也可以将其插入到前j组中，方案数为j*S[i-1][j]。</p>
-<p><strong>代码</strong>
+<h2 id="_5">第二类斯特林数</h2>
+<h3 id="_6">概述</h3>
+<p>求将n个不同的球分成k组的方案数</p>
+<h3 id="_7">思路</h3>
+<p><span class="arithmatex">\(S[i][j]\)</span>表示将<span class="arithmatex">\(i\)</span>个球分成<span class="arithmatex">\(j\)</span>组的方案数，当放入第<span class="arithmatex">\(i\)</span>个球时，同第一类斯特林数，可以选择额外生成一个原排列，则方案数为<span class="arithmatex">\(S[i-1][j-1]\)</span>，也可以将其插入到前<span class="arithmatex">\(j\)</span>组中，方案数为<span class="arithmatex">\(j*S[i-1][j]\)</span>。</p>
+<h3 id="_8">代码模板</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2096,7 +2154,7 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">S</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

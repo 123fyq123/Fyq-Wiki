@@ -484,8 +484,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E6%96%AF%E7%89%B9%E6%8B%89%E6%95%B0/" class="md-nav__link">
-        斯特拉数
+      <a href="../../../%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/" class="md-nav__link">
+        斯特林数
       </a>
     </li>
   
@@ -736,29 +736,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    例题
+  <a href="#1blocks" class="md-nav__link">
+    例1.Blocks
   </a>
   
-    <nav class="md-nav" aria-label="例题">
+    <nav class="md-nav" aria-label="例1.Blocks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blocks" class="md-nav__link">
-    Blocks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     题解
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     代码
   </a>
   
@@ -1963,29 +1956,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    例题
+  <a href="#1blocks" class="md-nav__link">
+    例1.Blocks
   </a>
   
-    <nav class="md-nav" aria-label="例题">
+    <nav class="md-nav" aria-label="例1.Blocks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blocks" class="md-nav__link">
-    Blocks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     题解
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     代码
   </a>
   
@@ -2030,16 +2016,15 @@
 <li><span class="arithmatex">\(1+\frac{x^2}{2!}+\frac{x^4}{4!}=\frac{e^x+e^{-x}}{2}\)</span></li>
 </ul>
 <hr />
-<h2 id="_3">例题</h2>
-<h3 id="blocks">Blocks</h3>
+<h2 id="1blocks">例1.Blocks</h2>
 <p><a href="https://ac.nowcoder.com/acm/contest/24710/D">题目链接</a></p>
 <p><img alt="" src="../../image/6.png" /></p>
-<h3 id="_4">题解</h3>
+<h3 id="_3">题解</h3>
 <p>构造出红、绿砖的指数生成函数<span class="arithmatex">\(F(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}...=\frac{e^x+e^{-x}}{2}\)</span></p>
 <p>黄、蓝砖的指数生成函数<span class="arithmatex">\(G(x)=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}...=e^x\)</span></p>
 <p>则<span class="arithmatex">\(H(x)=F^2(x)G^2(x)=\frac{e^{4x}+2e^{2e} + 1}{4}=\frac{1}{4}\sum_{n\ge0}\frac{(4x)^n+2(2x)^n}{n!}+\frac{1}{4}\)</span>为答案的指数生成函数</p>
 <p>因此结果为<span class="arithmatex">\(n![x^n]H(x)=n!\frac{1}{4}(\frac{4^n+2^{n+1}}{n!})=4^{n-1}+2^{n-1}\)</span></p>
-<h3 id="_5">代码</h3>
+<h3 id="_4">代码</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>

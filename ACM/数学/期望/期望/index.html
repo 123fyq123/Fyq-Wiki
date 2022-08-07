@@ -484,8 +484,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E6%96%AF%E7%89%B9%E6%8B%89%E6%95%B0/" class="md-nav__link">
-        斯特拉数
+      <a href="../../%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/" class="md-nav__link">
+        斯特林数
       </a>
     </li>
   
@@ -674,15 +674,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#p1365-wjmzbmrosu-easy" class="md-nav__link">
-    洛谷P1365 WJMZBMR打osu! / Easy
+  <a href="#1p1365-wjmzbmrosu-easy" class="md-nav__link">
+    例1.洛谷P1365 WJMZBMR打osu! / Easy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#p1654-osu" class="md-nav__link">
-    洛谷P1654 OSU！
+  <a href="#2p1654-osu" class="md-nav__link">
+    例2.洛谷P1654 OSU！
   </a>
   
 </li>
@@ -701,15 +701,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#p4562-jxoi2018" class="md-nav__link">
-    P4562 [JXOI2018]游戏
+  <a href="#1" class="md-nav__link">
+    例1.游戏
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#p3802" class="md-nav__link">
-    P3802 小魔女帕琪
+  <a href="#2_1" class="md-nav__link">
+    例2.小魔女帕琪
   </a>
   
 </li>
@@ -1961,15 +1961,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#p1365-wjmzbmrosu-easy" class="md-nav__link">
-    洛谷P1365 WJMZBMR打osu! / Easy
+  <a href="#1p1365-wjmzbmrosu-easy" class="md-nav__link">
+    例1.洛谷P1365 WJMZBMR打osu! / Easy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#p1654-osu" class="md-nav__link">
-    洛谷P1654 OSU！
+  <a href="#2p1654-osu" class="md-nav__link">
+    例2.洛谷P1654 OSU！
   </a>
   
 </li>
@@ -1988,15 +1988,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#p4562-jxoi2018" class="md-nav__link">
-    P4562 [JXOI2018]游戏
+  <a href="#1" class="md-nav__link">
+    例1.游戏
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#p3802" class="md-nav__link">
-    P3802 小魔女帕琪
+  <a href="#2_1" class="md-nav__link">
+    例2.小魔女帕琪
   </a>
   
 </li>
@@ -2027,13 +2027,15 @@
   <h1>期望</h1>
 
 <h2 id="1dp">1.期望DP</h2>
-<h3 id="p1365-wjmzbmrosu-easy">洛谷P1365 WJMZBMR打osu! / Easy</h3>
+<h3 id="1p1365-wjmzbmrosu-easy">例1.洛谷P1365 WJMZBMR打osu! / Easy</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1365">题目入口</a></p>
 <p><strong>题解</strong></p>
 <p>令<span class="arithmatex">\(f[i]\)</span>表示到第i个字符的期望长度,<span class="arithmatex">\(g[i]\)</span>表示以第i个字符为结尾的连续o串长度的期望,此时就有三种情况</p>
-<p><span class="arithmatex">\(s[i] ==  o 时, f[i] = f[i - 1] + (g[i-1] + 1)^2 -g[i-1]^2 = f[i - 1] + 2 * g[i - 1] + 1,g[i] = g[i -1] + 1\)</span></p>
-<p><span class="arithmatex">\(当s[i] == x时,g[i] = 0,f[i] = f[i - 1]\)</span></p>
-<p><span class="arithmatex">\(当s[i] == ?时,f[i] = f[i] + (2 * g[i - 1] + 1.0) * p,g[i]=(g[i - 1] + 1)*p(p为?为o的概率，这题是0.5)\)</span></p>
+<ul>
+<li><span class="arithmatex">\(s[i] ==  o 时, f[i] = f[i - 1] + (g[i-1] + 1)^2 -g[i-1]^2 = f[i - 1] + 2 * g[i - 1] + 1,g[i] = g[i -1] + 1\)</span></li>
+<li><span class="arithmatex">\(当s[i] == x时,g[i] = 0,f[i] = f[i - 1]\)</span></li>
+<li><span class="arithmatex">\(当s[i] == ?时,f[i] = f[i] + (2 * g[i - 1] + 1.0) * p,g[i]=(g[i - 1] + 1)*p(p为?为o的概率，这题是0.5)\)</span></li>
+</ul>
 <p><strong>代码</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2082,7 +2084,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h3 id="p1654-osu">洛谷P1654 OSU！</h3>
+<h3 id="2p1654-osu">例2.洛谷P1654 OSU！</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1654">题目入口</a></p>
 <p><strong>题解</strong></p>
 <p>本题和上题差不多,不同的是本题需要维护长度<span class="arithmatex">\(len\)</span>和<span class="arithmatex">\(len^2\)</span>的期望，注意不能只维护<span class="arithmatex">\(len\)</span>的期望，因为<span class="arithmatex">\(E(x^2)\neq E(x)^2\)</span></p>
@@ -2143,10 +2145,10 @@
 </code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="2">2.推公式</h2>
-<h3 id="p4562-jxoi2018">P4562 [JXOI2018]游戏</h3>
+<h3 id="1">例1.游戏</h3>
 <p><a href="https://www.luogu.com.cn/problem/P4562">题目入口</a></p>
 <p><strong>题解</strong></p>
-<p><strong>我们发现，对于一系列具有倍数关系数字2,4,6,8，检查时间其实是由他们种最小的数所决定的，以样例为例，将2，4分为一类，3分为一类，最后的检查时间是由2和3的位置所决定，所以可以枚举所有可能的时间，排列组合一下即可</strong></p>
+<p>我们发现，对于一系列具有倍数关系数字2,4,6,8，检查时间其实是由他们种最小的数所决定的，以样例为例，将2，4分为一类，3分为一类，最后的检查时间是由2和3的位置所决定，所以可以枚举所有可能的时间，排列组合一下即可</p>
 <p><strong>代码</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2293,7 +2295,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h3 id="p3802">P3802 小魔女帕琪</h3>
+<h3 id="2_1">例2.小魔女帕琪</h3>
 <p><a href="https://www.luogu.com.cn/problem/P3802">题目入口</a></p>
 <p><strong>题解</strong></p>
 <p>如果我们能知道每七个连续的晶体释放魔法的概率，将所有的可能性加起来便是结果，令<span class="arithmatex">\(a_1,a_2...a_7为每种属性的晶体数量，\)</span>以前七个为例，如果能施放魔法，概率必为<span class="arithmatex">\(7!\times C_n^{a1}\times C_{n-1}^{a2}...\times C_{n - 6}^{a7}\)</span>，7!是因为释放一次魔法时每种属性的晶体位置不确定，接下来我们可以感性的理解一下，对于抽签，在每次不知道前者结果时概率时一样的，本题也可以这么理解，之后每七个能释放魔法的概率均相同，由于长度为7的串一共有<span class="arithmatex">\(n-6\)</span>个，最后答案乘上即可</p>

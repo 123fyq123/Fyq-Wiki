@@ -516,16 +516,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    经典例题
+  <a href="#1-p1641-scoi2010" class="md-nav__link">
+    例1 P1641 [SCOI2010]生成字符串
   </a>
   
-    <nav class="md-nav" aria-label="经典例题">
+    <nav class="md-nav" aria-label="例1 P1641 [SCOI2010]生成字符串">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-p1641-scoi2010" class="md-nav__link">
-    例1 P1641 [SCOI2010]生成字符串
+  <a href="#_3" class="md-nav__link">
+    题解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码
   </a>
   
 </li>
@@ -550,8 +557,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%96%AF%E7%89%B9%E6%8B%89%E6%95%B0/" class="md-nav__link">
-        斯特拉数
+      <a href="../%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/" class="md-nav__link">
+        斯特林数
       </a>
     </li>
   
@@ -1949,16 +1956,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    经典例题
+  <a href="#1-p1641-scoi2010" class="md-nav__link">
+    例1 P1641 [SCOI2010]生成字符串
   </a>
   
-    <nav class="md-nav" aria-label="经典例题">
+    <nav class="md-nav" aria-label="例1 P1641 [SCOI2010]生成字符串">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-p1641-scoi2010" class="md-nav__link">
-    例1 P1641 [SCOI2010]生成字符串
+  <a href="#_3" class="md-nav__link">
+    题解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码
   </a>
   
 </li>
@@ -2002,25 +2016,22 @@
 <li>&ensp;<span class="arithmatex">\(H_n=C_{2n}^n-C_{2n}^{n-1}=\frac{C_{2n}^n}{n+1}\)</span></li>
 </ul>
 <hr />
-<h2 id="_3">经典例题</h2>
-<h3 id="1-p1641-scoi2010">例1 P1641 [SCOI2010]生成字符串</h3>
+<h2 id="1-p1641-scoi2010">例1 P1641 [SCOI2010]生成字符串</h2>
 <p><strong>题目描述</strong></p>
 <p>lxhgww 最近接到了一个生成字符串的任务，任务需要他把 n 个 1 和 m 个 0 组成字符串，但是任务还要求在组成的字符串中，在任意的前 k 个字符中，1 的个数不能少于 0 的个数。现在 lxhgww 想要知道满足要求的字符串共有多少个，聪明的程序员们，你们能帮助他吗？</p>
 <p><strong>输入格式</strong></p>
 <p>输入数据只有一行，包括 2 个数字 n 和 m。</p>
 <p><strong>输出格式</strong></p>
 <p>输出数据是一行，包括 1 个数字，表示满足要求的字符串数目，这个数可能会很大，只需输出这个数除以 20100403 的余数</p>
-<p><strong>输入输出样例</strong></p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>输入#1
-2 2
-输入#1
-2
+<p><strong>输入样例</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>2 2
 </code></pre></div></td></tr></table></div>
-<strong>思路</strong></p>
-<p>将1和0的操作转换到坐标系中，假设有1则（x+1，y+1），有0则（x+1,y-1），我们发现终点为（n+m,n-m），若存在前k字母中0个数大于1，则在坐标系中曲线经过y=-1，将终点关于y=-1对称，则终点对称点为（n+m，m-n-2），于是就有n-m+1步的向上变成向下，即一共有n+1步向下，所有情况有C_(c+m)^n种可能，不合法的有C_(n+m)^(m-1) 或C_(n+m)^(n+1)种可能，答案相减即可，另一种对称方法是将起点关于y=-1对称，则起点变为（0，-2），到达（n+m，n-m）,需要将一步向下变为向上，则不合法有C_(n+m)^(m-1)种可能</p>
+<p><strong>输出样例</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>2
+</code></pre></div></td></tr></table></div>
+<h3 id="_3">题解</h3>
+<p>将1和0的操作转换到坐标系中，假设有1则<span class="arithmatex">\((x+1，y+1)\)</span>，有0则<span class="arithmatex">\((x+1,y-1)\)</span>，我们发现终点为<span class="arithmatex">\((n+m,n-m)\)</span>，若存在前k字母中0个数大于1，则在坐标系中曲线经过<span class="arithmatex">\(y=-1\)</span>，将终点关于<span class="arithmatex">\(y=-1\)</span>对称，则终点对称点为<span class="arithmatex">\((n+m，m-n-2)\)</span>，于是就有<span class="arithmatex">\(n-m+1\)</span>步的向上变成向下，即一共有<span class="arithmatex">\(n+1\)</span>步向下，所有情况有<span class="arithmatex">\(C_{c+m}^n\)</span>种可能，不合法的有<span class="arithmatex">\(C_{n+m}^{m-1}\)</span>或<span class="arithmatex">\(C_{n+m}^{n+1}\)</span>种可能，答案相减即可，另一种对称方法是将起点关于<span class="arithmatex">\(y=-1\)</span>对称，则起点变为<span class="arithmatex">\((0，-2)\)</span>，到达<span class="arithmatex">\((n+m，n-m)\)</span>,需要将一步向下变为向上，则不合法有<span class="arithmatex">\(C_{n+m}^{m-1}\)</span>种可能</p>
+<h3 id="_4">代码</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2125,13 +2136,13 @@
       
       
         
-        <a href="../%E6%96%AF%E7%89%B9%E6%8B%89%E6%95%B0/" class="md-footer__link md-footer__link--next" aria-label="下一页: 斯特拉数" rel="next">
+        <a href="../%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/" class="md-footer__link md-footer__link--next" aria-label="下一页: 斯特林数" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              斯特拉数
+              斯特林数
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -536,29 +536,29 @@
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    三种求组合数的方法
+    求组合数的方法
   </a>
   
-    <nav class="md-nav" aria-label="三种求组合数的方法">
+    <nav class="md-nav" aria-label="求组合数的方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ab-2000" class="md-nav__link">
-    a,b &lt; 2000
+  <a href="#_9" class="md-nav__link">
+    递推处理
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ab-1e5" class="md-nav__link">
-    a,b &lt; 1e5
+  <a href="#_10" class="md-nav__link">
+    逆元处理
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ab" class="md-nav__link">
-    a,b较大且取模
+  <a href="#lucas" class="md-nav__link">
+    Lucas定理
   </a>
   
 </li>
@@ -569,16 +569,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    例题
+  <a href="#1beautiful-numbers" class="md-nav__link">
+    例1.Beautiful Numbers
   </a>
   
-    <nav class="md-nav" aria-label="例题">
+    <nav class="md-nav" aria-label="例1.Beautiful Numbers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1beautiful-numbers" class="md-nav__link">
-    例1.Beautiful Numbers
+  <a href="#_11" class="md-nav__link">
+    题解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    代码
   </a>
   
 </li>
@@ -631,8 +638,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%96%AF%E7%89%B9%E6%8B%89%E6%95%B0/" class="md-nav__link">
-        斯特拉数
+      <a href="../%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/" class="md-nav__link">
+        斯特林数
       </a>
     </li>
   
@@ -2078,29 +2085,29 @@
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    三种求组合数的方法
+    求组合数的方法
   </a>
   
-    <nav class="md-nav" aria-label="三种求组合数的方法">
+    <nav class="md-nav" aria-label="求组合数的方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ab-2000" class="md-nav__link">
-    a,b &lt; 2000
+  <a href="#_9" class="md-nav__link">
+    递推处理
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ab-1e5" class="md-nav__link">
-    a,b &lt; 1e5
+  <a href="#_10" class="md-nav__link">
+    逆元处理
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ab" class="md-nav__link">
-    a,b较大且取模
+  <a href="#lucas" class="md-nav__link">
+    Lucas定理
   </a>
   
 </li>
@@ -2111,16 +2118,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    例题
+  <a href="#1beautiful-numbers" class="md-nav__link">
+    例1.Beautiful Numbers
   </a>
   
-    <nav class="md-nav" aria-label="例题">
+    <nav class="md-nav" aria-label="例1.Beautiful Numbers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1beautiful-numbers" class="md-nav__link">
-    例1.Beautiful Numbers
+  <a href="#_11" class="md-nav__link">
+    题解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    代码
   </a>
   
 </li>
@@ -2179,8 +2193,9 @@
 部分圆排列公式
 <span class="arithmatex">\(Q_n^r=\frac{A_n^r}{r}=\frac{n!}{r×(n-r)!}\)</span></p>
 <hr />
-<h2 id="_8">三种求组合数的方法</h2>
-<h3 id="ab-2000">a,b &lt; 2000</h3>
+<h2 id="_8">求组合数的方法</h2>
+<h3 id="_9">递推处理</h3>
+<p>适用于<span class="arithmatex">\(a,b \le 2000\)</span>的情况</p>
 <p>通过<span class="arithmatex">\((_b^a)=(_{b-1}^a)+(_{b-1}^{a-1})\)</span>预处理</p>
 <p><strong>代码</strong>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2237,7 +2252,8 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div></p>
-<h3 id="ab-1e5">a,b &lt; 1e5</h3>
+<h3 id="_10">逆元处理</h3>
+<p>适用于<span class="arithmatex">\(a,b \le 1e5\)</span>的情况</p>
 <p>随取随用，用逆元,若询问多则选择预处理阶乘，<span class="arithmatex">\(C_a^b=\frac{fac[a]}{fac[b]*fac[a-b]}\)</span></p>
 <p><strong>代码</strong>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2328,9 +2344,10 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div></p>
-<h3 id="ab">a,b较大且取模</h3>
-<p><span class="arithmatex">\(a≤1e18,b≤1e18,p≤1e5\)</span></p>
-<p>Lucas定理，当p为质数时，有<span class="arithmatex">\(C_a^b=C_{a\ mod\ p}^{b\ mod\ p}\times C_{\frac{a}{p}}^{\frac{b}{p}}\)</span></p>
+<h3 id="lucas">Lucas定理</h3>
+<p>适用于<span class="arithmatex">\(a≤1e18,b≤1e18,p≤1e5\)</span>的取模情况 </p>
+<p><strong>Lucas定理:</strong></p>
+<p>当p为质数时，有<span class="arithmatex">\(C_a^b=C_{a\ mod\ p}^{b\ mod\ p}\times C_{\frac{a}{p}}^{\frac{b}{p}}\)</span></p>
 <p><strong>代码</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2415,12 +2432,11 @@
 <span class="p">}</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="_9">例题</h2>
-<h3 id="1beautiful-numbers">例1.Beautiful Numbers</h3>
+<h2 id="1beautiful-numbers">例1.Beautiful Numbers</h2>
 <p><a href="https://codeforces.com/problemset/problem/300/C">题目入口</a></p>
-<p><strong>思路</strong></p>
+<h3 id="_11">题解</h3>
 <p>对于每个n位数，只需要判断它的位数和是否good即可，暴力枚举a的数量，注意这里需要需处理阶乘</p>
-<p><strong>代码</strong></p>
+<h3 id="_12">代码</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
