@@ -12,7 +12,7 @@
         <meta name="author" content="方毓乔">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../image/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -2106,11 +2106,11 @@
 
   <h1>Bellman-Ford算法</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">概述</h2>
 <p>Dilijkstra算法，这个算法解决单源最短路径问题，但是它不能解决带有负权边（边的权值为负数）的图，原因见👉<a href="https://blog.csdn.net/Kprogram/article/details/81220702">Korpse的博客</a></p>
 <p>而Bellman-Ford算法解决了负环这个问题，同时Bellman-Ford算法擅长解决有边数限制的最短路问题</p>
 <hr />
-<h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">操作步骤</h2>
 <ol>
 <li>
 <p>初始化所有d[s],源点d[s]=0,其他d[s]=INF</p>
@@ -2123,8 +2123,8 @@
 </li>
 </ol>
 <hr />
-<h2 id="_3">经典问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">有边数限制的最短路<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_3">经典问题</h2>
+<h3 id="_4">有边数限制的最短路</h3>
 <p><a href="https://www.acwing.com/problem/content/855/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一个 n 个点 m 条边的有向图，图中可能存在重边和自环， 边权可能为负数。</p>
@@ -2138,21 +2138,60 @@
 <p>输出一个整数，表示从 1 号点到 n 号点的最多经过 k 条边的最短距离。</p>
 <p>如果不存在满足条件的路径，则输出 <code>impossible</code>。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤n,k≤500,</span><script type="math/tex">1≤n,k≤500,</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤m≤10000,</span><script type="math/tex">1≤m≤10000,</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤x,y≤n，</span><script type="math/tex">1≤x,y≤n，</script></span></p>
+<p><span class="arithmatex">\(1≤n,k≤500,\)</span></p>
+<p><span class="arithmatex">\(1≤m≤10000,\)</span></p>
+<p><span class="arithmatex">\(1≤x,y≤n，\)</span></p>
 <p>任意边长的绝对值不超过 10000。</p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>3 3 1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>3 3 1
 1 2 1
 2 3 1
 1 3 3
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>3
-</code></pre></div>
-<h3 id="_5">代码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>3
+</code></pre></div></td></tr></table></div>
+<h3 id="_5">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">1e4</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
@@ -2189,7 +2228,7 @@
 <span class="w">    </span><span class="n">bm_ford</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

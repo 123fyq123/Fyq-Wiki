@@ -12,7 +12,7 @@
         <meta name="author" content="方毓乔">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../image/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -2256,37 +2256,132 @@
 
   <h1>分治NTT</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">概述</h2>
 <p>NTT用来加速多项式乘法，最大的优点是可以取模，是FFT取模升级版</p>
 <hr />
-<h2 id="_2">前置知识<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">阶<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>若<span class="arithmatex"><span class="MathJax_Preview">(a, m) == 1</span><script type="math/tex">(a, m) == 1</script></span>, 使得<span class="arithmatex"><span class="MathJax_Preview">a^d \equiv 1(mod\ m)</span><script type="math/tex">a^d \equiv 1(mod\ m)</script></span>的最小正整数d，称为a对模m的阶，记作<span class="arithmatex"><span class="MathJax_Preview">\delta_m^a</span><script type="math/tex">\delta_m^a</script></span></p>
-<h3 id="_4">原根<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_2">前置知识</h2>
+<h3 id="_3">阶</h3>
+<p>若<span class="arithmatex">\((a, m) == 1\)</span>, 使得<span class="arithmatex">\(a^d \equiv 1(mod\ m)\)</span>的最小正整数d，称为a对模m的阶，记作<span class="arithmatex">\(\delta_m^a\)</span></p>
+<h3 id="_4">原根</h3>
 <p><strong>概念:</strong></p>
-<p>设<span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>为正整数，a为整数，若<span class="arithmatex"><span class="MathJax_Preview">\delta_m^a=\phi(m)</span><script type="math/tex">\delta_m^a=\phi(m)</script></span>，则称a为模m的一个原根，其中<span class="arithmatex"><span class="MathJax_Preview">\phi(m)</span><script type="math/tex">\phi(m)</script></span>为m的欧拉函数</p>
+<p>设<span class="arithmatex">\(m\)</span>为正整数，a为整数，若<span class="arithmatex">\(\delta_m^a=\phi(m)\)</span>，则称a为模m的一个原根，其中<span class="arithmatex">\(\phi(m)\)</span>为m的欧拉函数</p>
 <p><strong>性质:</strong></p>
-<p>若<span class="arithmatex"><span class="MathJax_Preview">g</span><script type="math/tex">g</script></span>对于<span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>是原根，则<span class="arithmatex"><span class="MathJax_Preview">g^i\ mod\ p \ne g^j \ mod\ (p为质数,且i\ne j,1\le i,j\le p - 1)</span><script type="math/tex">g^i\ mod\ p \ne g^j \ mod\ (p为质数,且i\ne j,1\le i,j\le p - 1)</script></span></p>
+<p>若<span class="arithmatex">\(g\)</span>对于<span class="arithmatex">\(P\)</span>是原根，则<span class="arithmatex">\(g^i\ mod\ p \ne g^j \ mod\ (p为质数,且i\ne j,1\le i,j\le p - 1)\)</span></p>
 <p><strong>求解方法</strong></p>
-<p>原根一般比较小，求原根的方法一般是从2开始枚举，然后暴力判断<span class="arithmatex"><span class="MathJax_Preview">g^{P-1} \equiv 1\ (mod\ p)(p 为素数)</span><script type="math/tex">g^{P-1} \equiv 1\ (mod\ p)(p 为素数)</script></span></p>
+<p>原根一般比较小，求原根的方法一般是从2开始枚举，然后暴力判断<span class="arithmatex">\(g^{P-1} \equiv 1\ (mod\ p)(p 为素数)\)</span></p>
 <p>值得一提的是，常见模数998244353 , 1004535809 , 469762049的原根都是3</p>
 <hr />
-<h2 id="1">例1.挑选队友<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1">例1.挑选队友</h2>
 <p><a href="https://ac.nowcoder.com/acm/contest/26013/C">题目链接</a></p>
 <p><img alt="" src="../../../image/7.png" /></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>5 3 4
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>5 3 4
 1 2 2
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>4
-</code></pre></div>
-<h3 id="_5">题解<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>对于第i个群，对应的生成函数是<span class="arithmatex"><span class="MathJax_Preview">F_i(x) = \sum_{j=1}^{s[i]}C_{s_i}^jx^j</span><script type="math/tex">F_i(x) = \sum_{j=1}^{s[i]}C_{s_i}^jx^j</script></span></p>
-<p>则令<span class="arithmatex"><span class="MathJax_Preview">G(x)=\prod_{i=1}^{n} F(x)</span><script type="math/tex">G(x)=\prod_{i=1}^{n} F(x)</script></span></p>
-<p>套NTT模板后<span class="arithmatex"><span class="MathJax_Preview">[x^k]G(x)</span><script type="math/tex">[x^k]G(x)</script></span>即为答案</p>
-<h3 id="_6">代码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>4
+</code></pre></div></td></tr></table></div>
+<h3 id="_5">题解</h3>
+<p>对于第i个群，对应的生成函数是<span class="arithmatex">\(F_i(x) = \sum_{j=1}^{s[i]}C_{s_i}^jx^j\)</span></p>
+<p>则令<span class="arithmatex">\(G(x)=\prod_{i=1}^{n} F(x)\)</span></p>
+<p>套NTT模板后<span class="arithmatex">\([x^k]G(x)\)</span>即为答案</p>
+<h3 id="_6">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="cp">#define int long long</span>
 <span class="cp">#define poly vector&lt;int&gt; </span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
@@ -2381,25 +2476,134 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="2tokitsukaze-and-another-protoss-and-zerg">例2.tokitsukaze and Another Protoss and Zerg<a class="headerlink" href="#2tokitsukaze-and-another-protoss-and-zerg" title="Permanent link">&para;</a></h2>
+<h2 id="2tokitsukaze-and-another-protoss-and-zerg">例2.tokitsukaze and Another Protoss and Zerg</h2>
 <p><a href="https://ac.nowcoder.com/acm/contest/26013/D">题目链接</a></p>
 <p><img alt="" src="../../../image/8.png" /></p>
 <p><strong>输入输出描述</strong></p>
 <p><img alt="" src="../../../image/9.png" /></p>
-<h3 id="_7">题解<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_7">题解</h3>
 <p>对于第i场:</p>
 <ul>
-<li>不选星灵:有<span class="arithmatex"><span class="MathJax_Preview">2^{b[i]}-1</span><script type="math/tex">2^{b[i]}-1</script></span>种选法</li>
-<li>不选虫族:则对于选j个星灵有<span class="arithmatex"><span class="MathJax_Preview">C_{a[i]}^j</span><script type="math/tex">C_{a[i]}^j</script></span>种选法</li>
+<li>不选星灵:有<span class="arithmatex">\(2^{b[i]}-1\)</span>种选法</li>
+<li>不选虫族:则对于选j个星灵有<span class="arithmatex">\(C_{a[i]}^j\)</span>种选法</li>
 </ul>
 <p>则第i场的生成函数为</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">F_i(x)=2^{b[i]}-1+\sum_{j=1}{a[i]}C_{a[i],j}x^j</span><script type="math/tex">F_i(x)=2^{b[i]}-1+\sum_{j=1}{a[i]}C_{a[i],j}x^j</script></span></p>
-<p>令<span class="arithmatex"><span class="MathJax_Preview">G(x)=\prod_{i=1}^{n}F_i(x)</span><script type="math/tex">G(x)=\prod_{i=1}^{n}F_i(x)</script></span></p>
+<p><span class="arithmatex">\(F_i(x)=2^{b[i]}-1+\sum_{j=1}{a[i]}C_{a[i],j}x^j\)</span></p>
+<p>令<span class="arithmatex">\(G(x)=\prod_{i=1}^{n}F_i(x)\)</span></p>
 <p>套NTT板子即可求出每一项</p>
-<h3 id="_8">代码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_8">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="cp">#define int long long</span>
 <span class="cp">#define poly vector&lt;int&gt; </span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
@@ -2509,57 +2713,304 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="3count-set">例3.Count Set<a class="headerlink" href="#3count-set" title="Permanent link">&para;</a></h2>
+<h2 id="3count-set">例3.Count Set</h2>
 <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=7191">题目链接</a></p>
 <p><strong>题目描述</strong></p>
-<p>给定一个排列<span class="arithmatex"><span class="MathJax_Preview">p\{1,2,3,..,n\}</span><script type="math/tex">p\{1,2,3,..,n\}</script></span>和一个非负整数k，要求计算<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>的子集<span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>的数量满足以下性质:</p>
+<p>给定一个排列<span class="arithmatex">\(p\{1,2,3,..,n\}\)</span>和一个非负整数k，要求计算<span class="arithmatex">\(p\)</span>的子集<span class="arithmatex">\(T\)</span>的数量满足以下性质:</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">|T|=k</span><script type="math/tex">|T|=k</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">|P(T) \cap T|=0</span><script type="math/tex">|P(T) \cap T|=0</script></span></li>
+<li><span class="arithmatex">\(|T|=k\)</span></li>
+<li><span class="arithmatex">\(|P(T) \cap T|=0\)</span></li>
 </ul>
-<p>注:<span class="arithmatex"><span class="MathJax_Preview">P(T)</span><script type="math/tex">P(T)</script></span>表示<span class="arithmatex"><span class="MathJax_Preview">P(T)=\{y|y=p_x,x\in T\}</span><script type="math/tex">P(T)=\{y|y=p_x,x\in T\}</script></span></p>
+<p>注:<span class="arithmatex">\(P(T)\)</span>表示<span class="arithmatex">\(P(T)=\{y|y=p_x,x\in T\}\)</span></p>
 <p><strong>输入格式</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>组输入</p>
-<p>每组输入第一行包含两个正整数<span class="arithmatex"><span class="MathJax_Preview">n,k</span><script type="math/tex">n,k</script></span></p>
-<p>第二行包含n个整数<span class="arithmatex"><span class="MathJax_Preview">P1,P2...Pn</span><script type="math/tex">P1,P2...Pn</script></span>表示给定的排列</p>
+<p><span class="arithmatex">\(T\)</span>组输入</p>
+<p>每组输入第一行包含两个正整数<span class="arithmatex">\(n,k\)</span></p>
+<p>第二行包含n个整数<span class="arithmatex">\(P1,P2...Pn\)</span>表示给定的排列</p>
 <p><strong>输出格式</strong></p>
-<p>输出一个正整数表示答案对<span class="arithmatex"><span class="MathJax_Preview">998244353</span><script type="math/tex">998244353</script></span>取余的结果</p>
+<p>输出一个正整数表示答案对<span class="arithmatex">\(998244353\)</span>取余的结果</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1\le T \le 15</span><script type="math/tex">1\le T \le 15</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1 \le n \le 5\times 10^5,0\le k \le n</span><script type="math/tex">1 \le n \le 5\times 10^5,0\le k \le n</script></span></p>
-<p>所有的样例保证<span class="arithmatex"><span class="MathJax_Preview">\sum n \le 5 \times 10^6</span><script type="math/tex">\sum n \le 5 \times 10^6</script></span></p>
+<p><span class="arithmatex">\(1\le T \le 15\)</span></p>
+<p><span class="arithmatex">\(1 \le n \le 5\times 10^5,0\le k \le n\)</span></p>
+<p>所有的样例保证<span class="arithmatex">\(\sum n \le 5 \times 10^6\)</span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>3
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>3
 5 1
 5 3 2 1 4
 5 2
 2 5 1 3 4
 10 3
 10 9 3 8 6 4 5 7 2 1
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>5
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>5
 5
 40
-</code></pre></div>
-<h3 id="_9">题解<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>我们发现第<span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>个数与第<span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span>个数显然不能同时选择，若将所有的限制条件建图，我们会发现这样形成了一个一个的环(单个点为自环)，上述限制条件也被转化成每个环中不能选择相邻的两个点</p>
-<p>要求在所有的环中选<span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>个点的方案数，我们可以先考虑他的子问题</p>
-<p>如何求在一个大小为m的环种选<span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>个点的方案数？</p>
+</code></pre></div></td></tr></table></div>
+<h3 id="_9">题解</h3>
+<p>我们发现第<span class="arithmatex">\(i\)</span>个数与第<span class="arithmatex">\(p[i]\)</span>个数显然不能同时选择，若将所有的限制条件建图，我们会发现这样形成了一个一个的环(单个点为自环)，上述限制条件也被转化成每个环中不能选择相邻的两个点</p>
+<p>要求在所有的环中选<span class="arithmatex">\(k\)</span>个点的方案数，我们可以先考虑他的子问题</p>
+<p>如何求在一个大小为m的环种选<span class="arithmatex">\(k\)</span>个点的方案数？</p>
 <p>我们发现限制条件是相邻，若将选出的点占用两个位置，就可以保证选出的这些点两两不相邻，注意到是环，破环成链后我们对断开处分两种情况讨论</p>
 <ul>
-<li>若断开处不是选中的点:此时相当于在<span class="arithmatex"><span class="MathJax_Preview">m-k</span><script type="math/tex">m-k</script></span>个相同物体中选<span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>个,答案为<span class="arithmatex"><span class="MathJax_Preview">C_{m-k}^k</span><script type="math/tex">C_{m-k}^k</script></span></li>
-<li>若断开处是选中的点:此时相当于在<span class="arithmatex"><span class="MathJax_Preview">m-2-(k-1)</span><script type="math/tex">m-2-(k-1)</script></span>个相同物体中选<span class="arithmatex"><span class="MathJax_Preview">k-1</span><script type="math/tex">k-1</script></span>个,答案为<span class="arithmatex"><span class="MathJax_Preview">C_{m-k-1}^{k-1}</span><script type="math/tex">C_{m-k-1}^{k-1}</script></span></li>
+<li>若断开处不是选中的点:此时相当于在<span class="arithmatex">\(m-k\)</span>个相同物体中选<span class="arithmatex">\(k\)</span>个,答案为<span class="arithmatex">\(C_{m-k}^k\)</span></li>
+<li>若断开处是选中的点:此时相当于在<span class="arithmatex">\(m-2-(k-1)\)</span>个相同物体中选<span class="arithmatex">\(k-1\)</span>个,答案为<span class="arithmatex">\(C_{m-k-1}^{k-1}\)</span></li>
 </ul>
 <p>因此可以构造出每个环对应的生成函数</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">F_i(x)=\sum_{j=1}^{size[i]}(C_{size[i]-j-1}^{j-1}+C_{size[i]-j}^j)x^j</span><script type="math/tex">F_i(x)=\sum_{j=1}^{size[i]}(C_{size[i]-j-1}^{j-1}+C_{size[i]-j}^j)x^j</script></span></p>
-<p>累乘后得到<span class="arithmatex"><span class="MathJax_Preview">G(x)=\prod_{i=1}^{cnt}F_i(x)</span><script type="math/tex">G(x)=\prod_{i=1}^{cnt}F_i(x)</script></span></p>
-<p>则<span class="arithmatex"><span class="MathJax_Preview">[x^k]G(x)</span><script type="math/tex">[x^k]G(x)</script></span>即为答案</p>
+<p><span class="arithmatex">\(F_i(x)=\sum_{j=1}^{size[i]}(C_{size[i]-j-1}^{j-1}+C_{size[i]-j}^j)x^j\)</span></p>
+<p>累乘后得到<span class="arithmatex">\(G(x)=\prod_{i=1}^{cnt}F_i(x)\)</span></p>
+<p>则<span class="arithmatex">\([x^k]G(x)\)</span>即为答案</p>
 <p>分治NTT加速即可</p>
-<h3 id="_10">代码<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_10">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="cp">#define fp(i, a, b) for (int i = (a), i##_ = (b) + 1; i &lt; i##_; ++i)</span>
 <span class="cp">#define fd(i, a, b) for (int i = (a), i##_ = (b) - 1; i &gt; i##_; --i)</span>
@@ -2799,7 +3250,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

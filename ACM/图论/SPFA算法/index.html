@@ -12,7 +12,7 @@
         <meta name="author" content="方毓乔">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../image/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -2230,11 +2230,11 @@
 
   <h1>SPFA算法</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">概述</h2>
 <p>本章讲解SPFA算法</p>
 <p>解决存在负环的图的单源最短路径，bellman-ford算法是比较经典的一个，(不清楚👉<a href="">Bellman-Ford算法</a>)这个算法的效率并不咋的，因为它只知道要求单源最短路，至多做|v|（j图的结点数）次松弛操作，SPFA很大程度上优化了bellman-ford算法。它的精妙之处在于不是盲目的做松弛操作，而是用一个队列保存当前做了松弛操作的结点，只要队列不空，就可以继续从队列里面取点，做松弛操作。</p>
 <hr />
-<h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">操作步骤</h2>
 <ol>
 <li>初始时将源加入队列</li>
 <li>每次从队列中取出一个元素，并对所有与他相邻的点进行松弛</li>
@@ -2242,8 +2242,8 @@
 <li>直到队列为空时算法结束</li>
 </ol>
 <hr />
-<h2 id="_3">经典问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="spfa">spfa求最短路<a class="headerlink" href="#spfa" title="Permanent link">&para;</a></h3>
+<h2 id="_3">经典问题</h2>
+<h3 id="spfa">spfa求最短路</h3>
 <p><a href="https://www.acwing.com/problem/content/853/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一个 n 个点 m 条边的有向图，图中可能存在重边和自环， 边权可能为负数。</p>
@@ -2256,21 +2256,72 @@
 <p>输出一个整数，表示 1 号点到 n 号点的最短距离。</p>
 <p>如果路径不存在，则输出 <code>impossible</code>。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤n,m≤105,</span><script type="math/tex">1≤n,m≤105,</script></span></p>
+<p><span class="arithmatex">\(1≤n,m≤105,\)</span></p>
 <p>图中涉及边长绝对值均不超过 10000。</p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>3 3
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>3 3
 1 2 5
 2 3 -3
 1 3 4
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>2
-</code></pre></div>
-<h3 id="_4">题解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>2
+</code></pre></div></td></tr></table></div>
+<h3 id="_4">题解</h3>
 <p>spfa模板题</p>
-<h3 id="_5">代码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_5">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">head</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">e</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">ne</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -2319,10 +2370,10 @@
 <span class="w">    </span><span class="n">spfa</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="_6">进阶问题<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="spfa_1">spfa判断负环<a class="headerlink" href="#spfa_1" title="Permanent link">&para;</a></h3>
+<h2 id="_6">进阶问题</h2>
+<h3 id="spfa_1">spfa判断负环</h3>
 <p><a href="https://www.acwing.com/activity/content/problem/content/921/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一个 n 个点 m 条边的有向图，图中可能存在重边和自环， 边权可能为负数。</p>
@@ -2333,22 +2384,78 @@
 <p><strong>输出格式</strong></p>
 <p>如果图中存在负权回路，则输出 <code>Yes</code>，否则输出 <code>No</code>。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤n≤2000,</span><script type="math/tex">1≤n≤2000,</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤m≤10000,</span><script type="math/tex">1≤m≤10000,</script></span></p>
+<p><span class="arithmatex">\(1≤n≤2000,\)</span></p>
+<p><span class="arithmatex">\(1≤m≤10000,\)</span></p>
 <p>图中涉及边长绝对值均不超过 10000。</p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>3 3
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>3 3
 1 2 -1
 2 3 4
 3 1 -4
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>Yes
-</code></pre></div>
-<h3 id="_7">题解<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Yes
+</code></pre></div></td></tr></table></div>
+<h3 id="_7">题解</h3>
 <p>如果不存在负环的话，每个节点可以通过其他节点作为中间节点然后再到达该节点来进行松弛，所以每个节点最多松弛n次，因此只要某个节点进入队列了超过了n次，那必定存在负环，用cnt数组记录松弛次数，判断即可</p>
-<h3 id="_8">代码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_8">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2005</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
@@ -2402,34 +2509,100 @@
 <span class="w">    </span><span class="n">spfa</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h3 id="link-with-game-glitch">Link with Game Glitch<a class="headerlink" href="#link-with-game-glitch" title="Permanent link">&para;</a></h3>
+<h3 id="link-with-game-glitch">Link with Game Glitch</h3>
 <p><a href="https://ac.nowcoder.com/acm/contest/33187/D">题目链接</a></p>
 <p><strong>题目大意</strong></p>
-<p>Link有一个食谱，他可以通过若干个一种食材制作出若干个另一种食材，由于食谱有些错误，可能出现某些食材被无限制造的情况，先加入一个参数w，使每个被制作食材的产生数量变为<span class="arithmatex"><span class="MathJax_Preview">w \times 原来可被产生的数量</span><script type="math/tex">w \times 原来可被产生的数量</script></span>。</p>
+<p>Link有一个食谱，他可以通过若干个一种食材制作出若干个另一种食材，由于食谱有些错误，可能出现某些食材被无限制造的情况，先加入一个参数w，使每个被制作食材的产生数量变为<span class="arithmatex">\(w \times 原来可被产生的数量\)</span>。</p>
 <p>现问你最大的w为多少</p>
 <p><strong>输入格式</strong></p>
 <p>第一行输入两个整数n，m，代表食材种类以及食谱数量</p>
-<p>接下来m行每行四个数<span class="arithmatex"><span class="MathJax_Preview">a_i,b_i,c_i,d_i</span><script type="math/tex">a_i,b_i,c_i,d_i</script></span>，表示可以用<span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span>个<span class="arithmatex"><span class="MathJax_Preview">b_i</span><script type="math/tex">b_i</script></span>型食材造出<span class="arithmatex"><span class="MathJax_Preview">c_i</span><script type="math/tex">c_i</script></span>个<span class="arithmatex"><span class="MathJax_Preview">d_i</span><script type="math/tex">d_i</script></span>型食材</p>
+<p>接下来m行每行四个数<span class="arithmatex">\(a_i,b_i,c_i,d_i\)</span>，表示可以用<span class="arithmatex">\(a_i\)</span>个<span class="arithmatex">\(b_i\)</span>型食材造出<span class="arithmatex">\(c_i\)</span>个<span class="arithmatex">\(d_i\)</span>型食材</p>
 <p><strong>输出格式</strong></p>
-<p>输出一个实数w，误差在<span class="arithmatex"><span class="MathJax_Preview">10^{-6}</span><script type="math/tex">10^{-6}</script></span>内的答案被认为正确</p>
+<p>输出一个实数w，误差在<span class="arithmatex">\(10^{-6}\)</span>内的答案被认为正确</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">2 \le n \le 1000,2 \le m \le 2000</span><script type="math/tex">2 \le n \le 1000,2 \le m \le 2000</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1 \le a_i,b_i,c_i,d_i \le n, b_i \ne d_i, 1 \le a_i,c_i \le 10^3</span><script type="math/tex">1 \le a_i,b_i,c_i,d_i \le n, b_i \ne d_i, 1 \le a_i,c_i \le 10^3</script></span></p>
+<p><span class="arithmatex">\(2 \le n \le 1000,2 \le m \le 2000\)</span></p>
+<p><span class="arithmatex">\(1 \le a_i,b_i,c_i,d_i \le n, b_i \ne d_i, 1 \le a_i,c_i \le 10^3\)</span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>3 3
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>3 3
 1 1 2 2
 1 2 2 1
 1 3 1 1
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>0.5000000000
-</code></pre></div>
-<h3 id="_9">题解<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>0.5000000000
+</code></pre></div></td></tr></table></div>
+<h3 id="_9">题解</h3>
 <p>最大值考虑二分，很容易发现食材之间可以建图，若某种食材能被无限制造，则其必要条件为某种食材在环中，将产生数量的比例作为边权，我们发现若环中长度之积大于1，则会造成资源无限的情况，乘积可能很大，考虑取对数，接下来就变成了判正环问题，资源有限等价于不存在正环，代码与判负环稍有不同，只需要将最短路改成最长路即可</p>
-<h3 id="_10">代码<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_10">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2005</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-8</span><span class="p">;</span><span class="w"></span>
@@ -2493,7 +2666,7 @@
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.8lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

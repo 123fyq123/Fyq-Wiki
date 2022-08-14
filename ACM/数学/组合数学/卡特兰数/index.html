@@ -12,7 +12,7 @@
         <meta name="author" content="方毓乔">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../image/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -2108,24 +2108,21 @@
 
   <h1>卡特兰数</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">概述</h2>
 <p>卡特兰数是一种经典的组合数，经常出现在各种计算中，其前几项为 :
 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845…</p>
 <hr />
-<h2 id="_2">常见公式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">常见公式</h2>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">H_n=\begin{cases}
+<li><span class="arithmatex">\(H_n=\begin{cases}
         \sum_{i = 1}^nH_{i - 1}H_{n-i},(n\ge2, n\in N_{+})\\
         1,(n=0,1)
-    \end{cases}</span><script type="math/tex">H_n=\begin{cases}
-        \sum_{i = 1}^nH_{i - 1}H_{n-i},(n\ge2, n\in N_{+})\\
-        1,(n=0,1)
-    \end{cases}</script></span></li>
-<li>&ensp;<span class="arithmatex"><span class="MathJax_Preview">H_n = \frac{H_{n-1}(4n-2)}{n+1}</span><script type="math/tex">H_n = \frac{H_{n-1}(4n-2)}{n+1}</script></span></li>
-<li>&ensp;<span class="arithmatex"><span class="MathJax_Preview">H_n=C_{2n}^n-C_{2n}^{n-1}=\frac{C_{2n}^n}{n+1}</span><script type="math/tex">H_n=C_{2n}^n-C_{2n}^{n-1}=\frac{C_{2n}^n}{n+1}</script></span></li>
+    \end{cases}\)</span></li>
+<li>&ensp;<span class="arithmatex">\(H_n = \frac{H_{n-1}(4n-2)}{n+1}\)</span></li>
+<li>&ensp;<span class="arithmatex">\(H_n=C_{2n}^n-C_{2n}^{n-1}=\frac{C_{2n}^n}{n+1}\)</span></li>
 </ul>
 <hr />
-<h2 id="1-p1641-scoi2010">例1 P1641 [SCOI2010]生成字符串<a class="headerlink" href="#1-p1641-scoi2010" title="Permanent link">&para;</a></h2>
+<h2 id="1-p1641-scoi2010">例1 P1641 [SCOI2010]生成字符串</h2>
 <p><strong>题目描述</strong></p>
 <p>lxhgww 最近接到了一个生成字符串的任务，任务需要他把 n 个 1 和 m 个 0 组成字符串，但是任务还要求在组成的字符串中，在任意的前 k 个字符中，1 的个数不能少于 0 的个数。现在 lxhgww 想要知道满足要求的字符串共有多少个，聪明的程序员们，你们能帮助他吗？</p>
 <p><strong>输入格式</strong></p>
@@ -2133,15 +2130,48 @@
 <p><strong>输出格式</strong></p>
 <p>输出数据是一行，包括 1 个数字，表示满足要求的字符串数目，这个数可能会很大，只需输出这个数除以 20100403 的余数</p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>2 2
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>2 2
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>2
-</code></pre></div>
-<h3 id="_3">题解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>将1和0的操作转换到坐标系中，假设有1则<span class="arithmatex"><span class="MathJax_Preview">(x+1，y+1)</span><script type="math/tex">(x+1，y+1)</script></span>，有0则<span class="arithmatex"><span class="MathJax_Preview">(x+1,y-1)</span><script type="math/tex">(x+1,y-1)</script></span>，我们发现终点为<span class="arithmatex"><span class="MathJax_Preview">(n+m,n-m)</span><script type="math/tex">(n+m,n-m)</script></span>，若存在前k字母中0个数大于1，则在坐标系中曲线经过<span class="arithmatex"><span class="MathJax_Preview">y=-1</span><script type="math/tex">y=-1</script></span>，将终点关于<span class="arithmatex"><span class="MathJax_Preview">y=-1</span><script type="math/tex">y=-1</script></span>对称，则终点对称点为<span class="arithmatex"><span class="MathJax_Preview">(n+m，m-n-2)</span><script type="math/tex">(n+m，m-n-2)</script></span>，于是就有<span class="arithmatex"><span class="MathJax_Preview">n-m+1</span><script type="math/tex">n-m+1</script></span>步的向上变成向下，即一共有<span class="arithmatex"><span class="MathJax_Preview">n+1</span><script type="math/tex">n+1</script></span>步向下，所有情况有<span class="arithmatex"><span class="MathJax_Preview">C_{c+m}^n</span><script type="math/tex">C_{c+m}^n</script></span>种可能，不合法的有<span class="arithmatex"><span class="MathJax_Preview">C_{n+m}^{m-1}</span><script type="math/tex">C_{n+m}^{m-1}</script></span>或<span class="arithmatex"><span class="MathJax_Preview">C_{n+m}^{n+1}</span><script type="math/tex">C_{n+m}^{n+1}</script></span>种可能，答案相减即可，另一种对称方法是将起点关于<span class="arithmatex"><span class="MathJax_Preview">y=-1</span><script type="math/tex">y=-1</script></span>对称，则起点变为<span class="arithmatex"><span class="MathJax_Preview">(0，-2)</span><script type="math/tex">(0，-2)</script></span>，到达<span class="arithmatex"><span class="MathJax_Preview">(n+m，n-m)</span><script type="math/tex">(n+m，n-m)</script></span>,需要将一步向下变为向上，则不合法有<span class="arithmatex"><span class="MathJax_Preview">C_{n+m}^{m-1}</span><script type="math/tex">C_{n+m}^{m-1}</script></span>种可能</p>
-<h3 id="_4">代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>2
+</code></pre></div></td></tr></table></div>
+<h3 id="_3">题解</h3>
+<p>将1和0的操作转换到坐标系中，假设有1则<span class="arithmatex">\((x+1，y+1)\)</span>，有0则<span class="arithmatex">\((x+1,y-1)\)</span>，我们发现终点为<span class="arithmatex">\((n+m,n-m)\)</span>，若存在前k字母中0个数大于1，则在坐标系中曲线经过<span class="arithmatex">\(y=-1\)</span>，将终点关于<span class="arithmatex">\(y=-1\)</span>对称，则终点对称点为<span class="arithmatex">\((n+m，m-n-2)\)</span>，于是就有<span class="arithmatex">\(n-m+1\)</span>步的向上变成向下，即一共有<span class="arithmatex">\(n+1\)</span>步向下，所有情况有<span class="arithmatex">\(C_{c+m}^n\)</span>种可能，不合法的有<span class="arithmatex">\(C_{n+m}^{m-1}\)</span>或<span class="arithmatex">\(C_{n+m}^{n+1}\)</span>种可能，答案相减即可，另一种对称方法是将起点关于<span class="arithmatex">\(y=-1\)</span>对称，则起点变为<span class="arithmatex">\((0，-2)\)</span>，到达<span class="arithmatex">\((n+m，n-m)\)</span>,需要将一步向下变为向上，则不合法有<span class="arithmatex">\(C_{n+m}^{m-1}\)</span>种可能</p>
+<h3 id="_4">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="cp">#define int long long  </span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mod</span><span class="o">=</span><span class="mi">20100403</span><span class="p">;</span><span class="w">  </span>
@@ -2175,7 +2205,7 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">((</span><span class="n">C</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">mod</span><span class="p">)</span><span class="o">-</span><span class="n">C</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="mi">-1</span><span class="p">,</span><span class="n">mod</span><span class="p">))</span><span class="o">%</span><span class="n">mod</span><span class="o">+</span><span class="n">mod</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

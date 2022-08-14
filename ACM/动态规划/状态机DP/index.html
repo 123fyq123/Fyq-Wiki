@@ -12,7 +12,7 @@
         <meta name="author" content="方毓乔">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../image/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -2254,10 +2254,10 @@
 
   <h1>状态机DP</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">概述</h2>
 <p>状态机模型包含多个待选状态，不同的状态之间有相互转化的方法，我们可以借助这些转化的手段，达成状态之间的相互转移，一般需要利用图论的知识进行转化</p>
 <hr />
-<h2 id="1">例1.大盗阿福<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1">例1.大盗阿福</h2>
 <p><a href="https://www.acwing.com/problem/content/1051/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>阿福是一名经验丰富的大盗。趁着月黑风高，阿福打算今晚洗劫一条街上的店铺。</p>
@@ -2274,28 +2274,53 @@
 <p>对于每组数据，输出一行。</p>
 <p>该行包含一个整数，表示阿福在不惊动警察的情况下可以得到的现金数量。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤T≤50,</span><script type="math/tex">1≤T≤50,</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤N≤10^5</span><script type="math/tex">1≤N≤10^5</script></span></p>
+<p><span class="arithmatex">\(1≤T≤50,\)</span></p>
+<p><span class="arithmatex">\(1≤N≤10^5\)</span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>2
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>2
 3
 1 8 2
 4
 10 7 6 14
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>8
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>8
 24
-</code></pre></div>
-<h3 id="_2">题解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>考虑如何表示当前的状态，假设当前到第i家店铺，我们有偷和不偷两种状态，<span class="arithmatex"><span class="MathJax_Preview">f[i,1]</span><script type="math/tex">f[i,1]</script></span>表示偷，<span class="arithmatex"><span class="MathJax_Preview">f[i,0]</span><script type="math/tex">f[i,0]</script></span>表示不偷，则状态转移方程如下：</p>
+</code></pre></div></td></tr></table></div>
+<h3 id="_2">题解</h3>
+<p>考虑如何表示当前的状态，假设当前到第i家店铺，我们有偷和不偷两种状态，<span class="arithmatex">\(f[i,1]\)</span>表示偷，<span class="arithmatex">\(f[i,0]\)</span>表示不偷，则状态转移方程如下：</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">f[i,0]=max(f[i-1,0],f[i-1,1])</span><script type="math/tex">f[i,0]=max(f[i-1,0],f[i-1,1])</script></span>,当前不偷则上一家可偷可不偷</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">f[i,1]=f[i-1,0]+w[i]</span><script type="math/tex">f[i,1]=f[i-1,0]+w[i]</script></span>,当前偷则上一家不偷</li>
+<li><span class="arithmatex">\(f[i,0]=max(f[i-1,0],f[i-1,1])\)</span>,当前不偷则上一家可偷可不偷</li>
+<li><span class="arithmatex">\(f[i,1]=f[i-1,0]+w[i]\)</span>,当前偷则上一家不偷</li>
 </ul>
 <p>最后结果为第n家偷或不偷取最大</p>
-<h3 id="_3">代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_3">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="cp">#define int long long</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
@@ -2316,9 +2341,9 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="2-iv">例2.股票买卖 IV<a class="headerlink" href="#2-iv" title="Permanent link">&para;</a></h2>
+<h2 id="2-iv">例2.股票买卖 IV</h2>
 <p><a href="https://www.acwing.com/problem/content/1059/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一个长度为 N 的数组，数组中的第 i 个数字表示一个给定股票在第 i 天的价格。</p>
@@ -2330,24 +2355,52 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示最大利润。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤N≤10^5,</span><script type="math/tex">1≤N≤10^5,</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤k≤100</span><script type="math/tex">1≤k≤100</script></span></p>
+<p><span class="arithmatex">\(1≤N≤10^5,\)</span></p>
+<p><span class="arithmatex">\(1≤k≤100\)</span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>6 2
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>6 2
 3 2 6 5 0 3
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>7
-</code></pre></div>
-<h3 id="_4">题解<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>考虑状态如何表示，对于第i天，有持仓和空仓两种状态，显然这里需要两维，但交易次数显然需要一维，因此我们定义<span class="arithmatex"><span class="MathJax_Preview">f[i,j,k]</span><script type="math/tex">f[i,j,k]</script></span>为：第i天已经完成j笔交易并且第i天初始状态为k所得的最大利润，状态转移方程如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>7
+</code></pre></div></td></tr></table></div>
+<h3 id="_4">题解</h3>
+<p>考虑状态如何表示，对于第i天，有持仓和空仓两种状态，显然这里需要两维，但交易次数显然需要一维，因此我们定义<span class="arithmatex">\(f[i,j,k]\)</span>为：第i天已经完成j笔交易并且第i天初始状态为k所得的最大利润，状态转移方程如下：</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">f[i,j,0]=max(f[i-1,j,0],f[i-1,j-1,1]+w[i])</span><script type="math/tex">f[i,j,0]=max(f[i-1,j,0],f[i-1,j-1,1]+w[i])</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">f[i,j,1]=max(f[i-1,j,1],f[i-1,j,0]-w[i])</span><script type="math/tex">f[i,j,1]=max(f[i-1,j,1],f[i-1,j,0]-w[i])</script></span></li>
+<li><span class="arithmatex">\(f[i,j,0]=max(f[i-1,j,0],f[i-1,j-1,1]+w[i])\)</span></li>
+<li><span class="arithmatex">\(f[i,j,1]=max(f[i-1,j,1],f[i-1,j,0]-w[i])\)</span></li>
 </ul>
-<p>注意当j为0时特判<span class="arithmatex"><span class="MathJax_Preview">f[i,j,0]</span><script type="math/tex">f[i,j,0]</script></span></p>
-<h3 id="_5">代码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<p>注意当j为0时特判<span class="arithmatex">\(f[i,j,0]\)</span></p>
+<h3 id="_5">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="c1">// #define int long long</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">105</span><span class="p">;</span><span class="w"></span>
@@ -2375,9 +2428,9 @@
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="3-v">例3.股票买卖 V<a class="headerlink" href="#3-v" title="Permanent link">&para;</a></h2>
+<h2 id="3-v">例3.股票买卖 V</h2>
 <p><a href="https://www.acwing.com/problem/content/1060/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>给定一个长度为 N 的数组，数组中的第 i 个数字表示一个给定股票在第 i 天的价格。</p>
@@ -2392,23 +2445,53 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个整数，表示最大利润。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤N≤105</span><script type="math/tex">1≤N≤105</script></span></p>
+<p><span class="arithmatex">\(1≤N≤105\)</span></p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>5
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>5
 1 2 3 0 2
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>3
-</code></pre></div>
-<h3 id="_6">题解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>比上题新增加了冷冻期的条件，因此状态也要相应地增加，我们令<span class="arithmatex"><span class="MathJax_Preview">f[i,0]</span><script type="math/tex">f[i,0]</script></span>表示第i天空仓且处于冷冻期，<span class="arithmatex"><span class="MathJax_Preview">f[i,1]</span><script type="math/tex">f[i,1]</script></span>表示第i天空仓不处于冷冻期，<span class="arithmatex"><span class="MathJax_Preview">f[i,2]</span><script type="math/tex">f[i,2]</script></span>表示第i天持仓，状态转移方程如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>3
+</code></pre></div></td></tr></table></div>
+<h3 id="_6">题解</h3>
+<p>比上题新增加了冷冻期的条件，因此状态也要相应地增加，我们令<span class="arithmatex">\(f[i,0]\)</span>表示第i天空仓且处于冷冻期，<span class="arithmatex">\(f[i,1]\)</span>表示第i天空仓不处于冷冻期，<span class="arithmatex">\(f[i,2]\)</span>表示第i天持仓，状态转移方程如下：</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">f[i,0]=f[i-1,2] + w[i]</span><script type="math/tex">f[i,0]=f[i-1,2] + w[i]</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">f[i,1]=max(f[i-1,0], f[i-1,1])</span><script type="math/tex">f[i,1]=max(f[i-1,0], f[i-1,1])</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">f[i,2]=max(f[i-1,2],f[i-1][1]-w[i]</span><script type="math/tex">f[i,2]=max(f[i-1,2],f[i-1][1]-w[i]</script></span></li>
+<li><span class="arithmatex">\(f[i,0]=f[i-1,2] + w[i]\)</span></li>
+<li><span class="arithmatex">\(f[i,1]=max(f[i-1,0], f[i-1,1])\)</span></li>
+<li><span class="arithmatex">\(f[i,2]=max(f[i-1,2],f[i-1][1]-w[i]\)</span></li>
 </ul>
-<h3 id="_7">代码<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+<h3 id="_7">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
 
@@ -2438,9 +2521,9 @@
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="4">例4.设计密码<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="4">例4.设计密码</h2>
 <p><a href="https://www.acwing.com/problem/content/1054/">题目链接</a></p>
 <p><strong>题目描述</strong></p>
 <p>你现在需要设计一个密码 S，S 需要满足：</p>
@@ -2458,19 +2541,56 @@
 <p><strong>输出格式</strong></p>
 <p>输出一个正整数，表示总方案数模 109+7 后的结果。</p>
 <p><strong>数据范围</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤N≤50,</span><script type="math/tex">1≤N≤50,</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">1≤|T|≤N</span><script type="math/tex">1≤|T|≤N</script></span>，|T|是T的长度。</p>
+<p><span class="arithmatex">\(1≤N≤50,\)</span></p>
+<p><span class="arithmatex">\(1≤|T|≤N\)</span>，|T|是T的长度。</p>
 <p><strong>输入样例</strong></p>
-<div class="highlight"><pre><span></span><code>4
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>4
 cbc
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>输出样例</strong></p>
-<div class="highlight"><pre><span></span><code>456924
-</code></pre></div>
-<h3 id="_8">题解<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>456924
+</code></pre></div></td></tr></table></div>
+<h3 id="_8">题解</h3>
 <p>对于单母串和单模式串匹配，很容易联想到KMP，对于本题，母串中不含模式串其实就是j走不到模式串的终点，根据KMP算法的特点，我们发现每次j的移动都是与母串当前位置的值一一对应，因此若枚举母串每一个位置的字母值，则j有26种跳跃方法。根据图论的相关知识，最终建出的图应该是有m个顶点，每个点有26条连向其他点的边构成的图，最终答案为j未跳到模式串末尾的方案数之和</p>
-<h3 id="_9">代码<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<h3 id="_9">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e9</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
@@ -2507,7 +2627,7 @@ cbc
 <span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

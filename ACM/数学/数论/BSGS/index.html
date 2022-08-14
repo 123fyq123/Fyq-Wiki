@@ -12,7 +12,7 @@
         <meta name="author" content="方毓乔">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../image/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -2202,17 +2202,76 @@
 
   <h1>BSGS和扩展BSGS</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>主要用于解决<span class="arithmatex"><span class="MathJax_Preview">a^n=b(mod \ p)</span><script type="math/tex">a^n=b(mod \ p)</script></span> 问题，求解最小非负整数n，使其满足左式，普通BSGS求解<span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>与<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>互质的情况，扩展BSGS可求解不互质情况</p>
+<h2 id="_1">概述</h2>
+<p>主要用于解决<span class="arithmatex">\(a^n=b(mod \ p)\)</span> 问题，求解最小非负整数n，使其满足左式，普通BSGS求解<span class="arithmatex">\(a\)</span>与<span class="arithmatex">\(p\)</span>互质的情况，扩展BSGS可求解不互质情况</p>
 <hr />
-<h2 id="bsgs">普通BSGS<a class="headerlink" href="#bsgs" title="Permanent link">&para;</a></h2>
-<h3 id="_2">解题步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>1.取<span class="arithmatex"><span class="MathJax_Preview">m=ceil(sqrt(p))</span><script type="math/tex">m=ceil(sqrt(p))</script></span>(向上取整)，若解存在，可令<span class="arithmatex"><span class="MathJax_Preview">n=i*m-j</span><script type="math/tex">n=i*m-j</script></span>，即数对<span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span>存在</p>
-<p>2.<span class="arithmatex"><span class="MathJax_Preview">a^n = b ( mod \ p ) =&gt; a^{i*m-j} = b( mod \ p ) -&gt; a_{i*m} = b*aj ( mod \ p )</span><script type="math/tex">a^n = b ( mod \ p ) => a^{i*m-j} = b( mod \ p ) -> a_{i*m} = b*aj ( mod \ p )</script></span></p>
-<p>3.在<span class="arithmatex"><span class="MathJax_Preview">0-m</span><script type="math/tex">0-m</script></span>范围内枚举<span class="arithmatex"><span class="MathJax_Preview">b*aj</span><script type="math/tex">b*aj</script></span>的值，并用hash表存储<span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span></p>
-<p>4.在<span class="arithmatex"><span class="MathJax_Preview">1-m</span><script type="math/tex">1-m</script></span>范围内枚举<span class="arithmatex"><span class="MathJax_Preview">a_i*m</span><script type="math/tex">a_i*m</script></span>的值，在hash表中查找，若找到，则输出<span class="arithmatex"><span class="MathJax_Preview">i*m-j</span><script type="math/tex">i*m-j</script></span>，反之无答案</p>
-<h3 id="_3">代码模板<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<h2 id="bsgs">普通BSGS</h2>
+<h3 id="_2">解题步骤</h3>
+<p>1.取<span class="arithmatex">\(m=ceil(sqrt(p))\)</span>(向上取整)，若解存在，可令<span class="arithmatex">\(n=i*m-j\)</span>，即数对<span class="arithmatex">\((i,j)\)</span>存在</p>
+<p>2.<span class="arithmatex">\(a^n = b ( mod \ p ) =&gt; a^{i*m-j} = b( mod \ p ) -&gt; a_{i*m} = b*aj ( mod \ p )\)</span></p>
+<p>3.在<span class="arithmatex">\(0-m\)</span>范围内枚举<span class="arithmatex">\(b*aj\)</span>的值，并用hash表存储<span class="arithmatex">\(j\)</span></p>
+<p>4.在<span class="arithmatex">\(1-m\)</span>范围内枚举<span class="arithmatex">\(a_i*m\)</span>的值，在hash表中查找，若找到，则输出<span class="arithmatex">\(i*m-j\)</span>，反之无答案</p>
+<h3 id="_3">代码模板</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="cp">#define int long long  </span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="p">;</span><span class="w">  </span>
@@ -2272,15 +2331,103 @@
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="bsgs_1">扩展BSGS<a class="headerlink" href="#bsgs_1" title="Permanent link">&para;</a></h2>
-<h3 id="_4">解题步骤<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>1.当<span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>与<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>互质时，套用普通BSGS即可</p>
-<p>2.当<span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>与<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>不互质时，设<span class="arithmatex"><span class="MathJax_Preview">gcd</span><script type="math/tex">gcd</script></span>为<span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>与<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>的最大公约数，对于方程<span class="arithmatex"><span class="MathJax_Preview">a^n=b ( mod \ p ) <span class="arithmatex"><span class="MathJax_Preview">，一定有 <span class="arithmatex"><span class="MathJax_Preview">a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )</span><script type="math/tex">a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )</script></span>存在，因此若存在，因此若</span><script type="math/tex">，一定有 <span class="arithmatex"><span class="MathJax_Preview">a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )</span><script type="math/tex">a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )</script></span>存在，因此若存在，因此若</script></span>bb</span><script type="math/tex">a^n=b ( mod \ p ) <span class="arithmatex"><span class="MathJax_Preview">，一定有 <span class="arithmatex"><span class="MathJax_Preview">a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )</span><script type="math/tex">a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )</script></span>存在，因此若存在，因此若</span><script type="math/tex">，一定有 <span class="arithmatex"><span class="MathJax_Preview">a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )</span><script type="math/tex">a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )</script></span>存在，因此若存在，因此若</script></span>bb</script></span>不为<span class="arithmatex"><span class="MathJax_Preview">gcd</span><script type="math/tex">gcd</script></span>的倍数，则方程无解</p>
-<p>3.对于新方程 令 <span class="arithmatex"><span class="MathJax_Preview">b/ gcd /( a / gcd) = b’</span><script type="math/tex">b/ gcd /( a / gcd) = b’</script></span>, <span class="arithmatex"><span class="MathJax_Preview">p/gcd = p’</span><script type="math/tex">p/gcd = p’</script></span> ,  用逆元处理<span class="arithmatex"><span class="MathJax_Preview">b’</span><script type="math/tex">b’</script></span> , 递归求解即可</p>
-<h3 id="_5">代码模板<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<h2 id="bsgs_1">扩展BSGS</h2>
+<h3 id="_4">解题步骤</h3>
+<p>1.当<span class="arithmatex">\(a\)</span>与<span class="arithmatex">\(p\)</span>互质时，套用普通BSGS即可</p>
+<p>2.当<span class="arithmatex">\(a\)</span>与<span class="arithmatex">\(p\)</span>不互质时，设<span class="arithmatex">\(gcd\)</span>为<span class="arithmatex">\(a\)</span>与<span class="arithmatex">\(p\)</span>的最大公约数，对于方程<span class="arithmatex">\(a^n=b ( mod \ p ) <span class="arithmatex">(，一定有 <span class="arithmatex">\(a/gcd * a^{n-1} = b/gcd ( mod\  p/gcd )\)</span>存在，因此若\)</span>b\)</span>不为<span class="arithmatex">\(gcd\)</span>的倍数，则方程无解</p>
+<p>3.对于新方程 令 <span class="arithmatex">\(b/ gcd /( a / gcd) = b’\)</span>, <span class="arithmatex">\(p/gcd = p’\)</span> ,  用逆元处理<span class="arithmatex">\(b’\)</span> , 递归求解即可</p>
+<h3 id="_5">代码模板</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="cp">#define int long long  </span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">inf</span><span class="o">=</span><span class="mf">1e8</span><span class="p">;</span><span class="w">  </span>
@@ -2369,9 +2516,9 @@
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="1p4861">例1.洛谷P4861 按钮<a class="headerlink" href="#1p4861" title="Permanent link">&para;</a></h2>
+<h2 id="1p4861">例1.洛谷P4861 按钮</h2>
 <p><a href="https://www.luogu.com.cn/problem/P4861">题目入口</a></p>
 <p><strong>题目描述</strong></p>
 <p>Ada被关在了一个房间里。房间的铁门上有一个按钮，还有一个显示屏显示着“1”。
@@ -2383,21 +2530,95 @@
 一行一个数字，表示最小按键次数。
 如果无论Ada按多少次都无法让门打开，输出"Let's go Blue Jays!"（不含引号）。</p>
 <p><strong>输入样例1</strong>
-<div class="highlight"><pre><span></span><code>11 2
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>11 2
+</code></pre></div></td></tr></table></div>
 <strong>输出样例1</strong>
-<div class="highlight"><pre><span></span><code>10
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>10
+</code></pre></div></td></tr></table></div>
 <strong>输入样例2</strong>
-<div class="highlight"><pre><span></span><code>6 26
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>6 26
+</code></pre></div></td></tr></table></div>
 <strong>输出样例2</strong>
-<div class="highlight"><pre><span></span><code>Let&#39;s go Blue Jays!
-</code></pre></div></p>
-<h3 id="_6">题解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>若最后答案存在，则有两种表达方式，<span class="arithmatex"><span class="MathJax_Preview">k^n</span><script type="math/tex">k^n</script></span>和<span class="arithmatex"><span class="MathJax_Preview">m*x+1</span><script type="math/tex">m*x+1</script></span>，于是可以列出方程，<span class="arithmatex"><span class="MathJax_Preview">k^n = 1 ( mod\ m )</span><script type="math/tex">k^n = 1 ( mod\ m )</script></span> ,套用由于答案不能为<span class="arithmatex"><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span>，于是特判一下原模板中输出<span class="arithmatex"><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span>的情况即可</p>
-<h3 id="_7">代码<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Let&#39;s go Blue Jays!
+</code></pre></div></td></tr></table></div></p>
+<h3 id="_6">题解</h3>
+<p>若最后答案存在，则有两种表达方式，<span class="arithmatex">\(k^n\)</span>和<span class="arithmatex">\(m*x+1\)</span>，于是可以列出方程，<span class="arithmatex">\(k^n = 1 ( mod\ m )\)</span> ,套用由于答案不能为<span class="arithmatex">\(0\)</span>，于是特判一下原模板中输出<span class="arithmatex">\(0\)</span>的情况即可</p>
+<h3 id="_7">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="cp">#define int long long  </span>
 <span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="n">k</span><span class="p">;</span><span class="w">  </span>
@@ -2472,7 +2693,7 @@
 <span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

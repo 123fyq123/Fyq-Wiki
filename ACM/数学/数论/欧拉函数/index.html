@@ -12,7 +12,7 @@
         <meta name="author" content="方毓乔">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../image/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -2244,25 +2244,45 @@
 
   <h1>欧拉函数</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>欧拉函数就是对于一个正整数<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>，小于<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>且和<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>互质的正整数(包括1)的个数，记作<span class="arithmatex"><span class="MathJax_Preview">φ(n)</span><script type="math/tex">φ(n)</script></span>。</p>
+<h2 id="_1">概述</h2>
+<p>欧拉函数就是对于一个正整数<span class="arithmatex">\(n\)</span>，小于<span class="arithmatex">\(n\)</span>且和<span class="arithmatex">\(n\)</span>互质的正整数(包括1)的个数，记作<span class="arithmatex">\(φ(n)\)</span>。</p>
 <p><strong>欧拉函数的通式:</strong></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">φ(n)=n*(1-1/p1)(1-1/p2)(1-1/p3)*(1-1/p4)……(1-1/pn)</span><script type="math/tex">φ(n)=n*(1-1/p1)(1-1/p2)(1-1/p3)*(1-1/p4)……(1-1/pn)</script></span></p>
-<p>其中<span class="arithmatex"><span class="MathJax_Preview">p_1, p_2,...,p_n</span><script type="math/tex">p_1, p_2,...,p_n</script></span>为<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>的所有质因数，<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>是不为<span class="arithmatex"><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span>的整数。<span class="arithmatex"><span class="MathJax_Preview">φ(1)=1</span><script type="math/tex">φ(1)=1</script></span>(唯一和1互质的数就是1本身)。</p>
+<p><span class="arithmatex">\(φ(n)=n*(1-1/p1)(1-1/p2)(1-1/p3)*(1-1/p4)……(1-1/pn)\)</span></p>
+<p>其中<span class="arithmatex">\(p_1, p_2,...,p_n\)</span>为<span class="arithmatex">\(n\)</span>的所有质因数，<span class="arithmatex">\(n\)</span>是不为<span class="arithmatex">\(0\)</span>的整数。<span class="arithmatex">\(φ(1)=1\)</span>(唯一和1互质的数就是1本身)。</p>
 <hr />
-<h2 id="_2">性质<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">性质</h2>
 <ul>
-<li>当<span class="arithmatex"><span class="MathJax_Preview">m,n</span><script type="math/tex">m,n</script></span>互质时，有<span class="arithmatex"><span class="MathJax_Preview">\phi(m \times n)= \phi(m)* \phi(n)</span><script type="math/tex">\phi(m \times n)= \phi(m)* \phi(n)</script></span>；</li>
-<li>若<span class="arithmatex"><span class="MathJax_Preview">i%p==0</span><script type="math/tex">i%p==0</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">\phi(i \times p) = p \times \phi(i)</span><script type="math/tex">\phi(i \times p) = p \times \phi(i)</script></span>；</li>
-<li>对于互质<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>与<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">x^{\phi(p)}≡1（mod \ p)</span><script type="math/tex">x^{\phi(p)}≡1（mod \ p)</script></span>,因此x的逆元为<span class="arithmatex"><span class="MathJax_Preview">x^{\phi(p)-1}</span><script type="math/tex">x^{\phi(p)-1}</script></span>，即欧拉定理。
-（特别地，当p为质数时，<span class="arithmatex"><span class="MathJax_Preview">\phi(p)=p-1</span><script type="math/tex">\phi(p)=p-1</script></span>,此时逆元为<span class="arithmatex"><span class="MathJax_Preview">x^{p-2}</span><script type="math/tex">x^{p-2}</script></span>，即费马小定理）</li>
-<li>当<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>为奇数时，<span class="arithmatex"><span class="MathJax_Preview">\phi(2n)=\phi(n)</span><script type="math/tex">\phi(2n)=\phi(n)</script></span></li>
-<li>若<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>与<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>互质，则<span class="arithmatex"><span class="MathJax_Preview">p-x</span><script type="math/tex">p-x</script></span>也与<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>互质，因此小于<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>且与<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>互质的数之和为<span class="arithmatex"><span class="MathJax_Preview">\phi(x) \times x/2</span><script type="math/tex">\phi(x) \times x/2</script></span>;</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">N&gt;1</span><script type="math/tex">N>1</script></span>，不大于<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>且和<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>互素的所有正整数的和是 <span class="arithmatex"><span class="MathJax_Preview">1/2 \times N \times eular(N)</span><script type="math/tex">1/2 \times N \times eular(N)</script></span>。</li>
+<li>当<span class="arithmatex">\(m,n\)</span>互质时，有<span class="arithmatex">\(\phi(m \times n)= \phi(m)* \phi(n)\)</span>；</li>
+<li>若<span class="arithmatex">\(i%p==0\)</span>，有<span class="arithmatex">\(\phi(i \times p) = p \times \phi(i)\)</span>；</li>
+<li>对于互质<span class="arithmatex">\(x\)</span>与<span class="arithmatex">\(p\)</span>，有<span class="arithmatex">\(x^{\phi(p)}≡1（mod \ p)\)</span>,因此x的逆元为<span class="arithmatex">\(x^{\phi(p)-1}\)</span>，即欧拉定理。
+（特别地，当p为质数时，<span class="arithmatex">\(\phi(p)=p-1\)</span>,此时逆元为<span class="arithmatex">\(x^{p-2}\)</span>，即费马小定理）</li>
+<li>当<span class="arithmatex">\(n\)</span>为奇数时，<span class="arithmatex">\(\phi(2n)=\phi(n)\)</span></li>
+<li>若<span class="arithmatex">\(x\)</span>与<span class="arithmatex">\(p\)</span>互质，则<span class="arithmatex">\(p-x\)</span>也与<span class="arithmatex">\(p\)</span>互质，因此小于<span class="arithmatex">\(p\)</span>且与<span class="arithmatex">\(p\)</span>互质的数之和为<span class="arithmatex">\(\phi(x) \times x/2\)</span>;</li>
+<li><span class="arithmatex">\(N&gt;1\)</span>，不大于<span class="arithmatex">\(N\)</span>且和<span class="arithmatex">\(N\)</span>互素的所有正整数的和是 <span class="arithmatex">\(1/2 \times N \times eular(N)\)</span>。</li>
 </ul>
 <hr />
-<h2 id="_3">欧拉筛模板<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">eular_</span><span class="p">()</span><span class="c1">//欧拉筛模板  </span>
+<h2 id="_3">欧拉筛模板</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">eular_</span><span class="p">()</span><span class="c1">//欧拉筛模板  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">vis</span><span class="p">,</span><span class="nb">true</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">vis</span><span class="p">));</span><span class="w">   </span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w">  </span>
@@ -2283,10 +2303,26 @@
 <span class="w">        </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="_4">欧拉函数模板<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">euler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">  </span>
+<h2 id="_4">欧拉函数模板</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">euler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="n">x</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">x</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//模拟（1-p1）*（1-p2）……过程，pi为x的质因数  </span>
@@ -2303,10 +2339,38 @@
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="n">ans</span><span class="o">-</span><span class="n">ans</span><span class="o">/</span><span class="n">x</span><span class="p">;</span><span class="c1">//若x不为1，说明仍有一个质因数没有乘  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="_5">线性求欧拉函数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">euler_</span><span class="p">()</span><span class="w">  </span>
+<h2 id="_5">线性求欧拉函数</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">euler_</span><span class="p">()</span><span class="w">  </span>
 <span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">vis</span><span class="p">,</span><span class="nb">true</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">vis</span><span class="p">));</span><span class="w">  </span>
 <span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">phi</span><span class="p">));</span><span class="w">  </span>
@@ -2335,9 +2399,9 @@
 <span class="w">        </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="1hdu2824-the-euler-function">例1.HDU2824 The Euler function<a class="headerlink" href="#1hdu2824-the-euler-function" title="Permanent link">&para;</a></h2>
+<h2 id="1hdu2824-the-euler-function">例1.HDU2824 The Euler function</h2>
 <p><strong>题目描述</strong></p>
 <p>The Euler function phi is an important kind of function in number theory, (n) represents the amount of the numbers which are smaller than n and coprime to n, and this function has a lot of beautiful characteristics. Here comes a very easy question: suppose you are given a, b, try to calculate (a)+ (a+1)+....+ (b)</p>
 <p><strong>输入格式</strong></p>
@@ -2345,15 +2409,62 @@
 <p><strong>输出格式</strong></p>
 <p>Output the result of (a)+ (a+1)+....+ (b)</p>
 <p><strong>输入样例</strong>
-<div class="highlight"><pre><span></span><code>3 100
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>3 100
+</code></pre></div></td></tr></table></div>
 <strong>输出样例</strong>
-<div class="highlight"><pre><span></span><code>3042
-</code></pre></div></p>
-<h3 id="_6">题解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>3042
+</code></pre></div></td></tr></table></div></p>
+<h3 id="_6">题解</h3>
 <p>线性求欧拉函数模板题</p>
-<h3 id="_7">代码<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+<h3 id="_7">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="w"> </span><span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w">  </span>
 <span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">3e6</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span><span class="w">  </span>
@@ -2401,9 +2512,9 @@
 <span class="w">     </span><span class="p">}</span><span class="w">  </span>
 <span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="w"> </span><span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="2hdu-2588-gcd">例2.HDU 2588 GCD<a class="headerlink" href="#2hdu-2588-gcd" title="Permanent link">&para;</a></h2>
+<h2 id="2hdu-2588-gcd">例2.HDU 2588 GCD</h2>
 <p><strong>题目描述</strong></p>
 <p>The greatest common divisor GCD(a,b) of two positive integers a and b,sometimes written (a,b),is the largest divisor common to a and b,For example,(1,2)=1,(12,18)=6.
 (a,b) can be easily found by the Euclidean algorithm. Now Carp is considering a little more difficult problem:
@@ -2413,20 +2524,74 @@ Given integers N and M, how many integer X satisfies 1&lt;=X&lt;=N and (X,N)&gt;
 <p><strong>输出格式</strong></p>
 <p>For each test case,output the answer on a single line.</p>
 <p><strong>输入样例</strong>
-<div class="highlight"><pre><span></span><code>3
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>3
 1 1
 10 2
 10000 72
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <strong>输出样例</strong>
-<div class="highlight"><pre><span></span><code>1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>1
 6
 260
-</code></pre></div></p>
-<h3 id="_8">题解<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>当<span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>为<span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span>时，易知答案为<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>，当<span class="arithmatex"><span class="MathJax_Preview">M&gt;1</span><script type="math/tex">M>1</script></span>时，可以确定满足条件的数一定时<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>大于<span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>的约数，如果<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>不能整除<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>，则<span class="arithmatex"><span class="MathJax_Preview">gcd(x,N)=1&lt;M</span><script type="math/tex">gcd(x,N)=1<M</script></span>，我们知道<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>的约数(设为<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>)和<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>的最大公约数为<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，那是否本题只有N的约数满足条件呢？显然不是，数<span class="arithmatex"><span class="MathJax_Preview">x*k</span><script type="math/tex">x*k</script></span>(<span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>为满足条件的某些数)与<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>的约数同样为<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，倒推一下，当<span class="arithmatex"><span class="MathJax_Preview">gcd(N，x \times k)=x</span><script type="math/tex">gcd(N，x \times k)=x</script></span>时，有<span class="arithmatex"><span class="MathJax_Preview">gcd(N/x，k)=1</span><script type="math/tex">gcd(N/x，k)=1</script></span>，即<span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>满足与<span class="arithmatex"><span class="MathJax_Preview">N/x</span><script type="math/tex">N/x</script></span>互质时满足<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>与<span class="arithmatex"><span class="MathJax_Preview">x \times k</span><script type="math/tex">x \times k</script></span>的最大公约数为<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，于是本题就变成了就<span class="arithmatex"><span class="MathJax_Preview">1-N/x</span><script type="math/tex">1-N/x</script></span>内，与<span class="arithmatex"><span class="MathJax_Preview">N/x</span><script type="math/tex">N/x</script></span>互质的数的个数，用欧拉函数求即可</p>
-<h3 id="_9">代码<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="_8">题解</h3>
+<p>当<span class="arithmatex">\(M\)</span>为<span class="arithmatex">\(1\)</span>时，易知答案为<span class="arithmatex">\(N\)</span>，当<span class="arithmatex">\(M&gt;1\)</span>时，可以确定满足条件的数一定时<span class="arithmatex">\(N\)</span>大于<span class="arithmatex">\(M\)</span>的约数，如果<span class="arithmatex">\(x\)</span>不能整除<span class="arithmatex">\(N\)</span>，则<span class="arithmatex">\(gcd(x,N)=1&lt;M\)</span>，我们知道<span class="arithmatex">\(N\)</span>的约数(设为<span class="arithmatex">\(x\)</span>)和<span class="arithmatex">\(N\)</span>的最大公约数为<span class="arithmatex">\(x\)</span>，那是否本题只有N的约数满足条件呢？显然不是，数<span class="arithmatex">\(x*k\)</span>(<span class="arithmatex">\(k\)</span>为满足条件的某些数)与<span class="arithmatex">\(N\)</span>的约数同样为<span class="arithmatex">\(x\)</span>，倒推一下，当<span class="arithmatex">\(gcd(N，x \times k)=x\)</span>时，有<span class="arithmatex">\(gcd(N/x，k)=1\)</span>，即<span class="arithmatex">\(k\)</span>满足与<span class="arithmatex">\(N/x\)</span>互质时满足<span class="arithmatex">\(N\)</span>与<span class="arithmatex">\(x \times k\)</span>的最大公约数为<span class="arithmatex">\(x\)</span>，于是本题就变成了就<span class="arithmatex">\(1-N/x\)</span>内，与<span class="arithmatex">\(N/x\)</span>互质的数的个数，用欧拉函数求即可</p>
+<h3 id="_9">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w">  </span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">1e5</span><span class="p">;</span><span class="w">  </span>
@@ -2476,35 +2641,109 @@ Given integers N and M, how many integer X satisfies 1&lt;=X&lt;=N and (X,N)&gt;
 <span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="3hdu-phi">例3.HDU phi<a class="headerlink" href="#3hdu-phi" title="Permanent link">&para;</a></h2>
+<h2 id="3hdu-phi">例3.HDU phi</h2>
 <p><strong>题目描述</strong></p>
 <p>给出若干个正整数n，请你求出最小的m，使得φ(m)≥n。</p>
 <p><strong>输入格式</strong></p>
 <p>本题有多组输入。</p>
 <p>第一行一个正整数T表示数据组数</p>
 <p>接下来T行每行一个正整数n</p>
-<p>数据保证<span class="arithmatex"><span class="MathJax_Preview">1≤T≤104,1≤n≤106</span><script type="math/tex">1≤T≤104,1≤n≤106</script></span>。</p>
+<p>数据保证<span class="arithmatex">\(1≤T≤104,1≤n≤106\)</span>。</p>
 <p><strong>输出格式</strong></p>
 <p>共T行，每行一个数代表对应的答案</p>
 <p><strong>输入样例</strong>
-<div class="highlight"><pre><span></span><code>5
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>5
 1
 2
 3
 4
 5
-</code></pre></div></p>
+</code></pre></div></td></tr></table></div></p>
 <p><strong>输出样例</strong>
-<div class="highlight"><pre><span></span><code>1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>1
 3
 5
 5
 7
-</code></pre></div></p>
-<h3 id="_10">代码<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="_10">代码</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="c1">  </span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w">  </span>
 <span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w">  </span>
 <span class="k">const</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">5e6</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span><span class="w">  </span>
@@ -2570,7 +2809,7 @@ Given integers N and M, how many integer X satisfies 1&lt;=X&lt;=N and (X,N)&gt;
 <span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span>
 <span class="p">}</span><span class="w">  </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

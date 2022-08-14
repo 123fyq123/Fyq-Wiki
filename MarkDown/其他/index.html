@@ -12,7 +12,7 @@
         <meta name="author" content="方毓乔">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../image/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -2092,39 +2092,42 @@
 
   <h1>其他扩展语法</h1>
 
-<h2 id="_1">马克笔<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><code>==...==</code>，使用两个等于可以把一段内容以 <mark>马克笔</mark> 的形式打上标记。</p>
+<h2 id="_1">马克笔</h2>
+<p><code>==...==</code>，使用两个等于可以把一段内容以 ==马克笔== 的形式打上标记。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>测试这个功能的时候发现两个等于的两边还需要加上空格。</p>
 </div>
-<h2 id="_2">脚注<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">脚注</h2>
 <p>格式：[^number]</p>
 <p>代码</p>
-<div class="highlight"><pre><span></span><code>前端三驾马车：HTML[^1]、CSS、JavaScript。
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>前端三驾马车：HTML[^1]、CSS、JavaScript。
+</code></pre></div></td></tr></table></div>
 <p>显示效果</p>
-<p>前端三驾马车：HTML<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>、CSS、JavaScript。</p>
+<p>前端三驾马车：HTML<a href="HTML称为超文本标记语言，是一种标识性的语言。">^1</a>、CSS、JavaScript。</p>
 <p>在markdown底部声明脚注</p>
-<div class="highlight"><pre><span></span><code>[<span class="nl">^1</span>]: <span class="na">HTML称为超文本标记语言，是一种标识性的语言。</span>
-</code></pre></div>
-<h2 id="latex">LaTex 数学扩展<a class="headerlink" href="#latex" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>[<span class="nl">^1</span>]: <span class="na">HTML称为超文本标记语言，是一种标识性的语言。</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="latex">LaTex 数学扩展</h2>
 <p>支持内联公式<code>$$</code>和块级公式<code>$$$$</code>，具体请查看LaTeX的语法规则。</p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="k">\frac</span><span class="nb">{</span>n!<span class="nb">}{</span>k!(n-k)!<span class="nb">}</span> = <span class="k">\binom</span><span class="nb">{</span>n<span class="nb">}{</span>k<span class="nb">}</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\frac</span><span class="nb">{</span>n!<span class="nb">}{</span>k!(n-k)!<span class="nb">}</span> = <span class="k">\binom</span><span class="nb">{</span>n<span class="nb">}{</span>k<span class="nb">}</span>
+</code></pre></div></td></tr></table></div>
 <p>效果:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \frac{n!}{k!(n-k)!} = \binom{n}{k}
-</div>
-<script type="math/tex; mode=display">
-\frac{n!}{k!(n-k)!} = \binom{n}{k}
-</script>
-</div>
-<h2 id="todo-list">Todo List<a class="headerlink" href="#todo-list" title="Permanent link">&para;</a></h2>
+\]</div>
+<h2 id="todo-list">Todo List</h2>
 <p>源代码：</p>
-<div class="highlight"><pre><span></span><code><span class="k">* [x]</span> 起床
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">* [x]</span> 起床
 <span class="k">* [x]</span> 刷牙
 <span class="k">* [ ]</span> 上网课
     <span class="k">* [x]</span> 数据库
@@ -2133,22 +2136,22 @@
     <span class="k">* [ ]</span> 数据结构
 <span class="k">* [ ]</span> 做作业
 <span class="k">* [ ]</span> 睡觉
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>显示结果：</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 起床</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 刷牙</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 上网课<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 数据库</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 操作系统</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 计算机网络</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 数据结构</li>
+<ul>
+<li>[x] 起床</li>
+<li>[x] 刷牙</li>
+<li>[ ] 上网课<ul>
+<li>[x] 数据库</li>
+<li>[x] 操作系统</li>
+<li>[x] 计算机网络</li>
+<li>[ ] 数据结构</li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 做作业</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 睡觉</li>
+<li>[ ] 做作业</li>
+<li>[ ] 睡觉</li>
 </ul>
-<h2 id="_3">连体标记<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">连体标记</h2>
 <table>
 <thead>
 <tr>
@@ -2159,58 +2162,50 @@
 <tbody>
 <tr>
 <td align="center"><code>(tm)</code></td>
-<td align="center">&trade;</td>
+<td align="center">(tm)</td>
 </tr>
 <tr>
 <td align="center"><code>(c)</code></td>
-<td align="center">&copy;</td>
+<td align="center">(c)</td>
 </tr>
 <tr>
 <td align="center"><code>(r)</code></td>
-<td align="center">&reg;</td>
+<td align="center">(r)</td>
 </tr>
 <tr>
 <td align="center"><code>c/o</code></td>
-<td align="center">&#8453;</td>
+<td align="center">c/o</td>
 </tr>
 <tr>
 <td align="center"><code>+/-</code></td>
-<td align="center">&plusmn;</td>
+<td align="center">+/-</td>
 </tr>
 <tr>
 <td align="center"><code>--&gt;</code></td>
-<td align="center">&rarr;</td>
+<td align="center">--&gt;</td>
 </tr>
 <tr>
 <td align="center"><code>&lt;--</code></td>
-<td align="center">&larr;</td>
+<td align="center">&lt;--</td>
 </tr>
 <tr>
 <td align="center"><code>&lt;--&gt;</code></td>
-<td align="center">&harr;</td>
+<td align="center">&lt;--&gt;</td>
 </tr>
 <tr>
 <td align="center"><code>=/=</code></td>
-<td align="center">&ne;</td>
+<td align="center">=/=</td>
 </tr>
 <tr>
 <td align="center"><code>1/4</code></td>
-<td align="center">&frac14;</td>
+<td align="center">1/4</td>
 </tr>
 <tr>
 <td align="center"><code>1st 2nd</code></td>
-<td align="center">1<sup>st</sup> 2<sup>nd</sup></td>
+<td align="center">1st 2nd</td>
 </tr>
 </tbody>
 </table>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>HTML称为超文本标记语言，是一种标识性的语言。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
               
             </article>
