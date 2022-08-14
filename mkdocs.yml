@@ -114,7 +114,7 @@ theme:
   palette:
     primary: 'white'
     accent: 'red'
-  # favicon: img/favicon.png
+  favicon: image/logo.png
   icon:
     logo: material/library
 
@@ -145,32 +145,24 @@ extra:
 
 # md extrc
 markdown_extensions:
-  - footnotes
-  - markdown.extensions.admonition
-  - markdown.extensions.codehilite:
-      linenums: false
-      guess_lang: false
-  - markdown.extensions.toc:
-      permalink: true
-  - pymdownx.arithmatex
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.details
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
-  - pymdownx.mark
-  - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tasklist:
-      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 extra_javascript:
     - 'js/mathjax.js'
-    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-  
+    - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
+
 extra_css:
   - css/mycss.css
   
