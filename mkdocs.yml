@@ -52,6 +52,8 @@ nav:
       - Dijkstra算法: ACM/图论/Dijkstra算法.md
       - SPFA算法: ACM/图论/SPFA算法.md
       - 单源最短路应用: ACM/图论/单源最短路应用.md
+      - 最小生成树: ACM/图论/最小生成树.md
+      - 差分约束: ACM/图论/差分约束.md
     - 2022多校:
         - 牛客多校1 I: ACM/多校/1.md
         - 牛客多校2 D: ACM/多校/2.md
