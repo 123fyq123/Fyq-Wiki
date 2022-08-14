@@ -27,7 +27,12 @@ nav:
         - 中国剩余定理: ACM/数学/数论/crt.md
         - 积性函数与莫比乌斯反演: ACM/数学/数论/莫反.md
         - 例题: ACM/数学/数论/例题.md
-      - 期望: ACM/数学/期望/期望.md
+      - 期望:
+        - WJMZBMR打osu!/easy: ACM/数学/期望/1.md
+        - OSU!: ACM/数学/期望/2.md
+        - Chiitoitsu: ACM/数学/期望/3.md
+        - 游戏: ACM/数学/期望/4.md
+        - 小魔女帕琪: ACM/数学/期望/5.md
       - 多项式: 
         - 常生成函数: ACM/数学/多项式/生成函数/常生成函数.md
         - 指数生成函数: ACM/数学/多项式/生成函数/指数生成函数.md
@@ -47,6 +52,14 @@ nav:
       - Dijkstra算法: ACM/图论/Dijkstra算法.md
       - SPFA算法: ACM/图论/SPFA算法.md
       - 单源最短路应用: ACM/图论/单源最短路应用.md
+    - 2022多校:
+        - 牛客多校1 I: ACM/多校/1.md
+        - 牛客多校2 D: ACM/多校/2.md
+        - 牛客多校2 K: ACM/多校/3.md
+        - 牛客多校4 A: ACM/多校/4.md
+        - 牛客多校4 H: ACM/多校/5.md
+        - 牛客多校6 A: ACM/多校/6.md
+        - 牛客多校8 F: ACM/多校/7.md
   - PS: 
     - 基础知识入门: PS/base.md
     - 图像的基本编辑方法: PS/PS1.md
@@ -97,7 +110,7 @@ nav:
       - 函数: Web/JS/js8.md
       - 类: Web/JS/js9.md
       - 事件: Web/JS/js10.md
-  - MarkDown扩展语法:
+  - MarkDown:
     - 警告框: MarkDown/警告框.md
     - 代码块扩展语法: MarkDown/代码块扩展语法.md
     - 其他扩展语法: MarkDown/其他.md
@@ -163,6 +176,5 @@ extra_javascript:
     - 'js/mathjax.js'
     - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
 
-extra_css:
-  - css/mycss.css
+
   
