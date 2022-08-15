@@ -1357,6 +1357,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" class="md-nav__link">
+        最近公共祖先
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2708,10 +2722,10 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>1.将边按照边权从小到大排序，并建立一个没有边的图T。
-2.选出一条没有被选过的边权最小的边。
-3.如果这条边两个顶点在T中所在的连通块不相同，那么将它加入图T，相同就跳过。
-4.重复步骤2和步骤3直到图T连通为止。
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>将边按照边权从小到大排序，并建立一个没有边的图T。
+选出一条没有被选过的边权最小的边。
+如果这条边两个顶点在T中所在的连通块不相同，那么将它加入图T，相同就跳过。
+重复步骤2和步骤3直到图T连通为止。
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2722,9 +2736,9 @@
 <h3 id="_4">操作步骤</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>1.先建立一个只有一个结点的树，这个结点可以是原图中任意的一个结点
-2.使用一条边扩展这个树，要求这条边一个顶点在树中另一 个顶点不在树中，并且这条边的权值要求最小。
-3. 重复步骤2直到所有顶点都在树中。
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>先建立一个只有一个结点的树，这个结点可以是原图中任意的一个结点
+使用一条边扩展这个树，要求这条边一个顶点在树中另一 个顶点不在树中，并且这条边的权值要求最小。
+重复步骤2直到所有顶点都在树中。
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
