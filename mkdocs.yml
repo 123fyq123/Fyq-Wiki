@@ -3,7 +3,7 @@ site_name: Fyq Docs
 site_name: FYQ Wiki
 site_description: 一位计算机爱好者的资料整理.... 
 site_author: 方毓乔
-# site_url: 'https://wiki.pjmcode.top/'
+site_url: 'https://wiki.fyqcode.top/'
 strict: false
 
 # Repository
@@ -64,6 +64,11 @@ nav:
         - 牛客多校4 H: ACM/多校/5.md
         - 牛客多校6 A: ACM/多校/6.md
         - 牛客多校8 F: ACM/多校/7.md
+        - 牛客多校加赛E: ACM/多校/8.md
+        - 牛客多校10 I: ACM/多校/12.md
+        - 杭电多校4 02: ACM/多校/9.md
+        - 杭电多校8 07: ACM/多校/10.md
+        - 杭电多校9 01: ACM/多校/11.md
   - PS: 
     - 基础知识入门: PS/base.md
     - 图像的基本编辑方法: PS/PS1.md
