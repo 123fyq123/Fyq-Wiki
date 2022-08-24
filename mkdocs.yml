@@ -69,6 +69,26 @@ nav:
         - 杭电多校4 02: ACM/多校/9.md
         - 杭电多校8 07: ACM/多校/10.md
         - 杭电多校9 01: ACM/多校/11.md
+  - Linux:
+    - 常用文件管理命令: Linux/常用文件管理命令.md
+    - Tmux和Vim: Linux/tmux和vim.md
+    - Shell语法:
+      - 概论: Linux/shell/概论.md
+      - 注释: Linux/shell/注释.md
+      - 变量: Linux/shell/变量.md
+      - 默认变量: Linux/shell/默认变量.md
+      - 数组: Linux/shell/数组.md
+      - expr命令: Linux/shell/expr.md
+      - read命令: Linux/shell/read.md
+      - echo命令: Linux/shell/echo.md
+      - printf命令: Linux/shell/printf.md
+      - test命令与判断符号[]: Linux/shell/test.md
+      - 判断语句: Linux/shell/判断.md
+      - 循环语句: Linux/shell/循环.md
+      - 函数: Linux/shell/函数.md
+      - exit命令: Linux/shell/exit.md
+      - 文件重定向: Linux/shell/文件重定向.md
+      - 引入外部脚本: Linux/shell/引入.md
   - PS: 
     - 基础知识入门: PS/base.md
     - 图像的基本编辑方法: PS/PS1.md
