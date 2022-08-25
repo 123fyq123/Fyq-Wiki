@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1509,9 +1514,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          默认变量
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         默认变量
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    文件参数变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    其它参数相关变量
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2566,6 +2607,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MarkDown/%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/" class="md-nav__link">
+        特殊字符查询表
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2652,6 +2707,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    文件参数变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    其它参数相关变量
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2670,7 +2747,78 @@
 
   <h1>默认变量</h1>
 
+<h2 id="_1">文件参数变量</h2>
+<p>在执行<code>shell</code>脚本时，可以向脚本传递参数。<code>$1</code>是第一个参数，<code>$2</code>是第二个参数，以此类推。特殊的，<code>$0</code>是文件名（包含路径）。例如：</p>
+<p><strong>创建文件<code>test.sh</code>：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#! /bin/bash</span>
 
+<span class="nb">echo</span> <span class="s2">&quot;文件名：&quot;</span><span class="nv">$0</span>
+<span class="nb">echo</span> <span class="s2">&quot;第一个参数：&quot;</span><span class="nv">$1</span>
+<span class="nb">echo</span> <span class="s2">&quot;第二个参数：&quot;</span><span class="nv">$2</span>
+<span class="nb">echo</span> <span class="s2">&quot;第三个参数：&quot;</span><span class="nv">$3</span>
+<span class="nb">echo</span> <span class="s2">&quot;第四个参数：&quot;</span><span class="nv">$4</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>然后执行该脚本：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>acs@9e0ebfcd82d7:~$ chmod +x test.sh 
+acs@9e0ebfcd82d7:~$ ./test.sh <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
+文件名：./test.sh
+第一个参数：1
+第二个参数：2
+第三个参数：3
+第四个参数：4
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="_2">其它参数相关变量</h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$#</code></td>
+<td>代表文件传入的参数个数，如上例中值为4</td>
+</tr>
+<tr>
+<td><code>$*</code></td>
+<td>由所有参数构成的用空格隔开的字符串，如上例中值为<code>"$1 $2 $3 $4"</code></td>
+</tr>
+<tr>
+<td><code>$@</code></td>
+<td>每个参数分别用双引号括起来的字符串，如上例中值为<code>"$1" "$2" "$3" "$4"</code></td>
+</tr>
+<tr>
+<td><code>$$</code></td>
+<td>脚本当前运行的进程ID</td>
+</tr>
+<tr>
+<td><code>$?</code></td>
+<td>上一条命令的退出状态（注意不是<code>stdout</code>，而是<code>exit code</code>）。<code>0</code>表示正常退出，其他值表示错误</td>
+</tr>
+<tr>
+<td><code>$(command)</code></td>
+<td>返回<code>command</code>这条命令的<code>stdout</code>（可嵌套）</td>
+</tr>
+<tr>
+<td>&#96; <code>command</code> &#96;</td>
+<td>返回<code>command</code>这条命令的<code>stdout</code>（不可嵌套）</td>
+</tr>
+</tbody>
+</table>
 
               
             </article>
