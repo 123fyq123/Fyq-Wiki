@@ -271,6 +271,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://wiki.fyqcode.top/Linux/git/</loc>
+         <lastmod>2022-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://wiki.fyqcode.top/Linux/ssh/</loc>
+         <lastmod>2022-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://wiki.fyqcode.top/Linux/tmux%E5%92%8Cvim/</loc>
          <lastmod>2022-08-26</lastmod>
          <changefreq>daily</changefreq>
