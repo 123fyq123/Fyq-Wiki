@@ -11,8 +11,8 @@ repo_name: 'Fyq'
 repo_url: 'https://github.com/123fyq123/Fyq-Wiki'
 
 nav:
-  - welcome: index.md
-  - ACM:
+  - Welcome: index.md
+  - Acm:
     - 数学:
       - 组合数学:
         - 组合数: ACM/数学/组合数学/组合数.md
@@ -89,7 +89,9 @@ nav:
       - exit命令: Linux/shell/exit.md
       - 文件重定向: Linux/shell/文件重定向.md
       - 引入外部脚本: Linux/shell/引入.md
-  - PS: 
+    - ssh: Linux/ssh.md
+    - git: Linux/git.md
+  - Ps: 
     - 基础知识入门: PS/base.md
     - 图像的基本编辑方法: PS/PS1.md
     - 选区与抠图: PS/PS2.md
@@ -144,7 +146,7 @@ nav:
     - 代码块扩展语法: MarkDown/代码块扩展语法.md
     - 其他扩展语法: MarkDown/其他.md
     - 特殊字符查询表: MarkDown/特殊字符.md
-  - about:
+  - About:
     - 关于作者: 关于/作者.md
     - 关于算法竞赛: 关于/大学.md
     
