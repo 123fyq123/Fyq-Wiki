@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1663,9 +1668,59 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          文件重定向
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         文件重定向
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    重定向命令列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    输入和输出重定向
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdinstdout" class="md-nav__link">
+    同时重定向stdin和stdout
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2666,6 +2721,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    重定向命令列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    输入和输出重定向
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdinstdout" class="md-nav__link">
+    同时重定向stdin和stdout
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2684,7 +2775,88 @@
 
   <h1>文件重定向</h1>
 
+<h2 id="_1">概述</h2>
+<p>每个进程默认打开3个<strong>文件描述符</strong>：</p>
+<ul>
+<li><code>stdin</code>标准输入，从命令行读取数据，文件描述符为<code>0</code></li>
+<li><code>stdout</code>标准输出，向命令行输出数据，文件描述符为<code>1</code></li>
+<li><code>stderr</code>标准错误输出，向命令行输出数据，文件描述符为<code>2</code></li>
+</ul>
+<p>可以用文件重定向将这三个文件重定向到其他文件中。</p>
+<hr />
+<h2 id="_2">重定向命令列表</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command &gt; file</code></td>
+<td>将<code>stdout</code>重定向到<code>file</code>中</td>
+</tr>
+<tr>
+<td><code>command &lt; file</code></td>
+<td>将<code>stdin</code>重定向到<code>file</code>中</td>
+</tr>
+<tr>
+<td><code>command &gt;&gt; file</code></td>
+<td>将<code>stdout</code>以追加方式重定向到<code>file</code>中</td>
+</tr>
+<tr>
+<td><code>command n&gt; file</code></td>
+<td>将文件描述符<code>n</code>重定向到<code>file</code>中</td>
+</tr>
+<tr>
+<td><code>command n&gt;&gt; file</code></td>
+<td>将文件描述符<code>n</code>以追加方式重定向到<code>file</code>中</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">输入和输出重定向</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">echo</span> -e <span class="s2">&quot;Hello \c&quot;</span> &gt; output.txt  <span class="c1"># 将stdout重定向到output.txt中</span>
+<span class="nb">echo</span> <span class="s2">&quot;World&quot;</span> &gt;&gt; output.txt  <span class="c1"># 将字符串追加到output.txt中</span>
 
+<span class="nb">read</span> str &lt; output.txt  <span class="c1"># 从output.txt中读取字符串</span>
+
+<span class="nb">echo</span> <span class="nv">$str</span>  <span class="c1"># 输出结果：Hello World</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="stdinstdout">同时重定向stdin和stdout</h2>
+<p><strong>创建bash脚本：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#! /bin/bash</span>
+
+<span class="nb">read</span> a
+<span class="nb">read</span> b
+
+<span class="nb">echo</span> <span class="k">$(</span>expr <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> + <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span><span class="k">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>创建input.txt，里面的内容为：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>3
+4
+</code></pre></div></td></tr></table></div>
+<p><strong>执行命令：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>acs@9e0ebfcd82d7:~$ chmod +x test.sh  <span class="c1"># 添加可执行权限</span>
+acs@9e0ebfcd82d7:~$ ./test.sh &lt; input.txt &gt; output.txt  <span class="c1"># 从input.txt中读取内容，将输出写入output.txt中</span>
+acs@9e0ebfcd82d7:~$ cat output.txt  <span class="c1"># 查看output.txt中的内容</span>
+<span class="m">7</span>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

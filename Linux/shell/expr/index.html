@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1537,9 +1542,98 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          expr命令
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         expr命令
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    字符串表达式
+  </a>
+  
+    <nav class="md-nav" aria-label="字符串表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    整数表达式
+  </a>
+  
+    <nav class="md-nav" aria-label="整数表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    逻辑关系表达式
+  </a>
+  
+    <nav class="md-nav" aria-label="逻辑关系表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2666,6 +2760,81 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    字符串表达式
+  </a>
+  
+    <nav class="md-nav" aria-label="字符串表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    整数表达式
+  </a>
+  
+    <nav class="md-nav" aria-label="整数表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    逻辑关系表达式
+  </a>
+  
+    <nav class="md-nav" aria-label="逻辑关系表达式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2684,7 +2853,133 @@
 
   <h1>expr命令</h1>
 
+<p><code>expr</code>命令用于求表达式的值，格式为：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>expr 表达式
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="_1">说明</h2>
+<ul>
+<li>用空格隔开每一项</li>
+<li>用反斜杠放在shell特定的字符前面（发现表达式运行错误时，可以试试转义）</li>
+<li>对包含空格和其他特殊字符的字符串要用引号括起来</li>
+<li><code>expr</code>会在<code>stdout</code>中输出结果。如果为逻辑关系表达式，则结果为真，<code>stdout</code>为<code>1</code>，否则为<code>0</code>。</li>
+<li><code>expr</code>的<code>exit code</code>：如果为逻辑关系表达式，则结果为真，<code>exit code</code>为<code>0</code>，否则为<code>1</code>。</li>
+</ul>
+<hr />
+<h2 id="_2">字符串表达式</h2>
+<ul>
+<li><code>length STRING</code><ul>
+<li>返回<code>STRING</code>的长度</li>
+</ul>
+</li>
+<li><code>index STRING CHARSET</code><ul>
+<li><code>CHARSET</code>中任意单个字符在<code>STRING</code>中最前面的字符位置，下标从<code>1</code>开始。如果在<code>STRING</code>中完全不存在</li>
+<li><code>CHARSET</code>中的字符，则返回<code>0</code>。</li>
+</ul>
+</li>
+<li><code>substr STRING POSITION LENGTH</code><ul>
+<li>返回<code>STRING</code>字符串中从<code>POSITION</code>开始，长度最大为<code>LENGTH</code>的子串。如果<code>POSITION</code>或<code>LENGTH</code>为负数，<code>0</code>或非数值，则返回空字符串。</li>
+</ul>
+</li>
+</ul>
+<h3 id="_3">举例</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;Hello World!&quot;</span>
 
+<span class="nb">echo</span> <span class="sb">`</span>expr length <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span><span class="sb">`</span>  <span class="c1"># ``不是单引号，表示执行该命令，输出12</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr index <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> aWd<span class="sb">`</span>  <span class="c1"># 输出7，下标从1开始</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr substr <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> <span class="m">2</span> <span class="m">3</span><span class="sb">`</span>  <span class="c1"># 输出 ell</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="_4">整数表达式</h2>
+<p><code>expr</code>支持普通的算术操作，算术表达式优先级低于字符串表达式，高于逻辑关系表达式。</p>
+<ul>
+<li><code>+ -</code><ul>
+<li>加减运算。两端参数会转换为整数，如果转换失败则报错。</li>
+</ul>
+</li>
+<li><code>* / %</code><ul>
+<li>乘，除，取模运算。两端参数会转换为整数，如果转换失败则报错。</li>
+</ul>
+</li>
+<li><code>()</code><ul>
+<li>可以改变优先级，但需要用反斜杠转义</li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">举例</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> + <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出7</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> - <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出-1</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\*</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出12，*需要转义</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> / <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0，整除</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> % <span class="nv">$b</span><span class="sb">`</span> <span class="c1"># 输出3</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="se">\(</span> <span class="nv">$a</span> + <span class="m">1</span> <span class="se">\)</span> <span class="se">\*</span> <span class="se">\(</span> <span class="nv">$b</span> + <span class="m">1</span> <span class="se">\)</span><span class="sb">`</span>  <span class="c1"># 输出20，值为(a + 1) * (b + 1)</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="_6">逻辑关系表达式</h2>
+<ul>
+<li><code>|</code><ul>
+<li>如果第一个参数非空且非0，则返回第一个参数的值，否则返回第二个参数的值，但要求第二个参数的值也是非空或非0，否则返回0。如果第一个参数是非空或非0时，不会计算第二个参数。</li>
+</ul>
+</li>
+<li><code>&amp;</code><ul>
+<li>如果两个参数都非空且非0，则返回第一个参数，否则返回0。如果第一个参为0或为空，则不会计算第二个参数。</li>
+</ul>
+</li>
+<li><code>&lt; &lt;= = == != &gt;= &gt;</code><ul>
+<li>比较两端的参数，如果为true，则返回1，否则返回0。”==”是”=”的同义词。”expr”首先尝试将两端参数转换为整数，并做算术比较，如果转换失败，则按字符集排序规则做字符比较。</li>
+</ul>
+</li>
+<li><code>()</code><ul>
+<li>可以改变优先级，但需要用反斜杠转义</li>
+</ul>
+</li>
+</ul>
+<h3 id="_7">举例</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&gt;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0，&gt;需要转义</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="s1">&#39;&lt;&#39;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出1，也可以将特殊字符用引号引起来</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="s1">&#39;&gt;=&#39;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&lt;\=</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出1</span>
+
+<span class="nv">c</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">d</span><span class="o">=</span><span class="m">5</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$c</span> <span class="se">\&amp;</span> <span class="nv">$d</span><span class="sb">`</span>  <span class="c1"># 输出0</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&amp;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出3</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$c</span> <span class="se">\|</span> <span class="nv">$d</span><span class="sb">`</span>  <span class="c1"># 输出5</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\|</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出3</span>
+</code></pre></div></td></tr></table></div>
 
               
             </article>

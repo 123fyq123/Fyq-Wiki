@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1579,9 +1584,38 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          printf命令
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         printf命令
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    用法示例
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2666,6 +2700,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    用法示例
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2684,7 +2733,31 @@
 
   <h1>printf命令</h1>
 
-
+<p><code>printf</code>命令用于格式化输出，类似于<code>C/C++</code>中的<code>printf</code>函数。</p>
+<p>默认不会在字符串末尾添加换行符。</p>
+<p><strong>命令格式：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">printf</span> format-string <span class="o">[</span>arguments...<span class="o">]</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="_1">用法示例</h2>
+<p><strong>脚本内容：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">printf</span> <span class="s2">&quot;%10d.\n&quot;</span> <span class="m">123</span>  <span class="c1"># 占10位，右对齐</span>
+<span class="nb">printf</span> <span class="s2">&quot;%-10.2f.\n&quot;</span> <span class="m">123</span>.123321  <span class="c1"># 占10位，保留2位小数，左对齐</span>
+<span class="nb">printf</span> <span class="s2">&quot;My name is %s\n&quot;</span> <span class="s2">&quot;fyq&quot;</span>  <span class="c1"># 格式化输出字符串</span>
+<span class="nb">printf</span> <span class="s2">&quot;%d * %d = %d\n&quot;</span>  <span class="m">2</span> <span class="m">3</span> <span class="sb">`</span>expr <span class="m">2</span> <span class="se">\*</span> <span class="m">3</span><span class="sb">`</span> <span class="c1"># 表达式的值作为参数</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>输出结果：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>       123.
+123.12    .
+My name is fyq
+2 * 3 = 6
+</code></pre></div></td></tr></table></div>
 
               
             </article>

@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1523,9 +1528,99 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          数组
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         数组
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    读取数组中某个元素的值
+  </a>
+  
+    <nav class="md-nav" aria-label="读取数组中某个元素的值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    数组长度
+  </a>
+  
+    <nav class="md-nav" aria-label="数组长度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2666,6 +2761,82 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    读取数组中某个元素的值
+  </a>
+  
+    <nav class="md-nav" aria-label="读取数组中某个元素的值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    数组长度
+  </a>
+  
+    <nav class="md-nav" aria-label="数组长度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    举例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2684,7 +2855,84 @@
 
   <h1>数组</h1>
 
+<p>数组中可以存放多个不同类型的值，只支持一维数组，初始化时不需要指明数组大小。
+数组下标从<code>0</code>开始。</p>
+<hr />
+<h2 id="_1">定义</h2>
+<p><strong>数组用小括号表示，元素之间用空格隔开。例如：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">array</span><span class="o">=(</span><span class="m">1</span> abc <span class="s2">&quot;def&quot;</span> fyq<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>也可以直接定义数组中某个元素的值：</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>array<span class="o">[</span><span class="m">0</span><span class="o">]=</span><span class="m">1</span>
+array<span class="o">[</span><span class="m">1</span><span class="o">]=</span>abc
+array<span class="o">[</span><span class="m">2</span><span class="o">]=</span><span class="s2">&quot;def&quot;</span>
+array<span class="o">[</span><span class="m">3</span><span class="o">]=</span>fyq
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="_2">读取数组中某个元素的值</h2>
+<h3 id="_3">格式</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="si">${</span><span class="nv">array</span><span class="p">[index]</span><span class="si">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_4">举例</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">array</span><span class="o">=(</span><span class="m">1</span> abc <span class="s2">&quot;def&quot;</span> fyq<span class="o">)</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[0]</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[1]</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[2]</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[3]</span><span class="si">}</span>
 
+---
+
+<span class="c1">## 读取整个数组</span>
+
+<span class="c1">### 格式</span>
+
+<span class="sb">```</span>shell
+<span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>  <span class="c1"># 第一种写法</span>
+<span class="si">${</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>  <span class="c1"># 第二种写法</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_5">举例</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">array</span><span class="o">=(</span><span class="m">1</span> abc <span class="s2">&quot;def&quot;</span> fyq<span class="o">)</span>
+
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>  <span class="c1"># 第一种写法</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>  <span class="c1"># 第二种写法</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="_6">数组长度</h2>
+<p>类似于字符串</p>
+<h3 id="_7">格式</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="si">${#</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>  <span class="c1"># 第一种写法</span>
+<span class="si">${#</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>  <span class="c1"># 第二种写法</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_8">举例</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">array</span><span class="o">=(</span><span class="m">1</span> abc <span class="s2">&quot;def&quot;</span> fyq<span class="o">)</span>
+
+<span class="nb">echo</span> <span class="si">${#</span><span class="nv">array</span><span class="p">[@]</span><span class="si">}</span>  <span class="c1"># 第一种写法</span>
+<span class="nb">echo</span> <span class="si">${#</span><span class="nv">array</span><span class="p">[*]</span><span class="si">}</span>  <span class="c1"># 第二种写法</span>
+</code></pre></div></td></tr></table></div>
 
               
             </article>
