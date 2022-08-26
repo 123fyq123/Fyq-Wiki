@@ -7,9 +7,9 @@
 
 ### 结构
 
- 一个tmux可以包含多个session，一个session可以包含多个window，一个window可以包含多个pane。
+ 一个`tmux`可以包含多个`session`，一个`session`可以包含多个`window`，一个`window`可以包含多个`pane`。
 
-实例：
+**实例：**
 ```
     tmux:
         session 0:
