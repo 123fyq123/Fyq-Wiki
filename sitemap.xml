@@ -286,7 +286,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://wiki.fyqcode.top/Linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+         <lastmod>2022-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://wiki.fyqcode.top/Linux/%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</loc>
+         <lastmod>2022-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://wiki.fyqcode.top/Linux/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
+         <lastmod>2022-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://wiki.fyqcode.top/Linux/%E7%AE%80%E4%BB%8B/</loc>
+         <lastmod>2022-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://wiki.fyqcode.top/Linux/%E7%AE%A1%E9%81%93/</loc>
          <lastmod>2022-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
