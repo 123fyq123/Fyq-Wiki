@@ -70,7 +70,7 @@ nav:
         - 杭电多校8 07: ACM/多校/10.md
         - 杭电多校9 01: ACM/多校/11.md
   - Linux:
-    - Linux简介: Linux/简介.md
+    - Linux简介: Linux/简介.md  
     - 常用文件管理命令: Linux/常用文件管理命令.md
     - Tmux和Vim: Linux/tmux和vim.md
     - Shell语法:
@@ -145,6 +145,16 @@ nav:
       - 函数: Web/JS/js8.md
       - 类: Web/JS/js9.md
       - 事件: Web/JS/js10.md
+      - 常用库:
+        - jQuery: Web/JS/js11.md
+        - setTimeout与setInterval: Web/JS/js12.md
+        - requestAnimationFrame: Web/JS/js13.md
+        - Map与Set: Web/JS/js14.md
+        - localStorage: Web/JS/js15.md
+        - JSON: Web/JS/js16.md
+        - 日期: Web/JS/js17.md
+        - WebSocket: Web/JS/js18.md
+        - window与canvas: Web/JS/js19.md
   - MarkDown:
     - 警告框: MarkDown/警告框.md
     - 代码块扩展语法: MarkDown/代码块扩展语法.md
