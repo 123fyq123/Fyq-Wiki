@@ -3238,10 +3238,10 @@
 
 <h2 id="_1">概述</h2>
 <h3 id="_2">排列数</h3>
-<p>从n个不同元素，任取m(m≤n,n,m均为自然数)个元素按照一定的顺序排成一列，叫做从n个不同元素中取出m个元素的一个排列；从n个不同元素中取出m(m≤n)个元素的所有排列的个数，叫做从n个不同元素中取出m个元素的排列数，用符号<span class="arithmatex">\(A_n^m(或者是P_n^m)\)</span>表示。
+<p>从<span class="arithmatex">\(n\)</span>个不同元素，任取<span class="arithmatex">\(m(m≤n,n,m均为自然数)\)</span>个元素按照一定的顺序排成一列，叫做从<span class="arithmatex">\(n\)</span>个不同元素中取出<span class="arithmatex">\(m\)</span>个元素的一个排列；从<span class="arithmatex">\(n\)</span>个不同元素中取出<span class="arithmatex">\(m(m≤n)\)</span>个元素的所有排列的个数，叫做从<span class="arithmatex">\(n\)</span>个不同元素中取出<span class="arithmatex">\(m\)</span>个元素的排列数，用符号<span class="arithmatex">\(A_n^m(或者是P_n^m)\)</span>表示。
 <span class="arithmatex">\(A_n^m=\frac{n!}{(n-m)!}\)</span></p>
 <h3 id="_3">组合数</h3>
-<p>从n个不同元素中，任取 m(m≤n)个元素组成一个集合，叫做从n个不同元素中取出m个元素的一个组合；从n个不同元素中取出m(m≤n)个元素的所有组合的个数，叫做从n个不同元素中取出m个元素的组合数。用符号<span class="arithmatex">\(C_n^m\)</span>来表示,组合数也常用<span class="arithmatex">\((_m^n)\)</span>表示
+<p>从<span class="arithmatex">\(n\)</span>个不同元素中，任取 <span class="arithmatex">\(m(m≤n)\)</span>个元素组成一个集合，叫做从<span class="arithmatex">\(n\)</span>个不同元素中取出<span class="arithmatex">\(m\)</span>个元素的一个组合；从<span class="arithmatex">\(n\)</span>个不同元素中取出<span class="arithmatex">\(m(m≤n)\)</span>个元素的所有组合的个数，叫做从<span class="arithmatex">\(n\)</span>个不同元素中取出<span class="arithmatex">\(m\)</span> 个元素的组合数。用符号<span class="arithmatex">\(C_n^m\)</span>来表示,组合数也常用<span class="arithmatex">\((_m^n)\)</span>表示
 <span class="arithmatex">\(C_n^m=\frac{n!}{m!(n-m)!}\)</span></p>
 <hr />
 <h2 id="_4">各种排列</h2>
@@ -3250,20 +3250,20 @@
 <p>(摘自oiwiki)</p>
 </div>
 <h3 id="_5">不相邻的排列</h3>
-<p>1-n这n个自然数中选k个，这k个中任何两个数都不相邻的组合有<span class="arithmatex">\((\frac{n-k+1}{k})\)</span></p>
+<p><span class="arithmatex">\(1-n\)</span>这<span class="arithmatex">\(n\)</span>个自然数中选<span class="arithmatex">\(k\)</span>个，这<span class="arithmatex">\(k\)</span>个中任何两个数都不相邻的组合有<span class="arithmatex">\((\frac{n-k+1}{k})\)</span></p>
 <h3 id="_6">错位排列</h3>
 <p>我们把错位排列问题具体化，考虑这样一个问题：</p>
-<p>n封不同的信，编号分别是1,2,3,4,5，现在要把这五封信放在编号1,2,3,4,5的信封中，要求信封的编号与信的编号不一样。问有多少种不同的放置方法？</p>
-<p>假设我们考虑到第n个信封，初始时我们暂时把第n封信放在第n个信封中，然后考虑两种情况的递推：</p>
-<p>前面n-1个信封全部装错；
-前面n-1个信封有一个没有装错其余全部装错。
-对于第一种情况，前面n-1个信封全部装错：因为前面n-1个已经全部装错了，所以第n封只需要与前面任一一个位置交换即可，总共有<span class="arithmatex">\(f(n-1)×(n-1)\)</span>种情况。</p>
-<p>对于第二种情况，前面n-1个信封有一个没有装错其余全部装错：考虑这种情况的目的在于，若n-1个信封中如果有一个没装错，那么我们把那个没装错的与n交换，即可得到一个全错位排列情况。</p>
-<p>其他情况，我们不可能通过一次操作来把它变成一个长度为  的错排。</p>
+<p><span class="arithmatex">\(n\)</span>封不同的信，编号分别是<span class="arithmatex">\(1,2,3,4,5\)</span>，现在要把这五封信放在编号<span class="arithmatex">\(1,2,3,4,5\)</span>的信封中，要求信封的编号与信的编号不一样。问有多少种不同的放置方法？</p>
+<p>假设我们考虑到第<span class="arithmatex">\(n\)</span>个信封，初始时我们暂时把第<span class="arithmatex">\(n\)</span>封信放在第<span class="arithmatex">\(n\)</span>个信封中，然后考虑两种情况的递推：</p>
+<p>前面<span class="arithmatex">\(n-1\)</span>个信封全部装错；
+前面<span class="arithmatex">\(n-1\)</span>个信封有一个没有装错其余全部装错。
+对于第一种情况，前面<span class="arithmatex">\(n-1\)</span>个信封全部装错：因为前面<span class="arithmatex">\(n-1\)</span>个已经全部装错了，所以第n封只需要与前面任一一个位置交换即可，总共有<span class="arithmatex">\(f(n-1)×(n-1)\)</span>种情况。</p>
+<p>对于第二种情况，前面<span class="arithmatex">\(n-1\)</span>个信封有一个没有装错其余全部装错：考虑这种情况的目的在于，若<span class="arithmatex">\(n-1\)</span>个信封中如果有一个没装错，那么我们把那个没装错的与n交换，即可得到一个全错位排列情况。</p>
+<p>其他情况，我们不可能通过一次操作来把它变成一个长度为<span class="arithmatex">\(n\)</span>的错排。</p>
 <p>于是可得错位排列的递推式为<span class="arithmatex">\(f(n)=(n-1)(f(n-1)+f(n-2))\)</span>。</p>
-<p>错位排列数列的前几项为0,1,2,9,44,265。</p>
+<p>错位排列数列的前几项为<span class="arithmatex">\(0,1,2,9,44,265\)</span>。</p>
 <h3 id="_7">圆排列</h3>
-<p>n个人全部来围成一圈，所有的排列数记为Q_n^n。考虑其中已经排好的一圈，从不同位置断开，又变成不同的队列。 所以有
+<p><span class="arithmatex">\(n\)</span>个人全部来围成一圈，所有的排列数记为<span class="arithmatex">\(Q_n^n\)</span>。考虑其中已经排好的一圈，从不同位置断开，又变成不同的队列。 所以有
 <span class="arithmatex">\(Q_n^n×n=A_n^n→Q_n^n=\frac{A_n^n}{n}=(n-1)!\)</span>
 部分圆排列公式
 <span class="arithmatex">\(Q_n^r=\frac{A_n^r}{r}=\frac{n!}{r×(n-r)!}\)</span></p>
@@ -3431,7 +3431,7 @@
 <p>适用于<span class="arithmatex">\(a≤1e18,b≤1e18,p≤1e5\)</span>的取模情况 </p>
 </div>
 <p><strong>Lucas定理:</strong></p>
-<p>当p为质数时，有<span class="arithmatex">\(C_a^b=C_{a\ mod\ p}^{b\ mod\ p}\times C_{\frac{a}{p}}^{\frac{b}{p}}\)</span></p>
+<p>当<span class="arithmatex">\(p\)</span>为质数时，有<span class="arithmatex">\(C_a^b=C_{a\ mod\ p}^{b\ mod\ p}\times C_{\frac{a}{p}}^{\frac{b}{p}}\)</span></p>
 <p><strong>代码</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -3519,7 +3519,7 @@
 <h2 id="1beautiful-numbers">例1.Beautiful Numbers</h2>
 <p><a href="https://codeforces.com/problemset/problem/300/C">题目入口</a></p>
 <h3 id="_11">题解</h3>
-<p>对于每个n位数，只需要判断它的位数和是否good即可，暴力枚举a的数量，注意这里需要需处理阶乘</p>
+<p>对于每个<span class="arithmatex">\(n\)</span>位数，只需要判断它的位数和是否good即可，暴力枚举a的数量，注意这里需要需处理阶乘</p>
 <h3 id="_12">代码</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>

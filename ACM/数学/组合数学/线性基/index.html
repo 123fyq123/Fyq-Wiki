@@ -3488,8 +3488,19 @@
 <hr />
 <h2 id="_2">预备知识</h2>
 <p><strong>交换变量位置：</strong></p>
-<p>a = a ^ b; b = a ^ b; a = a ^ b;  </p>
-<p>如果a^b==c  则 a^c==b  b^c==a  a^b^c==0</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span>
+<span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span>
+<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span>
+</code></pre></div></td></tr></table></div>
+<p>如果<code>a^b==c</code>  则 </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span><span class="o">^</span><span class="n">c</span><span class="o">==</span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="n">b</span><span class="o">^</span><span class="n">c</span><span class="o">==</span><span class="n">a</span><span class="p">;</span><span class="w">  </span>
+<span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="o">^</span><span class="n">c</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="_3">定义</h2>
 <p>线性基是一个数的集合，并且每个序列都拥有至少一个线性基，取线性基中若干个数异或起来可以得到原序列中的任何一个数。</p>
