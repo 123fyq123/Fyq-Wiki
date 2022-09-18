@@ -157,6 +157,8 @@ nav:
         - 日期: Web/JS/js17.md
         - WebSocket: Web/JS/js18.md
         - window与canvas: Web/JS/js19.md
+    - React框架:
+      - 配置环境: Web/React框架/配置环境.md
   - MarkDown:
     - 警告框: MarkDown/警告框.md
     - 代码块扩展语法: MarkDown/代码块扩展语法.md
