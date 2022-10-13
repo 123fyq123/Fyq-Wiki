@@ -159,6 +159,8 @@ nav:
         - window与canvas: Web/JS/js19.md
     - React框架:
       - 配置环境: Web/React框架/配置环境.md
+      - ES6语法补充: Web/React框架/ES6语法补充.md
+      - Components: Web/React框架/Components.md
   - MarkDown:
     - 警告框: MarkDown/警告框.md
     - 代码块扩展语法: MarkDown/代码块扩展语法.md
