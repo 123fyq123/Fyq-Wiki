@@ -161,6 +161,9 @@ nav:
       - 配置环境: Web/React框架/配置环境.md
       - ES6语法补充: Web/React框架/ES6语法补充.md
       - Components: Web/React框架/Components.md
+      - 组合Components: Web/React框架/组合Components.md
+      - 路由: Web/React框架/路由.md
+      - Redux: Web/React框架/Redux.md
   - MarkDown:
     - 警告框: MarkDown/警告框.md
     - 代码块扩展语法: MarkDown/代码块扩展语法.md
