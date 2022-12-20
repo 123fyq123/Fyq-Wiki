@@ -109,6 +109,15 @@ nav:
     - 图层的高级操作: PS/PS8.md
     - 通道的应用: PS/PS9.md
     - 蒙版: PS/PS10.md
+  - Java语法:
+    - 变量: Java/java1.md
+    - 判断语句: Java/java2.md
+    - 循环语句: Java/java3.md
+    - 数组: Java/java4.md
+    - 字符串: Java/java5.md
+    - 函数: Java/java6.md
+    - 类和对象: Java/java7.md
+    - 常用容器: Java/java8.md
   - Web:
     - html: 
       - html基础标签: Web/html/html1.md
