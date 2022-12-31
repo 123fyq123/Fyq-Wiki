@@ -12,6 +12,7 @@ repo_url: 'https://github.com/123fyq123/Fyq-Wiki'
 
 nav:
   - Welcome: index.md
+  - aaa: 404.md
   - Acm:
     - 数学:
       - 组合数学:
