@@ -4627,6 +4627,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#46-structural-responses" class="md-nav__link">
+    4.6 structural responses
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4881,6 +4888,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#46-structural-responses" class="md-nav__link">
+    4.6 structural responses
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4999,8 +5013,8 @@ a(\mathbf{u}, \delta \mathbf{u}) = l(\delta \mathbf{u}),\quad \mathbf{u}|_{\Gamm
 </li>
 <li>最后一个为设计变量约束</li>
 </ul>
-<p><strong>父空间</strong></p>
-<p>父空间是指一个标准区间，例如：</p>
+<p><strong>母空间</strong></p>
+<p>母空间是指一个标准区间，例如：</p>
 <ul>
 <li>1D：[-1,1]</li>
 <li>2D：[-1,1] <span class="arithmatex">\(\times\)</span> [-1,1]</li>
@@ -5009,12 +5023,12 @@ a(\mathbf{u}, \delta \mathbf{u}) = l(\delta \mathbf{u}),\quad \mathbf{u}|_{\Gamm
 <p>定义Nurbs基函数变量的标准空间</p>
 <p><strong>物理空间</strong></p>
 <p>将 NURBS 基函数定义的“参数空间”映射到结构所在的实际物理空间。使用 NURBS 基函数对参数空间点进行加权组合，实现曲线/面的光滑表达：<span class="arithmatex">\(\mathbf{x}(\xi, \eta) = \sum_i R_i(\xi, \eta)\, \mathbf{P}_i\)</span></p>
-<p>在计算刚度矩阵时，需要使用到高斯积分，这被定义到父空间 </p>
+<p>在计算刚度矩阵时，需要使用到高斯积分，这被定义到母空间 </p>
 <p>​IGA需要使用两个映射：
-父空间 → 参数空间 → 物理空间
+母空间 → 参数空间 → 物理空间
 <img alt="alt text" src="../../source/img/1.png" />
 上图为使用 IGA 实现拓扑优化的整体框架流程图</p>
-<h4 id="41-geom_mod">4.1 Geom_Mod</h4>
+<h3 id="41-geom_mod">4.1 Geom_Mod</h3>
 <p>在IGA中，二维Nurbs曲面使用如下公式表示 </p>
 <div class="arithmatex">\[
 \mathbf{x}(\xi, \eta) = \sum_{i=1}^{n} \sum_{j=1}^{m} R_{i,j}(\xi, \eta)\, \mathbf{P}_{i,j}
@@ -5053,7 +5067,7 @@ N_{i,p}(\xi) = \frac{\xi - \xi_i}{\xi_{i+p} - \xi_i} N_{i,p-1}(\xi)
 <li>nrbbasisfun：用于在指定参数位置计算非零基函数和其控制点索引。</li>
 <li>nrbeval: 通过参数坐标计算实际物理坐标</li>
 </ul>
-<h4 id="42-pre_iga">4.2 Pre_IGA</h4>
+<h3 id="42-pre_iga">4.2 Pre_IGA</h3>
 <p>根据Nurbs曲面得出返回三个参数——[CtrPts,Ele,GauPts]</p>
 <p>CtrPts：控制点相关信息</p>
 <table>
@@ -5169,7 +5183,7 @@ N_{i,p}(\xi) = \frac{\xi - \xi_i}{\xi_{i+p} - \xi_i} N_{i,p-1}(\xi)
 <tbody>
 <tr>
 <td><code>QuaPts</code></td>
-<td>父空间中高斯积分点的坐标<span class="arithmatex">\((\hat{\xi}, \hat{\eta}\)</span>）</td>
+<td>母空间中高斯积分点的坐标<span class="arithmatex">\((\hat{\xi}, \hat{\eta}\)</span>）</td>
 </tr>
 <tr>
 <td><code>Weigh</code></td>
@@ -5181,11 +5195,11 @@ N_{i,p}(\xi) = \frac{\xi - \xi_i}{\xi_{i+p} - \xi_i} N_{i,p-1}(\xi)
 </tr>
 <tr>
 <td><code>CorU</code></td>
-<td>高斯点从父空间映射到参数空间时第一方向的 knot 对应</td>
+<td>高斯点从母空间映射到参数空间时第一方向的 knot 对应</td>
 </tr>
 <tr>
 <td><code>CorV</code></td>
-<td>高斯点从父空间映射到参数空间时第二方向的 knot 对应</td>
+<td>高斯点从母空间映射到参数空间时第二方向的 knot 对应</td>
 </tr>
 <tr>
 <td><code>Seque</code></td>
@@ -5195,7 +5209,7 @@ N_{i,p}(\xi) = \frac{\xi - \xi_i}{\xi_{i+p} - \xi_i} N_{i,p-1}(\xi)
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>高斯积分点被定义在父空间中，需要转换到参数空间，转换如下</p>
+<p>高斯积分点被定义在母空间中，需要转换到参数空间，转换如下</p>
 <p><span class="arithmatex">\(CorU = ((u2 - u1) * \hat{\xi} + (u2 + u1)) / 2\)</span></p>
 <p><span class="arithmatex">\(CorV = ((v2 - v1) * \hat{\eta} + (v2 + v1)) / 2\)</span></p>
 </div>
@@ -5209,7 +5223,7 @@ N_{i,p}(\xi) = \frac{\xi - \xi_i}{\xi_{i+p} - \xi_i} N_{i,p-1}(\xi)
 <li>quadpoint: 高斯积分点坐标（二维）</li>
 <li>quadweight: 每个高斯点的积分权重</li>
 </ul>
-<h4 id="43-boun_cond">4.3 Boun_Cond</h4>
+<h3 id="43-boun_cond">4.3 Boun_Cond</h3>
 <p>用于定义狄利克雷边界和纽曼边界条件</p>
 <ul>
 <li>狄利克雷边界：固定</li>
@@ -5243,7 +5257,7 @@ N_{i,p}(\xi) = \frac{\xi - \xi_i}{\xi_{i+p} - \xi_i} N_{i,p-1}(\xi)
 </tr>
 </tbody>
 </table>
-<h4 id="44-ddf">4.4 DDF</h4>
+<h3 id="44-ddf">4.4 DDF</h3>
 <p>本章用于初始化控制密度以及获取高斯积分点处的DDF(密度分布函数)</p>
 <ul>
 <li>分配一系列定义在控制点处的离散密度，称为控制密度</li>
@@ -5277,7 +5291,7 @@ N_{i,p}(\xi) = \frac{\xi - \xi_i}{\xi_{i+p} - \xi_i} N_{i,p-1}(\xi)
 <span class="p">[</span><span class="n">dRu</span><span class="p">,</span><span class="w"> </span><span class="n">dRv</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nrbbasisfunder</span><span class="p">(</span><span class="n">GauPts</span><span class="p">.</span><span class="n">Cor</span><span class="p">,</span><span class="w"> </span><span class="n">NURBS</span><span class="p">);</span><span class="w"> </span><span class="c">% 获取高斯积分点在uv方向的导数</span>
 <span class="n">X</span><span class="p">.</span><span class="n">GauPts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">R</span><span class="o">*</span><span class="n">X</span><span class="p">.</span><span class="n">CtrPts</span><span class="p">;</span><span class="w"> </span><span class="c">% 得到高斯积分点的密度</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="45-shep_fun">4.5 Shep_Fun</h4>
+<h3 id="45-shep_fun">4.5 Shep_Fun</h3>
 <p>定义平滑机制</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="nf">[Sh, Hs] = Shep_Fun</span><span class="p">(</span>CtrPts, rmin<span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -5346,6 +5360,353 @@ N_{i,p}(\xi) = \frac{\xi - \xi_i}{\xi_{i+p} - \xi_i} N_{i,p-1}(\xi)
 <span class="w">    </span><span class="k">end</span>
 <span class="k">end</span>
 <span class="n">Sh</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sparse</span><span class="p">(</span><span class="n">iH</span><span class="p">,</span><span class="n">jH</span><span class="p">,</span><span class="n">sH</span><span class="p">);</span><span class="w"> </span><span class="n">Hs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">Sh</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c">% 生成对应的权重矩阵，对权重矩阵的每一行累加得到对应控制点权重和</span>
+<span class="k">end</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="46-structural-responses">4.6 structural responses</h3>
+<p>本章用于求解结构响应，分为三个部分：Stiff_Ele2D、Stiff_Ass2D、Solving</p>
+<ul>
+<li>Stiff_Ele2D：计算所有等几何分析单元的刚度矩阵</li>
+<li>Stiff_Ass2D：组装所有等几何分析单元刚度矩阵</li>
+<li>Solving：解决结构响应问题</li>
+</ul>
+<p><strong>Stiff_Ele2D</strong>：</p>
+<p>等几何分析单元刚度矩阵计算如下</p>
+<div class="arithmatex">\[
+K_e = \int_{\Omega_e} B^T D B \, d\Omega_e
+\]</div>
+<p>需要使用高斯积分计算，由于高斯积分被定义在母空间中，故需要进行母空间-&gt;参数空间的映射，通过构建雅可比矩阵实现，如下式：</p>
+<div class="arithmatex">\[
+K_e = \int_{\tilde{\Omega}_e} B^T D B |J_1||J_2| \, d\tilde{\Omega}_e
+\]</div>
+<p><span class="arithmatex">\(|J_1|、|J_2|\)</span>分别是x和y方向的雅可比矩阵</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">[</span><span class="n">KE</span><span class="p">,</span><span class="w"> </span><span class="n">dKE</span><span class="p">,</span><span class="w"> </span><span class="n">dv_dg</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Stiff_Ele2D</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">penal</span><span class="p">,</span><span class="w"> </span><span class="n">Emin</span><span class="p">,</span><span class="w"> </span><span class="n">DH</span><span class="p">,</span><span class="w"> </span><span class="n">CtrPts</span><span class="p">,</span><span class="w"> </span><span class="n">Ele</span><span class="p">,</span><span class="w"> </span><span class="n">GauPts</span><span class="p">,</span><span class="w"> </span><span class="n">dRu</span><span class="p">,</span><span class="w"> </span><span class="n">dRv</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X</code></td>
+<td>结构体数组，包含设计变量密度的信息。具体包含：<br> - <code>CtrPts</code>（控制点密度）<br> - <code>GauPts</code>（高斯积分点密度）<br> - <code>DDF</code>（设计域中的密度场）</td>
+</tr>
+<tr>
+<td><code>penal</code></td>
+<td>惩罚参数，SIMP模型中通常取3，用于控制材料插值的非线性。</td>
+</tr>
+<tr>
+<td><code>Emin</code></td>
+<td>空材料的最小杨氏模量，避免数值奇异性。</td>
+</tr>
+<tr>
+<td><code>DH</code></td>
+<td>材料本构矩阵D（如平面应力或应变条件下的弹性矩阵）。</td>
+</tr>
+<tr>
+<td><code>CtrPts</code></td>
+<td>控制点信息（NURBS控制点）。</td>
+</tr>
+<tr>
+<td><code>Ele</code></td>
+<td>等几何单元</td>
+</tr>
+<tr>
+<td><code>GauPts</code></td>
+<td>高斯积分点的位置和权重。</td>
+</tr>
+<tr>
+<td><code>dRu</code></td>
+<td>NURBS基函数对第一个参数方向（u）的导数。</td>
+</tr>
+<tr>
+<td><code>dRv</code></td>
+<td>NURBS基函数对第二个参数方向（v）的导数。</td>
+</tr>
+</tbody>
+</table>
+<p>参数空间-&gt;物理空间的雅可比矩阵推导如下：</p>
+<p>根据定义
+$$
+\mathbf{J} = 
+\frac{\partial (x, y)}{\partial (\xi, \eta)} = 
+\begin{bmatrix}
+\frac{\partial x}{\partial \xi} &amp; \frac{\partial x}{\partial \eta} \
+\frac{\partial y}{\partial \xi} &amp; \frac{\partial y}{\partial \eta}
+\end{bmatrix}
+$$</p>
+<p>上式的x是高斯点的x，不是控制点，根据下式可知，高斯点的坐标是由控制点插值得到</p>
+<div class="arithmatex">\[
+\mathbf{x} = 
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+=
+\sum_{i=1}^{n} N_i(\xi, \eta) 
+\begin{bmatrix}
+x_i \\
+y_i
+\end{bmatrix}
+\]</div>
+<p>故每个元素对参数坐标的导数如下</p>
+<div class="arithmatex">\[
+\frac{\partial x}{\partial \xi} = \sum_{i=1}^{n} \frac{\partial N_i}{\partial \xi} \cdot x_i
+\]</div>
+<div class="arithmatex">\[
+\frac{\partial x}{\partial \eta} = \sum_{i=1}^{n} \frac{\partial N_i}{\partial \eta} \cdot x_i
+\]</div>
+<div class="arithmatex">\[
+\frac{\partial y}{\partial \xi} = \sum_{i=1}^{n} \frac{\partial N_i}{\partial \xi} \cdot y_i
+\]</div>
+<div class="arithmatex">\[
+\frac{\partial y}{\partial \eta} = \sum_{i=1}^{n} \frac{\partial N_i}{\partial \eta} \cdot y_i
+\]</div>
+<p>带入J可知</p>
+<div class="arithmatex">\[
+\mathbf{J} =
+\begin{bmatrix}
+\frac{\partial N_1}{\partial \xi} &amp; \cdots &amp; \frac{\partial N_n}{\partial \xi} \\
+\frac{\partial N_1}{\partial \eta} &amp; \cdots &amp; \frac{\partial N_n}{\partial \eta}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+x_1 &amp; y_1 \\
+x_2 &amp; y_2 \\
+\vdots &amp; \vdots \\
+x_n &amp; y_n
+\end{bmatrix}
+\]</div>
+<p>体现在代码中只有两行</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">dPhy_dPara</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dR_dPara</span><span class="o">*</span><span class="n">Ele_CoCtPt</span><span class="o">&#39;</span><span class="p">;</span><span class="w">    </span><span class="c">% phy表示物理坐标，Para表示参数坐标，R表示基函数           </span>
+<span class="n">J1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dPhy_dPara</span><span class="p">;</span><span class="w">                                   </span>
+</code></pre></div></td></tr></table></div>
+<p>接下来为了计算位移-应变矩阵B，需要基函数对物理坐标的导数，使用链式法则如下：</p>
+<div class="arithmatex">\[
+\frac{\partial N}{\partial x} = 
+\frac{\partial N}{\partial \xi} \cdot \frac{\partial \xi}{\partial x} + 
+\frac{\partial N}{\partial \eta} \cdot \frac{\partial \eta}{\partial x}
+\]</div>
+<div class="arithmatex">\[
+\frac{\partial N}{\partial y} = 
+\frac{\partial N}{\partial \xi} \cdot \frac{\partial \xi}{\partial y} + 
+\frac{\partial N}{\partial \eta} \cdot \frac{\partial \eta}{\partial y}
+\]</div>
+<p>转变为矩阵形式：</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\frac{\partial N}{\partial x} \\
+\frac{\partial N}{\partial y}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{\partial \xi}{\partial x} &amp; \frac{\partial \eta}{\partial x} \\
+\frac{\partial \xi}{\partial y} &amp; \frac{\partial \eta}{\partial y}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+\frac{\partial N}{\partial \xi} \\
+\frac{\partial N}{\partial \eta}
+\end{bmatrix}
+\]</div>
+<p>可以发现</p>
+<div class="arithmatex">\[
+\mathbf{J}_1 = 
+\frac{\partial (x, y)}{\partial (\xi, \eta)}
+\implies
+\mathbf{J}_1^{-1} = 
+\frac{\partial (\xi, \eta)}{\partial (x, y)}
+\]</div>
+<p>故</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\frac{\partial N}{\partial x} \\
+\frac{\partial N}{\partial y}
+\end{bmatrix}
+=
+\mathbf{J}_1^{-1} \cdot
+\begin{bmatrix}
+\frac{\partial N}{\partial \xi} \\
+\frac{\partial N}{\partial \eta}
+\end{bmatrix}
+\]</div>
+<p>在代码中体现如下</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">dR_dPhy</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">inv</span><span class="p">(</span><span class="n">J1</span><span class="p">)</span><span class="o">*</span><span class="n">dR_dPara</span><span class="p">;</span><span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>整体代码注释如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="nf">[KE, dKE, dv_dg] = Stiff_Ele2D</span><span class="p">(</span>X, penal, Emin, DH, CtrPts, Ele, GauPts, dRu, dRv<span class="p">)</span>
+<span class="c">% 计算二维等几何单元的刚度矩阵，刚度矩阵对密度的导数，以及体积对密度的导数</span>
+
+<span class="c">% 初始化输出变量</span>
+<span class="n">KE</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="n">Ele</span><span class="p">.</span><span class="n">Num</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">             </span><span class="c">% 存储每个单元的刚度矩阵</span>
+<span class="n">dKE</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="n">Ele</span><span class="p">.</span><span class="n">Num</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">            </span><span class="c">% 存储每个单元刚度矩阵对密度的导数</span>
+<span class="n">dv_dg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="n">GauPts</span><span class="p">.</span><span class="n">Num</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">      </span><span class="c">% 存储每个高斯点的体积对密度的导数</span>
+
+<span class="n">Nen</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ele</span><span class="p">.</span><span class="n">CtrPtsNum</span><span class="p">;</span><span class="w">               </span><span class="c">% 每个单元对应的控制点数量（自由度=2*Nen）</span>
+
+<span class="c">% 遍历每个单元</span>
+<span class="k">for</span><span class="w"> </span><span class="n">ide</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">Ele</span><span class="p">.</span><span class="n">Num</span>
+
+<span class="w">    </span><span class="c">% 获取当前单元在参数空间U和V方向的索引</span>
+<span class="w">    </span><span class="p">[</span><span class="n">idv</span><span class="p">,</span><span class="w"> </span><span class="n">idu</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">find</span><span class="p">(</span><span class="n">Ele</span><span class="p">.</span><span class="n">Seque</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ide</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% 获取当前单元在U方向的节点区间</span>
+<span class="w">    </span><span class="n">Ele_Knot_U</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ele</span><span class="p">.</span><span class="n">KnotsU</span><span class="p">(</span><span class="n">idu</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span>
+
+<span class="w">    </span><span class="c">% 获取当前单元在V方向的节点区间</span>
+<span class="w">    </span><span class="n">Ele_Knot_V</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ele</span><span class="p">.</span><span class="n">KnotsV</span><span class="p">(</span><span class="n">idv</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span>
+
+<span class="w">    </span><span class="c">% 获取当前单元对应的控制点编号</span>
+<span class="w">    </span><span class="n">Ele_NoCtPt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ele</span><span class="p">.</span><span class="n">CtrPtsCon</span><span class="p">(</span><span class="n">ide</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span>
+
+<span class="w">    </span><span class="c">% 获取当前单元控制点的物理坐标（二维）</span>
+<span class="w">    </span><span class="n">Ele_CoCtPt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">CtrPts</span><span class="p">.</span><span class="n">Cordis</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Ele_NoCtPt</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% 初始化当前单元的刚度矩阵（2*Nen × 2*Nen）</span>
+<span class="w">    </span><span class="n">Ke</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Nen</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">Nen</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% 初始化当前单元的刚度矩阵对每个高斯点密度的导数（cell存储）</span>
+<span class="w">    </span><span class="n">dKe</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="n">Ele</span><span class="p">.</span><span class="n">GauPtsNum</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% 遍历当前单元内的所有高斯积分点</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">Ele</span><span class="p">.</span><span class="n">GauPtsNum</span>
+
+<span class="w">        </span><span class="c">% 获取当前高斯点的全局编号</span>
+<span class="w">        </span><span class="n">GptOrder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GauPts</span><span class="p">.</span><span class="n">Seque</span><span class="p">(</span><span class="n">ide</span><span class="p">,</span><span class="w"> </span><span class="nb">i</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c">% 获取当前高斯点的基函数对参数空间（ξ,η）的导数</span>
+<span class="w">        </span><span class="n">dR_dPara</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">dRu</span><span class="p">(</span><span class="n">GptOrder</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span><span class="w"> </span><span class="n">dRv</span><span class="p">(</span><span class="n">GptOrder</span><span class="p">,</span><span class="w"> </span><span class="p">:)];</span>
+
+<span class="w">        </span><span class="c">% 计算雅可比矩阵 J1（从参数空间映射到物理空间）</span>
+<span class="w">        </span><span class="n">dPhy_dPara</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dR_dPara</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ele_CoCtPt</span><span class="o">&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">J1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dPhy_dPara</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c">% 计算基函数对物理空间（x,y）的导数</span>
+<span class="w">        </span><span class="n">dR_dPhy</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">inv</span><span class="p">(</span><span class="n">J1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dR_dPara</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c">% 构建应变-位移矩阵Be</span>
+<span class="w">        </span><span class="n">Be</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">Nen</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dR_dPhy</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span><span class="w">            </span><span class="c">% εx 对x方向位移的偏导</span>
+<span class="w">        </span><span class="n">Be</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Nen</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">Nen</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dR_dPhy</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span><span class="w">      </span><span class="c">% εy 对y方向位移的偏导</span>
+<span class="w">        </span><span class="n">Be</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">Nen</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dR_dPhy</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span><span class="w">            </span><span class="c">% γxy 对x方向位移的y偏导</span>
+<span class="w">        </span><span class="n">Be</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">Nen</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">Nen</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dR_dPhy</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">:);</span><span class="w">      </span><span class="c">% γxy 对y方向位移的x偏导</span>
+
+<span class="w">        </span><span class="c">% 计算参数空间（ξ,η）到父单元空间（[-1,1]）的缩放矩阵</span>
+<span class="w">        </span><span class="n">dPara_dPare</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">Ele_Knot_U</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Ele_Knot_U</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">dPara_dPare</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">Ele_Knot_V</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Ele_Knot_V</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">J2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dPara_dPare</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c">% 完整的Jacobian，从父单元空间到物理空间</span>
+<span class="w">        </span><span class="n">J</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">J1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">J2</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c">% 当前高斯点的积分权重（Jacobian行列式 * 高斯点权重）</span>
+<span class="w">        </span><span class="n">weight</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GauPts</span><span class="p">.</span><span class="n">Weigh</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">det</span><span class="p">(</span><span class="n">J</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c">% 材料插值（SIMP），计算当前高斯点的有效杨氏模量</span>
+<span class="w">        </span><span class="n">E_effective</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Emin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">GauPts</span><span class="p">(</span><span class="n">GptOrder</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span><span class="o">.^</span><span class="n">penal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Emin</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c">% 当前高斯点对刚度矩阵的贡献</span>
+<span class="w">        </span><span class="n">Ke</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ke</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">E_effective</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">Be</span><span class="o">&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DH</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Be</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c">% 当前高斯点刚度矩阵对密度的导数（灵敏度）</span>
+<span class="w">        </span><span class="n">dKe</span><span class="p">{</span><span class="nb">i</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">penal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">X</span><span class="p">.</span><span class="n">GauPts</span><span class="p">(</span><span class="n">GptOrder</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span><span class="o">.^</span><span class="p">(</span><span class="n">penal</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Emin</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">Be</span><span class="o">&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DH</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Be</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c">% 当前高斯点体积对密度的导数（Jacobian行列式 * 权重）</span>
+<span class="w">        </span><span class="n">dv_dg</span><span class="p">(</span><span class="n">GptOrder</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span>
+<span class="w">    </span><span class="k">end</span>
+
+<span class="w">    </span><span class="c">% 存储当前单元的刚度矩阵和导数</span>
+<span class="w">    </span><span class="n">KE</span><span class="p">{</span><span class="n">ide</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ke</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dKE</span><span class="p">{</span><span class="n">ide</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dKe</span><span class="p">;</span>
+<span class="k">end</span>
+
 <span class="k">end</span>
 </code></pre></div></td></tr></table></div>
 
