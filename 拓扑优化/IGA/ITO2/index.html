@@ -26,7 +26,7 @@
     
     
       
-        <title>等几何拓扑优化高效隐式过滤方法 - FYQ Wiki</title>
+        <title>Bézier分解算法 - FYQ Wiki</title>
       
     
     
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              等几何拓扑优化高效隐式过滤方法
+              Bézier分解算法
             
           </span>
         </div>
@@ -4536,7 +4536,7 @@
         
   
   <span class="md-ellipsis">
-    等几何拓扑优化高效隐式过滤方法
+    Bézier分解算法
   </span>
   
 
@@ -4689,22 +4689,21 @@
 <hr />
 <h1 id="bezier_1">二、Bézier分解算法</h1>
 <p>在节点矢量上不断插入节点，直到内部节点的重复度达到 𝑝−1,以此将 B 样条基函数拆分为 Bézier 基函数片段。</p>
-<p>将节点$ \xi' \in [\xi_k, \xi_{k+1}] $ 插入 <span class="arithmatex">\(\xi\)</span> 得到新的节点区间 $\Xi' = {\xi_1, \dots, \xi_k, \xi', \xi_{k+1}, \dots, \xi_{n+p+1}}
-$</p>
+<p>将节点 <span class="arithmatex">\(\xi' \in [\xi_k, \xi_{k+1}]\)</span> 插入 <span class="arithmatex">\(\xi\)</span> 得到新的节点区间 <span class="arithmatex">\(\Xi' = \{\xi_1, \dots, \xi_k, \xi', \xi_{k+1}, \dots, \xi_{n+p+1}\}\)</span></p>
 <p>此时控制点更新规则如下：</p>
 <div class="arithmatex">\[P'_j =
 \begin{cases}
 P_1, &amp; j=1 \\
 \alpha_j P_j + (1-\alpha_j) P_{j-1}, &amp; 1 &lt; j &lt; n+1 \\
 P_n, &amp; j=n+1
-\end{cases} \tag{1}\]</div>
+\end{cases} \]</div>
 <p>其中 <span class="arithmatex">\(\alpha_j\)</span>为权重因子,k为要插入的节点区间下标</p>
 <div class="arithmatex">\[\alpha_j =
 \begin{cases}
 1, &amp; 1 \leq j \leq k-p \\
 \frac{\xi' - \xi_j}{\xi_{j+p} - \xi_j}, &amp; k-p+1 \leq j \leq k \\
 0, &amp; j \geq k+1
-\end{cases} \tag{2}\]</div>
+\end{cases} \]</div>
 <p><strong>Bézier分解算法</strong></p>
 <p>我们需要将内部节点的重复度变为p个，故不仅仅只插入一次，对于每次插入我们提取C矩阵（Bezier提取算子）</p>
 <div class="arithmatex">\[C_\text{ext}^w =
@@ -4713,7 +4712,7 @@ P_n, &amp; j=n+1
 0 &amp; \alpha_2 &amp; &amp; \\
 \vdots &amp; &amp; \ddots &amp; \\
 0 &amp; \cdots &amp; \alpha_{n+w} &amp; 1-\alpha_{n+w}
-\end{bmatrix} \tag{3}\]</div>
+\end{bmatrix} \]</div>
 <p>其规模为 <span class="arithmatex">\((n+w-1) \times (n+w)\)</span> 因为每次控制点会变多，故列数会变多</p>
 <p>多次插入即将这些算子相乘</p>
 <div class="arithmatex">\[C_\text{ext} = C_\text{ext}^1 \cdot C_\text{ext}^2 \cdots C_\text{ext}^w \cdots C_\text{ext}^m, \quad w=1,2,\dots,m\]</div>
@@ -4723,39 +4722,100 @@ P_n, &amp; j=n+1
 <div class="arithmatex">\[N(\xi) =
 \begin{Bmatrix}
 N_{i,p}(\xi)
-\end{Bmatrix}_{i=1}^n \tag{4}\]</div>
+\end{Bmatrix}_{i=1}^n \]</div>
 <p>Bernstein函数空间如下：</p>
 <div class="arithmatex">\[B(\xi) =
 \begin{Bmatrix}
 B_{i,p}(\xi)
-\end{Bmatrix}_{i=1}^{n+m} \tag{5}\]</div>
+\end{Bmatrix}_{i=1}^{n+m} \]</div>
 <p>它们满足</p>
-<div class="arithmatex">\[N(\xi) = C_\text{ext} \cdot B(\xi) \tag{6}\]</div>
+<div class="arithmatex">\[N(\xi) = C_\text{ext} \cdot B(\xi) \]</div>
 <p>Bezier控制点为新点，B样条控制点为旧点，控制点的映射关系如下：</p>
 <div class="arithmatex">\[\mathbf{P}_{\text{Bezier}} =
 C_\text{ext}^{\mathrm{T}} \cdot
-\mathbf{P}_{\text{Bspline}} \tag{7}\]</div>
+\mathbf{P}_{\text{Bspline}} \]</div>
 <p>上式可以通过曲线形式不变证明</p>
 <p>我们可以通过B样条和Bezier形式表示同一条曲线</p>
 <div class="arithmatex">\[
 x(\xi) =
 \sum_{i=1}^{n} N_{i,p}(\xi) P_{i}^{\text{Bspline}} =
-\sum_{j=1}^{n+m} B_{j,p}(\xi) P_{j}^{\text{Bezier}} \tag{8}\]</div>
+\sum_{j=1}^{n+m} B_{j,p}(\xi) P_{j}^{\text{Bezier}} \]</div>
 <p>使用矩阵形式表示更为简洁</p>
 <div class="arithmatex">\[x(\xi) =
 N^\mathrm{T}(\xi) \cdot \mathbf{P}_{\text{Bspline}} =
-B^\mathrm{T}(\xi) \cdot \mathbf{P}_{\text{Bezier}} \tag{9}\]</div>
+B^\mathrm{T}(\xi) \cdot \mathbf{P}_{\text{Bezier}} \]</div>
 <p>由于之前我们得出两个函数空间之间可以通过<span class="arithmatex">\(C_{ext}\)</span> Bezier算子进行转换</p>
 <div class="arithmatex">\[N(\xi) =
-C_\text{ext} \cdot B(\xi) \tag{10}\]</div>
+C_\text{ext} \cdot B(\xi) \]</div>
 <p>故带入曲线表达式</p>
 <div class="arithmatex">\[x(\xi) =
 \big( C_\text{ext} \cdot B(\xi) \big)^\mathrm{T} \cdot \mathbf{P}_{\text{Bspline}} =
-B^\mathrm{T}(\xi) \cdot \big( C_\text{ext}^\mathrm{T} \cdot \mathbf{P}_{\text{Bspline}} \big) \tag{11}\]</div>
+B^\mathrm{T}(\xi) \cdot \big( C_\text{ext}^\mathrm{T} \cdot \mathbf{P}_{\text{Bspline}} \big) \]</div>
 <p>根据曲线形式不变，可得(7)式</p>
 <div class="arithmatex">\[
 \mathbf{P}_{\text{Bezier}} =
 C_\text{ext}^\mathrm{T} \cdot \mathbf{P}_{\text{Bspline}} \]</div>
+<hr />
+<h1 id="_2">三、高效隐式过滤方法</h1>
+<p>转化为Berstein基函数后，灵敏度计算如下：</p>
+<div class="arithmatex">\[\bar{x}_e (\alpha, \beta) =
+\sum_{i=1}^r \sum_{j=1}^v R_{i,j} (\alpha, \beta) x_{i,j}^e =
+\sum_{k=1}^{r \times v} \omega_{i,j}^e \cdot C_e^k \cdot B_{st} \cdot x_{i,j}^e =
+\sum_{k=1}^{r \times v} \omega_{i,j}^e \cdot C_e^k \cdot B_{st} =
+\frac{(x^e)^\mathrm{T} \cdot \big( \omega^e * (C_e \cdot B_{st}) \big)}{(\omega^e)^\mathrm{T} \cdot \big( C_e \cdot B_{st} \big)}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\bar{x}^e = [\bar{x}_{1,1}^e, \cdots, \bar{x}_{r,v}^e]^\mathrm{T}\)</span>— 第 <span class="arithmatex">\(e\)</span> 个单元的控制点相对密度设计变量的集合。</li>
+<li><span class="arithmatex">\(x_{i,j}^e\)</span> — 第 <span class="arithmatex">\(e\)</span> 个单元的第 <span class="arithmatex">\((i,j)\)</span> 个控制点相对密度设计变量。</li>
+<li><span class="arithmatex">\(\omega^e = [\omega_{1,1}^e, \cdots, \omega_{r,v}^e]^\mathrm{T}\)</span> — 第 <span class="arithmatex">\(e\)</span> 个单元相关的控制点的权重因子集合。</li>
+<li><span class="arithmatex">\(\omega_{i,j}^e\)</span> — 第 <span class="arithmatex">\(e\)</span> 个单元相关的第 <span class="arithmatex">\((i,j)\)</span> 个控制点对应的权重因子。</li>
+<li>矩阵 <span class="arithmatex">\(C_e\)</span> — 单元 <span class="arithmatex">\(e\)</span> 的 Bézier 提取矩阵。</li>
+<li><span class="arithmatex">\(C_{ext}^{i,j}\)</span> — 第 <span class="arithmatex">\((i,j)\)</span> 个控制点对应的提取矩阵分量。</li>
+<li><span class="arithmatex">\(B_{st}\)</span> — 任一单元相关的 Bernstein 基函数在单元中心点的函数值的集合。</li>
+</ul>
+<p>对于单元的<span class="arithmatex">\(C_{ext}\)</span>矩阵可以写成 <span class="arithmatex">\(\alpha、\beta\)</span>方向的Bézier提取
+矩阵的克罗内克（Kronecker）乘积，</p>
+<div class="arithmatex">\[
+C_\text{ext} =
+C_\text{ext}^\alpha \otimes C_\text{ext}^\beta
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>克罗内克乘积是矩阵的“按块扩展乘法”</p>
+</div>
+<div class="arithmatex">\[
+A =
+\begin{bmatrix}
+a_{11} &amp; a_{12} \\\\
+a_{21} &amp; a_{22}
+\end{bmatrix},
+\quad
+B =
+\begin{bmatrix}
+b_{11} &amp; b_{12} \\\\
+b_{21} &amp; b_{22}
+\end{bmatrix}
+\]</div>
+<p>那么它们的克罗内克积为：</p>
+<div class="arithmatex">\[
+A \otimes B =
+\begin{bmatrix}
+a_{11} B &amp; a_{12} B \\\\
+a_{21} B &amp; a_{22} B
+\end{bmatrix}
+\]</div>
+<p>最后，灵敏度可计算如下：</p>
+<div class="arithmatex">\[
+\frac{\partial C}{\partial x_{i,j}} =
+\sum_{e \in W} \frac{\partial C}{\partial \bar{x}_{i,je}} \cdot \frac{\partial \bar{x}_{i,je}}{\partial x_{i,j}} =
+\sum_{e \in W} \left[
+\left(
+\frac{\omega_{i,j}^e \cdot C_{e}^{i,j} \cdot B_{st}}{\omega_e^\mathrm{T} \cdot \big( C_e \cdot B_{st} \big) }
+\right)
+\cdot
+\frac{\partial C}{\partial \bar{x}_{i,je}}
+\right]
+\]</div>
 
 
 
