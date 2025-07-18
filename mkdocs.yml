@@ -187,6 +187,9 @@ nav:
     - IGA: 
         igaTop: 拓扑优化/IGA/ITO.md
         Bézier分解算法: 拓扑优化/IGA/ITO2.md
+        盖贇东老师论文: 拓扑优化/IGA/gaiyundong.md
+    - 弹性力学:
+        弹性力学知识扫盲: 拓扑优化/弹性力学/弹性力学相关.md
   - About:
     - 关于作者: 关于/作者.md
     - 关于算法竞赛: 关于/大学.md
